@@ -1,4 +1,6 @@
-
+<?php
+include "template/header.php";
+ ?>
 <main>
 <section class="container">
 	<div class="row">
