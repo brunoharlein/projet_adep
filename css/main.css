@@ -104,7 +104,10 @@ textarea {
 .mobile{
   display:block;
 }
-
+  /* common rules */
+  .minHeight {
+    min-height: 100vh;
+  }
    /* footer rules */
 
    .width {

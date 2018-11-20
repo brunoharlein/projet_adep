@@ -6,8 +6,8 @@ include "template/header.php";
 	<div class="row">
       <form method="post" action='login.php' name="Connexion" class="col-md-6 mx-auto">
           <div class="form-group ">
-            <label for="userName" class="mb-0">Votre nom d'utilisateur</label><br>
-            <input type="text" class="span3" name="userName" id="userName" placeholder="Votre nom d'utilisateur" required="" autofocus="">
+            <label for="email" class="mb-0">Votre nom d'utilisateur</label><br>
+            <input type="email" class="span3" name="email" id="userName" placeholder="Votre email" required="" autofocus="">
           </div>
           <div class="form-group">
              <label for="pwd" class="mb-0">Votre mot de passe</label><br>
