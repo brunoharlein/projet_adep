@@ -19,3 +19,6 @@
   </div>
 </section>
 </main>
+<?php
+require "template/footer.php";
+ ?>
