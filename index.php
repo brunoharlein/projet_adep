@@ -18,12 +18,28 @@
 </head>
 
 <body>
-  <?php
-echo "test fatma2 ";
-   ?>
+<main>
 
+<section class="container">
+	<div class="row">
+      <form method="post" action='login.php' name="Connexion" class="col-md-6 mx-auto">
+          <div class="form-group ">
+            <label for="userName" class="mb-0">Votre nom d'utilisateur</label><br>
+            <input type="text" class="span3" name="userName" id="userName" placeholder="Votre nom d'utilisateur" required="" autofocus="">
+          </div>
+          <div class="form-group">
+             <label for="pwd" class="mb-0">Votre mot de passe</label><br>
+             <input type="password" class="form-control" name="pwd" placeholder="Votre mot de passe" required="">
+           </div>
+          <div >
+            <input type="submit" class=" btn btn-primary" value="Vous connecter">
+            <a href="#">Mot de passe oublié?</a>
+          </div>
+      </form>
+  </div>
+</section>
 
-
+</main>
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
