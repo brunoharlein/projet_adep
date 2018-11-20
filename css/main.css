@@ -101,17 +101,6 @@ textarea {
 
    /* footer rules */
 
-
-
-
-
-
-
-
-
-
-
-
    .width {
      width: 100%;
      text-align: center;
@@ -135,10 +124,18 @@ textarea {
       }
    }
 
+
    /* header class */
 
 
    /* main class */
+   /* Small devices (tablets, 768px and up) */
+   @media only screen and (max-width : 768px) {
+     label {
+       display:none;
+     }
+  }
+
 
 
 
