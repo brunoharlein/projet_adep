@@ -1,4 +1,6 @@
-
+<?php
+include "template/header.php";
+ ?>
 <main>
 <section class="container">
 	<div class="row">
@@ -20,5 +22,5 @@
 </section>
 </main>
 <?php
-require "template/footer.php";
+include "template/footer.php";
  ?>
