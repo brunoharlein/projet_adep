@@ -97,12 +97,105 @@ textarea {
    Author's custom styles
    ========================================================================== */
    /* utility class */
+.tab{
+  display:none !important;
+}
 
+.mobile{
+  display:block;
+}
 
    /* commun rules */
 
 
    /* header class */
+header{
+  height: 15vh;
+}
+
+#logoHeader {
+  max-height: 15vh;
+  max-width: 72px;
+}
+
+#logoHeader img{
+  max-height: 100%;
+  width: auto;
+}
+
+#titreHeader{
+  font-size:1.25em !important;
+}
+
+/* Navigation */
+.transformIcon{
+  transform:rotateY(180deg);
+  transition-duration:1s;
+}
+
+.transformIconClose{
+  transform:rotateY(0deg);
+  transition-duration:1s;
+}
+
+#navMobile{
+  position: fixed;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  top: 15vh;
+  left: 0;
+  z-index: 99999;
+}
+
+.menuVisible{
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .5s,visibility 0s .5s;
+}
+
+.menuHidden{
+  visibility: visible;
+  opacity: 0.9;
+  transition: opacity .5s;
+}
+
+#navMobile ul li{
+  border-bottom: 1px solid grey;
+  font-size: 1.25em;
+}
+
+#navMobile ul li a{
+  color: #ffffff;
+}
+
+
+#nav ul li a{
+  color: #ffffff;
+  font-size: 2em;
+  margin-left: 1em;
+}
+
+   @media screen and (min-width: 1000px) {
+     header{
+       height:23vh;
+     }
+     #logoHeader {
+       max-height: 23vh;
+       max-width: 200px;
+     }
+     #titreHeader{
+       font-size:3.5em !important;
+     }
+     .tab{
+       display:block !important;
+     }
+
+     .mobile{
+       display:none;
+     }
+   }
+
 
 
    /* main class */
