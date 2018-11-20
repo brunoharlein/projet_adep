@@ -19,7 +19,7 @@
 
 <body>
   <?php
-echo "test fatma ";
+echo "test fatma2 ";
    ?>
 
 
