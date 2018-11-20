@@ -20,5 +20,5 @@
 </section>
 </main>
 <?php
-require "template/footer.php";
+include "template/footer.php";
  ?>
