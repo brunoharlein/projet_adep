@@ -36,6 +36,17 @@ if (!empty($_POST)) {
         header("Location: ../materielsAdmin.php?action=add&msg=".$code);
         exit;
         break;
+      case 'delete':
+        // Suppression d'un matériel
+        if (deleteMateriel($db,$_POST["id"])) {
+          $code .= "6"; // Add OK
+        }
+        else {
+          $code .= "7"; // Add KO
+        }
+        header("Location: ../materielsAdmin.php?action=delete&id=". $_POST["id"]."&msg=".$code);
+        exit;
+        break;
     }
   }
   if ($_POST["action"] == "add") {

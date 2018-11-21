@@ -23,4 +23,10 @@ function addMateriel($db,$form){
   return $result;
 }
 
+function deleteMateriel($db,$id){
+  $requete = $db->prepare('DELETE FROM materiel where id= ?');
+  $result = $requete->execute(array($id));
+  return $result;
+}
+
  ?>

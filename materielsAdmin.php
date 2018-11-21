@@ -12,7 +12,7 @@ if (isset($_GET["msg"])) {
   foreach ($tabMsg as $key => $value) {
     foreach ($tabCode as $key2 => $code) {
       if ($value["id"] == $code) {
-        if ($code == 2 || $code == 4) {
+        if ($code == 2 || $code == 4|| $code == 6) {
           $message .= "<div class='alert alert-success mt-2 text-center' role='alert'>"
                               .$value['msg'] .
                       "</div>";
@@ -71,17 +71,19 @@ if (isset($_GET["action"])) {
       <a href="materiels.php" class="btn btn-primary">Retour à la liste</a>
     </div>
   </div>
-  <?php if ($action != "delete") { ?>
   <form class="needs-validation text-right" action="service/materielsTreatment.php" method="post" novalidate >
+  <?php if ($action != "add") { ?>
+    <input type='hidden' value="<?php echo (isset($id))?$id:""; ?>" name='id'>
+  <?php } ?>
+  <?php if ($action != "delete") { ?>
+
     <div class="form-group text-left">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <label class="input-group-text" for="name">Nom du matériel</label>
           </div>
           <input type="input" class="form-control" value="<?php echo (isset($nom))?$nom:""; ?>" name="nom" placeholder="Nom du matériel" >
-          <?php if ($action == "edit") { ?>
-            <input type='hidden' value="<?php echo (isset($id))?$id:""; ?>" name='id'>
-          <?php } ?>
+
           <!-- <div class="invalid-feedback">Veuillez saisir un nom produit.</div> -->
         </div>
       </div>
@@ -140,20 +142,21 @@ if (isset($_GET["action"])) {
 
     <?php if ($action == "edit") { ?>
         <button type="submit" class="btn btn-success w-25" name="action" value="edit">Enregistrer</button>
-    <?php }else { ?>
+    <?php }elseif ($action == "add") { ?>
         <button type="submit" class="btn btn-success w-25" name="action" value="add">Ajouter</button>
     <?php } ?>
-  </form>
+
 <?php } else {  ?>
-  <div class="d-flex flex-column justify-content-center align-items-center">
-    <h4>Voulez- vous supprimer ce matériel ?</h4>
-    <p><?php echo ($result["nom"])?$result["nom"]:""; ?> </p>
-    
-    <button type="submit" class="btn btn-success w-25" name="action" value="delete">Supprimer</button>
-  </div>
+  <?php if (!isset($_GET["msg"])) { ?>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <h4>Voulez-vous supprimer ce matériel ?</h4>
+      <p><?php echo ($result["nom"])?$result["nom"]:""; ?> </p>
 
-
+      <button type="submit" class="btn btn-success w-25" name="action" value="delete">Supprimer</button>
+    </div>
 <?php } ?>
+<?php } ?>
+</form>
   <!-- Affichage du ou des message(s) d'erreur -->
   <?php
     if (isset($message)) {
