@@ -1,10 +1,10 @@
 <?php
-//On essaie de se connecter à la base de données avec nos identifiants
-//Si cela marche on crée une variable db qui stocke la connexion
+//We try to connect to the db with our id
+//If it works we create a variable db which stocks the connexion
 try {
   $db = new PDO("mysql:host=localhost;dbname=EmpruntsAdep", "ben", "test");
 }
-//Sinon on récupère une erreur 
+//Otherwise we retrieve an error 
 catch (Exception $e) {
   echo 'Exception reçue : ' .  $e->getMessage() . "\n";
 }
