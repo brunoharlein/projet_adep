@@ -5,7 +5,7 @@ include "template/header.php";
 
 <form class="col-12 col-md-12 col-lg-8 mx-auto my-5" action="ajoutEmprunteurTreatment.php" method="post">
   <div class="form-group">
-    <label for="email">Email</label>
+    <label for="email">Email : </label>
     <input type="email" class="form-control" id="email" name="Email" value="">
   </div>
 
