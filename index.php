@@ -1,6 +1,5 @@
-
 <?php
-include "template.php"
+include "template/header.php";
  ?>
 <main>
 <section class="container">

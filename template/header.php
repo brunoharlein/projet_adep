@@ -35,7 +35,7 @@
               <li class="nav-item"><a class="nav-link" href="#">Les emprunts</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Les matériels</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">L'historique</a></li>
+              <li class="nav-item"><a class="nav-link" href="historical.php">L'historique</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Se déconnecter</a></li>
             </ul>
       </nav>
