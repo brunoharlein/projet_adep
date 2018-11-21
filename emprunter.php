@@ -1,5 +1,7 @@
 <?php
 include "template/header.php";
+require "modele/db.php";
+
 ?>
 <main>
   <div class="container">
@@ -18,18 +20,19 @@ include "template/header.php";
         <thead class="thead-light">
           <tr>
             <th scope="col-2" >Matériel</th>
-            <th scope="col-2" class="d-none d-md-table-cell">Descrition</th>
+            <th scope="col-2" class="d-none d-md-table-cell">Description</th>
             <th scope="col-2" class="d-none d-md-table-cell">Etat</th>
             <th scope="col-2" class="d-none d-md-table-cell">Accessibilité</th>
             <th scope="col-2" >Emprunter</th>
           </tr>
         </thead>
+      
         <tbody>
           <tr>
-            <td scope="row"></td>
-            <td class="d-none d-md-table-cell"></td>
-            <td class="d-none d-md-table-cell"></td>
-            <td class="d-none d-md-table-cell"></td>
+            <td scope="row"><?php echo $value['nom'] ?></td>
+            <td class="d-none d-md-table-cell"><?php echo $value['description'] ?> </td>
+            <td class="d-none d-md-table-cell">e<?php echo $value['etat'] ?></td>
+            <td class="d-none d-md-table-cell"><?php echo $value['num_serie'] ?></td>
             <td class="btn btn-primary btn-xs">Emprunter</td>
           </tr>
 
