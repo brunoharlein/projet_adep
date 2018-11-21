@@ -7,7 +7,9 @@ include "template/header.php";
 	<div class="row my-4">
       <div class="w-100 d-flex justify-content-between mb-3">
             <h2>Gestion des matériels</h2>
-            <a href="materielsAdmin.php?action=add" class="btn btn-primary">Ajouter un matériel</a>
+            <div class="">
+               <a href="materielsAdmin.php?action=add" class="btn btn-primary">Ajouter un matériel</a>
+            </div>
           </div>
 
       <table class="table table-hover">
