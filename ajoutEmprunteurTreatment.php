@@ -1,7 +1,7 @@
 <?php
 require 'modele/db.php';
 // on verifie si le formulaire n'est pas vide
-if(!empty($_POST)) {
+if(isset($_POST) && !empty($_POST)) {
   $errors ="";
   //on sécurise les entrées du formulaire
   foreach ($_POST as $key => $value) {
