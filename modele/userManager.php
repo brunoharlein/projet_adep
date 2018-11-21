@@ -1,13 +1,13 @@
 <?php
-//Fonction qui récupère un seul utilisateur en DB
-function getUser($userName, $db) {
+//Fonction which retrieve a single user in DB
+function getUser($userEmail, $db) {
   $query = $db->prepare("SELECT * FROM emprunteur WHERE Email =  ?");
-  $query->execute([$userName]);
+  $query->execute([$userEmail]);
   $user = $query->fetch(PDO::FETCH_ASSOC);
   return $user;
 }
 
-//Fonction qui ajoute un utilisateur en DB
+//Fonction which add a user in DB
 function addUser($user, $db) {
     $query = $db->prepare("INSERT INTO emprunteur (nom, prenom, password, poste, statut) VALUES(:nom, :prenom, :password, :poste, :statut)");
     $query->execute([
