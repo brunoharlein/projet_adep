@@ -2,7 +2,7 @@
 //On essaie de se connecter à la base de données avec nos identifiants
 //Si cela marche on crée une variable db qui stocke la connexion
 try {
-  $db = new PDO("mysql:host=localhost;dbname=EmpruntsAdep", "phpmyadmin", "asma2012");
+  $db = new PDO("mysql:host=localhost;dbname=EmpruntsAdep", "phpmyadmin", "");
 }
 //Sinon on récupère une erreur
 catch (Exception $e) {
