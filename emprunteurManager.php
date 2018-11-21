@@ -5,14 +5,14 @@ $query = $db->query("SELECT * FROM emprunteur");
 $emprunteur = $query->fetchall(PDO::FETCH_ASSOC);
 
 ?>
-<div class="d-flex justify-content-between w-auto mt-5">
-    <h2 class="col-8 col-md-6 col-lg-4">Gestion des emprunteurs</h2>
-    <a href="ajoutEmprunteurTreatment.php"><button type="button" class="btn btn-success col-3 col-md-3 col-lg-2"><i class="fas fa-plus"></i> Ajouter</button></a>
+<div class="d-flex justify-content-between flex-wrap w-75 mt-5 mb-3">
+    <h2 class="col-12 col-md-6 col-lg-8">Gestion des emprunteurs</h2>
+    <a href="ajoutEmprunteurTreatment.php"><button type="button" class="btn btn-success"><i class="fas fa-plus"></i>Ajouter</button></a>
 </div>
 <table class="table w-75 table-hover">
   <thead>
     <tr>
-      <th scope="col">Utilisateurs N°</th>
+      <th scope="col">N°</th>
       <th scope="col">Email</th>
       <th scope="col">Nom</th>
       <th scope="col">Prenom</th>
