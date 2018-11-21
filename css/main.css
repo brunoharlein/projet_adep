@@ -226,9 +226,7 @@ header{
 
 
    /* main class */
-   .minHeight {
-     min-height: 100vh;
-   }
+
    /* Small devices (tablets, 768px and up) */
    @media only screen and (max-width : 768px) {
      label {
