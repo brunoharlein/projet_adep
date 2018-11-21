@@ -1,6 +1,31 @@
 <?php
 require "modele/db.php"; // connexion à la bdd
+require "modele/materielsManager.php";
+require "service/errorsTreatment.php"; //Gestion des msg erreurs
 include "template/header.php";
+
+//Affichage du ou des msg d'erreurs
+$message ="";
+if (isset($_GET["msg"])) {
+  $tabCode = str_split($_GET["msg"]); //tableau des codes
+  $tabMsg = getErrorsMsgMateriels(); //tableau des messages
+  foreach ($tabMsg as $key => $value) {
+    foreach ($tabCode as $key2 => $code) {
+      if ($value["id"] == $code) {
+        if ($code == 2 || $code == 4) {
+          $message .= "<div class='alert alert-success mt-2 text-center' role='alert'>"
+                              .$value['msg'] .
+                      "</div>";
+        }
+        else {
+          $message .= "<div class='alert alert-warning mt-2 text-center' role='alert'>"
+                              .$value['msg'] .
+                      "</div>";
+        }
+      }
+    }
+  }
+}
  ?>
 <main>
 <section class="container">
@@ -29,17 +54,26 @@ if (isset($_GET["action"])) {
   elseif ($action == "add") {
     $titre = "Ajouter un matériel";
   }
+  elseif ($action == "delete") {
+    if (isset($_GET["id"]) && !empty($_GET["id"])) {
+      $titre = "Supprimer un matériel";
+      $id = intval(htmlspecialchars($_GET["id"])); // ID récupéré via l'url
+      $result = getMateriel($db,$id);
+      //var_dump($result);
+    }
+  }
+
 ?>
 <div class="container">
   <div class="d-flex justify-content-between">
-    <h2><?php echo $titre; ?> </h2>
+    <h2><?php echo (isset($titre))?$titre:""; ?> </h2>
     <div class="">
       <a href="materiels.php" class="btn btn-primary">Retour à la liste</a>
     </div>
   </div>
-  <form class="needs-validation text-right" action="materielsTreatment.php" method="post" novalidate >
-
-      <div class="form-group text-left">
+  <?php if ($action != "delete") { ?>
+  <form class="needs-validation text-right" action="service/materielsTreatment.php" method="post" novalidate >
+    <div class="form-group text-left">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <label class="input-group-text" for="name">Nom du matériel</label>
@@ -51,7 +85,6 @@ if (isset($_GET["action"])) {
           <!-- <div class="invalid-feedback">Veuillez saisir un nom produit.</div> -->
         </div>
       </div>
-
     <div class="form-group text-left">
       <label for="description">Description</label>
       <textarea name="description" class="form-control" rows="5"><?php echo (isset($description))?$description:""; ?></textarea>
@@ -106,27 +139,34 @@ if (isset($_GET["action"])) {
     </div>
 
     <?php if ($action == "edit") { ?>
-        <button type="submit" class="btn btn-success w-25" name="update" value="1">Enregistrer</button>
+        <button type="submit" class="btn btn-success w-25" name="action" value="edit">Enregistrer</button>
     <?php }else { ?>
-        <button type="submit" class="btn btn-success w-25" name="add"  value="1">Ajouter</button>
+        <button type="submit" class="btn btn-success w-25" name="action" value="add">Ajouter</button>
     <?php } ?>
-
-
-
-    <!-- Affichage du ou des message(s) d'erreur -->
-    <?php
-      if (isset($messageAffiche)) {
-        echo $messageAffiche;
-      }
-    ?>
   </form>
+<?php } else {  ?>
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <h4>Voulez- vous supprimer ce matériel ?</h4>
+    <p><?php echo ($result["nom"])?$result["nom"]:""; ?> </p>
+    
+    <button type="submit" class="btn btn-success w-25" name="action" value="delete">Supprimer</button>
+  </div>
+
+
+<?php } ?>
+  <!-- Affichage du ou des message(s) d'erreur -->
+  <?php
+    if (isset($message)) {
+      echo $message;
+    }
+  ?>
 </div>
 
 
 <?php
   }
   else {
-    header("Location: index.php");
+    header("Location: materiels.php");
     exit;
   }
 ?>
