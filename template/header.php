@@ -33,7 +33,7 @@
             <ul class="nav flex-column">
               <li class="nav-item"><a class="nav-link" href="#">Emprunter</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Les emprunts</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Les matériels</a></li>
+              <li class="nav-item"><a class="nav-link" href="materiels.php">Les matériels</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
               <li class="nav-item"><a class="nav-link" href="historical.php">L'historique</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Se déconnecter</a></li>
@@ -52,7 +52,7 @@
       <a class="nav-link" href="#">Les emprunts</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Les matériels</a>
+      <a class="nav-link" href="materiels.php">Les matériels</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Les emprunteurs</a>
