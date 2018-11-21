@@ -1,5 +1,6 @@
 <?php
 require "modele/db.php"; // connexion à la bdd
+require "modele/materielsManager.php";
 include "template/header.php";
  ?>
 <main>
@@ -27,8 +28,7 @@ include "template/header.php";
               <tbody>
                 <?php
                   // On récupère tout le contenu de la table materiel
-                  $requete = $db->query('SELECT * FROM materiel');
-                  $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+                  $result = getMateriels($db);
                   // On affiche chaque entrée une à une
                   foreach ($result as $key => $value) {
 
@@ -44,7 +44,7 @@ include "template/header.php";
                 </tr>
                 <?php
                   }
-                  $requete->closeCursor(); // Termine le traitement de la requête
+                  
                 ?>
             </tbody>
 
