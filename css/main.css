@@ -101,6 +101,10 @@ textarea {
   display:none !important;
 }
 
+.tabCell1,.tabCell2{
+  display: none;
+}
+
 .mobile{
   display:block;
 }
@@ -203,6 +207,12 @@ header{
   margin-left: 1em;
 }
 
+  @media screen and (min-width: 768px) {
+    .tabCell1{
+      display: table-cell;
+    }
+  }
+
    @media screen and (min-width: 1000px) {
      header{
        height:23vh;
@@ -220,6 +230,10 @@ header{
 
      .mobile{
        display:none;
+     }
+
+     .tabCell2{
+       display: table-cell;
      }
    }
 
