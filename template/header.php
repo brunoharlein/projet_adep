@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
-
+<body class="d-flex flex-column justify-content-between">
 <header class="jumbotron jumbotron-fluid py-0 mb-0">
   <div class="container d-flex justify-content-between">
     <!-- Logo and title ADEP -->

@@ -1,5 +1,5 @@
 
-<div class="jumbotron jumbotron-fluid p-1">
+<div class="jumbotron jumbotron-fluid p-1 mb-0">
   <div class="container">
     <hr class="none">
       <p class="width">Le secrétariat est fermé le Lundi matin. </p>
