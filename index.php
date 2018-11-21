@@ -1,7 +1,7 @@
 <?php
 include "template/header.php";
  ?>
-<main class="">
+<main class>
 <section class="container">
 	<div class="row">
       <form method="post" action='login.php' name="Connexion" class="col-md-6 mx-auto">
