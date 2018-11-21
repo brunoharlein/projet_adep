@@ -1,7 +1,14 @@
 <?php
+require "service/errorManager.php";
+//We load header
 include "template/header.php";
+
+//If a message was transmitted by the url we retrieve it and we display it
+displayMessages();
  ?>
-<main class>
+
+
+<main>
 <section class="container">
 	<div class="row">
       <form method="post" action='login.php' name="Connexion" class="col-md-6 mx-auto">

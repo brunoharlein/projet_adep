@@ -1,5 +1,5 @@
 <?php
-//Function qui nettoie les entrées d'un formulaire
+//Function which clean the entries of a form
 function clearForm($form) {
   foreach ($form as $key => $value) {
     $form[$key] = htmlspecialchars($value);
@@ -7,7 +7,7 @@ function clearForm($form) {
   return $form;
 }
 
-//Function qui vérifie si un champ est vide
+//Function which verifies if a field is empty
 function isFieldEmpty($form) {
   foreach ($form as $key => $value) {
     if(empty($value)) {
@@ -16,21 +16,21 @@ function isFieldEmpty($form) {
   }
 }
 
-//Function qui vérifie si un champ est trop court
+//Function which verifies if a field is too short
 function isTooShort($value, $length) {
   if(strlen($value) < $length) {
     return "2";
   }
 }
 
-//Function qui vérifie si deux champs sont identiques
+//Function which verifies if two fields are identical
 function areIdentical($value1, $value2) {
   if($value1 !== $value2) {
     return "3";
   }
 }
 
-//Function qui vérifie le respect d'une regex
+//Function which verifies regex
 function respectPattern($pattern, $value) {
   if(!preg_match($pattern, $value)) {
     return "4";
