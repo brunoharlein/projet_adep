@@ -1,7 +1,7 @@
 <?php
 include "template/header.php";
 require "modele/db.php";
-var_dump($db);
+//var_dump($db);
 
 ?>
 <main>
@@ -27,19 +27,26 @@ var_dump($db);
             <th scope="col-2" >Emprunter</th>
           </tr>
         </thead>
-      <?php
-foreach ($materiel as $key => $value) {
+        <?php
+        //récupère toutes les entrées de la table materiel
+          $requete = $db->query('SELECT * FROM materiel');
+          $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+        //affiche les données sur chaque entrée dans le tableau
+          foreach ($result as $key => $value) {
          ?>
         <tbody>
           <tr>
             <td scope="row"><?php echo $value['nom'] ?></td>
             <td class="d-none d-md-table-cell"><?php echo $value['description'] ?> </td>
-            <td class="d-none d-md-table-cell">e<?php echo $value['etat'] ?></td>
-            <td class="d-none d-md-table-cell"><?php echo $value['num_serie'] ?></td>
-            <td class="btn btn-primary btn-xs">Emprunter</td>
+            <td class="d-none d-md-table-cell"><?php echo ($value['etat']== 1)?"En stock":"Indisponible"; ?></td>
+            <td class="d-none d-md-table-cell"><?php echo ($value['acces']==1)?"Libre":"Restreint"; ?></td>
+            <td class="btn btn-primary btn-xs ">Emprunter
+
+            </td>
           </tr>
         <?php
-       } ?>
+          }
+          ?>
         </tbody>
       </table>
     </div>
