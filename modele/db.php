@@ -4,7 +4,7 @@
 try {
   $db = new PDO("mysql:host=localhost;dbname=EmpruntsAdep", "phpmyadmin", "hanane");
 }
-//Sinon on récupère une erreur 
+//Sinon on récupère une erreur
 catch (Exception $e) {
   echo 'Exception reçue : ' .  $e->getMessage() . "\n";
 }
