@@ -1,6 +1,7 @@
 <?php
 include "template/header.php";
 require "modele/db.php";
+var_dump($db);
 
 ?>
 <main>
@@ -26,7 +27,9 @@ require "modele/db.php";
             <th scope="col-2" >Emprunter</th>
           </tr>
         </thead>
-      
+      <?php
+foreach ($materiel as $key => $value) {
+         ?>
         <tbody>
           <tr>
             <td scope="row"><?php echo $value['nom'] ?></td>
@@ -35,7 +38,8 @@ require "modele/db.php";
             <td class="d-none d-md-table-cell"><?php echo $value['num_serie'] ?></td>
             <td class="btn btn-primary btn-xs">Emprunter</td>
           </tr>
-
+        <?php
+       } ?>
         </tbody>
       </table>
     </div>
