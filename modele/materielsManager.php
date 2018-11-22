@@ -39,12 +39,3 @@ function deleteMateriel($db,$id){
   $result = $requete->execute(array($id));
   return $result;
 }
-
-
-//fonction qui update l'état du matériel en fonction de son id quand l'utilisateur  clique sur emprunter page emprunts.php
-  function updateEtatMateriel ($db, $id, $etat) {
-    $requete = $db ->prepare ('UPDATE materiel SET etat => :etat WHERE id = :id');
-    $result =$requete -> $result = $requete->execute(array('id' => $id, 'etat' => $etat));
-    return $result;
-  }
- ?>
