@@ -1,15 +1,21 @@
 <?php
+session_start();
 require "modele/db.php"; // connexion à la bdd
 require "modele/materielsManager.php";
 include "template/header.php";
- ?>
+if (isset($_SESSION["emprunteur"])) {
+
+?>
 <main>
 <section class="container">
-	<div class="row my-4">
-      <div class="w-100 d-flex justify-content-between mb-3">
+	<div class="d-flex flex-column my-3">
+      <div class="d-flex justify-content-between mb-3">
             <h2>Gestion des matériels</h2>
-            <div class="">
+            <div class="d-none d-md-block">
                <a href="materielsAdmin.php?action=add" class="btn btn-primary">Ajouter un matériel</a>
+            </div>
+            <div class="d-block d-md-none">
+              <a href="materielsAdmin.php?action=add" class="btn btn-primary"><i class="fas fa-plus"></i></a>
             </div>
       </div>
       <div class="table-responsive">
@@ -53,4 +59,9 @@ include "template/header.php";
 </main>
 <?php
 include "template/footer.php";
+}else {
+  header("Location:index.php?message=0") ;
+  exit;
+}
+
  ?>
