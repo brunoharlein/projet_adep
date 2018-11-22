@@ -6,12 +6,11 @@ include "template/header.php";
 
 
 <main>
-<section class="container h-100 d-flex align-items-center">
-	<div class="row w-100 h-75 flex-column justify-content-center align-items-center">
-      <div class="w-50 h-75">
-        <h5 class="mb-5 text-center">
-          Pour accéder à l'interface d'emprunt de matériels, <br>
-          veuillez vous connecter avec vos identifiants :
+<section class="container py-3 h-100 d-flex flex-column justify-content-center align-items-center ">
+      <div id="formConnexion" class="d-flex flex-column justify-content-center h-75 py-4">
+        <h5 class="text-center">
+          <span class="d-none d-md-block">Pour accéder à l'interface d'emprunt de matériels, <br></span>
+          Veuillez saisir vos identifiants :
         </h5>
         <!-- new -->
         <form  action="login.php" method="post" name="Connexion" class="needs-validation" novalidate>
@@ -30,13 +29,12 @@ include "template/header.php";
           </div>
         </form>
       </div>
-      <div class="w-100 h-25">
+      <div id="errorsConnexion" class="w-100 h-25">
         <?php
         //If a message was transmitted by the url we retrieve it and we display it
         displayMessages();
          ?>
       </div>
-  </div>
 </section>
 </main>
 <?php
