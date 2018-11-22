@@ -6,7 +6,7 @@ require "service/sessionManager.php";
 require "service/formChecker.php";
 
 //We check if the form has been filled
-if(!empty($_POST)) {
+if(isset($_POST) && !empty($_POST)) {
   //We clean form entries
   $_POST = clearForm($_POST);
   //We retrieve user stocked on the website

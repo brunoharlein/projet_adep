@@ -9,7 +9,7 @@ function getReferences() {
     "4" => "Le mot de passe ne respecte pas les conditions indiquées",
     "5" => "Un utilisateur utilise déjà cet email merci d'en choisir un autre",
     "6" => "Veuillez entrer un email au format valide",
-    "7" => "Veuillez rentrer un email et un mot de passe valide",
+    "7" => "Veuillez saisir des identifiants valident.",
     "8" => "Il faut vous identifier pour accéder au contenu",
     "9" => "Contenu reservé aux administrateurs du site"
   ];
@@ -20,12 +20,12 @@ function getErrorMessages($codes) {
   //Array associating codes and messages
   $references = getReferences();
   //Start of standard message
-  $message = "Nous avons trouvé les erreurs suivantes : ";
+  $message = "";
   //Securing argument
   $codes  = htmlspecialchars($codes);
   //We loop on the string and we add to $message the messages associated to the error code
   for ($i=0; $i < strlen($codes) ; $i++) {
-    $message .= "<p>" . $references[$codes[$i]] . "</p>";
+    $message .=$references[$codes[$i]];
   }
   //We return the finished message
   return $message;

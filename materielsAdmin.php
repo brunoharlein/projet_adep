@@ -38,17 +38,13 @@ if (isset($_GET["action"])) {
       $titre = "Editer un matériel";
       $id = intval(htmlspecialchars($_GET["id"])); // ID récupéré via l'url
       // On récupère tout le contenu de l'ID matériel
-      $requete = $db->prepare('SELECT * FROM materiel where id= ?');
-      $requete->execute(array($id));
-      // On affiche le resultat
-      while ($result = $requete->fetch())
-      { $nom = $result["nom"];
+      $result = getMateriel($db,$id);
+      //initialisation des données value du form
+        $nom = $result["nom"];
         $description = $result["description"];
         $etat = $result["etat"];
         $acces = $result["acces"];
         $num_serie = $result["num_serie"];
-      } //fin du while
-      $requete->closeCursor(); // Termine le traitement de la requête
     }
   }
   elseif ($action == "add") {

@@ -101,13 +101,13 @@ textarea {
   display:none !important;
 }
 
-.tabCell1,.tabCell2{
-  display: none;
-}
-
 .mobile{
   display:block;
 }
+  /*common rules*/
+  html, body {
+    height: 100vh;
+  }
 
    /* footer rules */
 
@@ -203,15 +203,11 @@ header{
   margin-left: 1em;
 }
 
-  @media screen and (min-width: 768px) {
-    .tabCell1{
-      display: table-cell;
-    }
-  }
+
 
    @media screen and (min-width: 1000px) {
      header{
-       height:23vh;
+       height:25vh;
      }
      #logoHeader {
        max-height: 23vh;
@@ -228,14 +224,32 @@ header{
        display:none;
      }
 
-     .tabCell2{
-       display: table-cell;
-     }
    }
 
 
 
    /* main class */
+main{
+  height:100%;
+}
+
+#formConnexion{
+  width: 100%;
+}
+
+#formConnexion h5 {
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 768px) {
+  #formConnexion{
+    width: 50%;
+  }
+
+  #formConnexion h5 {
+    margin-bottom: 3em;
+  }
+}
    /* Small devices (tablets, 768px and up) */
    @media only screen and (max-width : 768px) {
      label {
