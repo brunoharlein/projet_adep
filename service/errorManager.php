@@ -8,7 +8,7 @@ function getReferences() {
     "3" => "Le mot de passe ne correspond pas à sa confirmation",
     "4" => "Le mot de passe ne respecte pas les conditions indiquées",
     "5" => "Un utilisateur utilise déjà cet email merci d'en choisir un autre",
-    // "6" => "Un problème est survenu lors de l'enregistrement de votre produit merci de réessayer",
+    "6" => "Veuillez entrer un email au format valide",
     "7" => "Veuillez rentrer un email et un mot de passe valide",
     "8" => "Il faut vous identifier pour accéder au contenu",
     "9" => "Contenu reservé aux administrateurs du site"
