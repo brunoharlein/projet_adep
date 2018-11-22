@@ -20,11 +20,11 @@ if(isset($_POST) && !empty($_POST)) {
     $errors .= "1";
   }
 
-  //si le nom utilisateur contient moins de 3 lettres
-  if(strlen($_POST["nom"]) < 3) {
+  //Si le nom utilisateur contient moins de 3 lettres
+  if(strlen($_POST["email"])) {
     $errors .= "2";
   }
-  //sinon on envoi l'utilisateur vers la page emprunteurManager avec un message de succès
+  //Sinon on envoi sur la page de login avec un message de succès
   else {
     $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $ajout = $db->prepare('INSERT INTO emprunteur(Email, nom, prenom, password, poste, statut) VALUES(?, ?, ?, ?, ?, ?)');
