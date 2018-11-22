@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
-
+<body class="d-flex flex-column justify-content-between">
 <header class="jumbotron jumbotron-fluid py-0 mb-0">
   <div class="container d-flex justify-content-between">
     <!-- Logo and title ADEP -->
@@ -31,7 +31,7 @@
       <a class="mobile" href="javascript:void(0);" onclick="menuMobile()"><i id="navIcon" class="fas fa-bars fa-2x transformIcon"></i></a>
       <nav id="navMobile" class="menuVisible">
             <ul class="nav flex-column">
-              <li class="nav-item"><a class="nav-link" href="#">Emprunter</a></li>
+              <li class="nav-item"><a class="nav-link" href="emprunts.php">Emprunter</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Les emprunts</a></li>
               <li class="nav-item"><a class="nav-link" href="materiels.php">Les matériels</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
@@ -46,7 +46,7 @@
 <nav class="tab container ">
   <ul class="nav d-flex justify-content-center">
     <li class="nav-item">
-      <a class="nav-link active" href="#">Emprunter</a>
+      <a class="nav-link active" href="emprunts.php">Emprunter</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Les emprunts</a>

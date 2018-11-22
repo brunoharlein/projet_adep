@@ -104,6 +104,10 @@ textarea {
 .mobile{
   display:block;
 }
+  /*common rules*/
+  html, body {
+    height: 100vh;
+  }
 
    /* footer rules */
 
@@ -225,6 +229,7 @@ header{
 
 
    /* main class */
+
    /* Small devices (tablets, 768px and up) */
    @media only screen and (max-width : 768px) {
      label {
