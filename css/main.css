@@ -125,12 +125,40 @@ textarea {
    footer, p {
     font-size: 0.9em;
    }
+   /******************************** update and resize table historical.php */
+   .historicalH2 {
+     display: none;
+   }
+   .fontTable {
+     font-size: 0.55em;
+   }
+   @media screen and (min-width: 400px) {
+     .fontTable {
+       font-size: 0.6em;
+     }
+   }
+   @media screen and (min-width: 500px) {
+     .fontTable {
+       font-size: 0.8em;
+     }
+   }
+   @media screen and (min-width: 600px) {
+     .fontTable {
+       font-size: 0.9em;
+     }
+   }
    @media screen and (min-width: 768px) {
       .none {
         display: block;
       }
       .width {
         display: block;
+      }
+      .historicalH2 {
+        display: block;
+      }
+      .fontTable {
+        font-size: 1em;
       }
    }
 
