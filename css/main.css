@@ -207,7 +207,7 @@ header{
 
    @media screen and (min-width: 1000px) {
      header{
-       height:23vh;
+       height:25vh;
      }
      #logoHeader {
        max-height: 23vh;
@@ -229,7 +229,9 @@ header{
 
 
    /* main class */
-
+main{
+  height:100%;
+}
    /* Small devices (tablets, 768px and up) */
    @media only screen and (max-width : 768px) {
      label {

@@ -40,24 +40,24 @@
       </nav>
     </div>
   </div>
+  <!-- Navigation Tab and Screen -->
+  <nav class="tab container ">
+    <ul class="nav d-flex justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" href="emprunts.php">Emprunter</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="materiels.php">Les matériels</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Les emprunteurs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="historical.php">L'historique</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Se déconnecter</a>
+      </li>
+    </ul>
+  </nav>
 </header>
-<!-- Navigation Tab and Screen -->
-<nav class="tab container ">
-  <ul class="nav d-flex justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link active" href="emprunts.php">Emprunter</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="materiels.php">Les matériels</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Les emprunteurs</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="historical.php">L'historique</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Se déconnecter</a>
-    </li>
-  </ul>
-</nav>
