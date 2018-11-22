@@ -7,8 +7,8 @@ $historicals = getHistorical($db);
  ?>
 <div class="container"
  <div class="row mt-5">
-    <section class="col-lg-6">
-      <h2>Gérer les produits du site</h2>
+    <section class="col-md-6 mx-auto">
+      <h2 class="">Gérer les produits du site</h2>
       <div class="container-fluide">
         <div class="row">
           <table class="table table-hover">
@@ -40,3 +40,7 @@ $historicals = getHistorical($db);
       </section>
     </div>
   </div>
+
+  <?php
+  include "template/footer.php"
+   ?>
