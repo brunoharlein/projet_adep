@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION["emprunteur"])) {
+  $statut = $_SESSION["emprunteur"]["statut"];
+}
+?>
 <!doctype html>
 <html class="no-js" lang="fr">
 
@@ -27,37 +33,47 @@
       <h1 id="titreHeader" class="my-3">Gestion des prêts</h1>
     </div>
     <!-- Navigation Mobile -->
+    <?php if (isset($statut)) { ?>
     <div class="mobile d-flex align-items-center">
       <a class="mobile" href="javascript:void(0);" onclick="menuMobile()"><i id="navIcon" class="fas fa-bars fa-2x transformIcon"></i></a>
       <nav id="navMobile" class="menuVisible">
             <ul class="nav flex-column">
-              <li class="nav-item"><a class="nav-link" href="emprunts.php">Emprunter</a></li>
-              <li class="nav-item"><a class="nav-link" href="materiels.php">Les matériels</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
-              <li class="nav-item"><a class="nav-link" href="historical.php">L'historique</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Se déconnecter</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="emprunts.php">Emprunter</a></li>
+                <?php if (isset($statut) === "1") { ?> //Si l'emprunteur est admin
+                  <li class="nav-item"><a class="nav-link" href="materiels.php">Les matériels</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
+                  <li class="nav-item"><a class="nav-link" href="historical.php">L'historique</a></li>
+                <?php } ?>
+                <li class="nav-item"><a class="nav-link" href="logout.php">Se déconnecter</a></li>
+
             </ul>
       </nav>
     </div>
+    <?php } ?>
   </div>
   <!-- Navigation Tab and Screen -->
   <nav class="tab container ">
     <ul class="nav d-flex justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link active" href="emprunts.php">Emprunter</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="materiels.php">Les matériels</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Les emprunteurs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="historical.php">L'historique</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Se déconnecter</a>
-      </li>
+      <?php if (isset($statut)) { ?>
+        <li class="nav-item">
+          <a class="nav-link active" href="emprunts.php">Emprunter</a>
+        </li>
+        <?php if (isset($statut) === "1") { ?> //Si l'emprunteur est admin
+          <li class="nav-item">
+            <a class="nav-link" href="materiels.php">Les matériels</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Les emprunteurs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="historical.php">L'historique</a>
+          </li>
+        <?php }?>
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php">Se déconnecter</a>
+        </li>
+    <?php } ?>
     </ul>
   </nav>
 </header>

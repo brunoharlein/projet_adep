@@ -3,7 +3,7 @@
 //Fonction de démarrage standard d'une session utilisateur
 function initializeUserSession($user) {
     session_start();
-    $_SESSION["user"] = $user;
+    $_SESSION["emprunteur"] = $user;
 }
 
 //Fonction de déconnexion

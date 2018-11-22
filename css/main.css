@@ -103,7 +103,10 @@ textarea {
 
 .mobile{
   display:block;
-  }
+}
+label {
+  display:none;
+}
   /*common rules*/
   html, body {
     height: 100vh;
@@ -269,6 +272,14 @@ main{
   margin-bottom: 1em;
 }
 
+main h2{
+  font-size:1.5em;
+}
+
+#addMateriel, #editMateriel{
+  width:100%;
+}
+
 @media screen and (min-width: 768px) {
   #formConnexion{
     width: 50%;
@@ -277,11 +288,19 @@ main{
   #formConnexion h5 {
     margin-bottom: 3em;
   }
+
+  main h2{
+    font-size:2em;
+  }
+
+  #addMateriel, #editMateriel {
+    width:25%;
+  }
 }
    /* Small devices (tablets, 768px and up) */
-   @media only screen and (max-width : 768px) {
+   @media only screen and (min-width : 768px) {
      label {
-       display:none;
+       display:block;
      }
   }
 
