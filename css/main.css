@@ -269,6 +269,14 @@ main{
   margin-bottom: 1em;
 }
 
+main h2{
+  font-size:1.5em;
+}
+
+#addMateriel, #editMateriel{
+  width:100%;
+}
+
 @media screen and (min-width: 768px) {
   #formConnexion{
     width: 50%;
@@ -276,6 +284,14 @@ main{
 
   #formConnexion h5 {
     margin-bottom: 3em;
+  }
+
+  main h2{
+    font-size:2em;
+  }
+
+  #addMateriel, #editMateriel {
+    width:25%;
   }
 }
    /* Small devices (tablets, 768px and up) */
