@@ -7,7 +7,7 @@ $historicals = getHistorical($db);
  ?>
 <main class="container"
  <div class="row mt-5">
-    <section class="col-md-6 mx-auto">
+    <section class="col-md-6 mx-auto mt-4">
       <h2 class="historicalH2">Gérer les produits du site</h2>
       <div class="container-fluide">
         <div class="row">
