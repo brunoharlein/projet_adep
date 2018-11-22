@@ -21,9 +21,9 @@ require "modele/db.php";
         <thead class="thead-light">
           <tr>
             <th scope="col-2" >Matériel</th>
-            <th scope="col-2" class="d-none d-md-table-cell">Description</th>
-            <th scope="col-2" class="d-none d-md-table-cell">Etat</th>
-            <th scope="col-2" class="d-none d-md-table-cell">Accessibilité</th>
+            <th scope="col-2" class="d-none d-md-table-cell text-center">Description</th>
+            <th scope="col-2" class="d-none d-md-table-cell text-center">Etat</th>
+            <th scope="col-2" class="d-none d-md-table-cell text-center">Accessibilité</th>
             <th scope="col-2" >Emprunter</th>
           </tr>
         </thead>
@@ -37,10 +37,13 @@ require "modele/db.php";
         <tbody>
           <tr>
             <td scope="row"><?php echo $value['nom'] ?></td>
-            <td class="d-none d-md-table-cell"><?php echo $value['description'] ?> </td>
-            <td class="d-none d-md-table-cell"><?php echo ($value['etat']== 1)?"En stock":"Indisponible"; ?></td>
-            <td class="d-none d-md-table-cell"><?php echo ($value['acces']==1)?"Libre":"Restreint"; ?></td>
-            <td class="btn btn-primary btn-xs ">Emprunter
+            <td class="d-none d-md-table-cell text-center"><?php echo $value['description'] ?> </td>
+            <td class="d-none d-md-table-cell text-center"><?php echo ($value['etat']== 1)?"En stock":"Indisponible"; ?></td>
+            <td class="d-none d-md-table-cell text-center"><?php echo ($value['acces']==1)?"Libre":"Restreint"; ?></td>
+            <td>
+              <div>
+                <a class="btn btn-primary btn-xs text-center  " href="service/empruntsTraitement.php?id=">Emprunter</a>
+              </div>
 
             </td>
           </tr>

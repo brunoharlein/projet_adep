@@ -14,7 +14,7 @@ if(!empty($_POST)) {
   //We check if db has found user
   if(!empty($user) && $_POST["password"] === $user["password"]) {
     initializeUserSession($user);
-    header("Location: emprunter.php");
+    header("Location: emprunts.php");
     //We put exit to stop execution of the script, otherwise redirection won't have time to execute
     exit;
   }
