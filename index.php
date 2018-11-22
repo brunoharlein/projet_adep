@@ -2,29 +2,40 @@
 require "service/errorManager.php";
 //We load header
 include "template/header.php";
-
-//If a message was transmitted by the url we retrieve it and we display it
-displayMessages();
  ?>
 
 
 <main>
-<section class="container">
-	<div class="row">
-      <form method="post" action='login.php' name="Connexion" class="col-md-6 mx-auto">
-          <div class="form-group ">
-            <label for="email" class="mb-0">Votre email</label><br>
-            <input type="text" class="span3" name="email" id="email" placeholder="Votre email" required="" autofocus="">
+<section class="container h-100 d-flex align-items-center">
+	<div class="row w-100 h-75 flex-column justify-content-center align-items-center">
+      <div class="w-50 h-75">
+        <h5 class="mb-5 text-center">
+          Pour accéder à l'interface d'emprunt de matériels, <br>
+          veuillez vous connecter avec vos identifiants :
+        </h5>
+        <!-- new -->
+        <form  action="login.php" method="post" name="Connexion" class="needs-validation" novalidate>
+          <div class="form-group">
+            <label for="email">Votre Email</label>
+            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Votre@email.com" required autofocus>
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
           </div>
           <div class="form-group">
-             <label for="password" class="mb-0">Votre mot de passe</label><br>
-             <input type="password" class="form-control" name="password" placeholder="Votre mot de passe" required="">
-           </div>
-          <div >
-            <input type="submit" class=" btn btn-primary" value="Vous connecter">
-            <a href="#">Mot de passe oublié?</a>
+            <label for="password">Votre mot de passe</label>
+            <input type="password" class="form-control" name="password" id="password" aria-describedby="passwordHelp" placeholder="Password" required>
+            <small id="passwordHelp" class="form-text text-muted"><a href="#">Mot de passe oublié ?</a></small>
           </div>
-      </form>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Se connecter</button>
+          </div>
+        </form>
+      </div>
+      <div class="w-100 h-25">
+        <?php
+        //If a message was transmitted by the url we retrieve it and we display it
+        displayMessages();
+         ?>
+      </div>
   </div>
 </section>
 </main>
