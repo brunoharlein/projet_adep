@@ -104,6 +104,9 @@ textarea {
 .mobile{
   display:block;
 }
+label {
+  display:none;
+}
   /*common rules*/
   html, body {
     height: 100vh;
@@ -295,9 +298,9 @@ main h2{
   }
 }
    /* Small devices (tablets, 768px and up) */
-   @media only screen and (max-width : 768px) {
+   @media only screen and (min-width : 768px) {
      label {
-       display:none;
+       display:block;
      }
   }
 
