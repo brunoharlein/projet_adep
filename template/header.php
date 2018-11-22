@@ -32,7 +32,6 @@
       <nav id="navMobile" class="menuVisible">
             <ul class="nav flex-column">
               <li class="nav-item"><a class="nav-link" href="emprunts.php">Emprunter</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Les emprunts</a></li>
               <li class="nav-item"><a class="nav-link" href="materiels.php">Les matériels</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
               <li class="nav-item"><a class="nav-link" href="historical.php">L'historique</a></li>
@@ -47,9 +46,6 @@
   <ul class="nav d-flex justify-content-center">
     <li class="nav-item">
       <a class="nav-link active" href="emprunts.php">Emprunter</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Les emprunts</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="materiels.php">Les matériels</a>
