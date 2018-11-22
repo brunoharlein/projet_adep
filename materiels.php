@@ -1,8 +1,11 @@
 <?php
+session_start();
 require "modele/db.php"; // connexion à la bdd
 require "modele/materielsManager.php";
 include "template/header.php";
- ?>
+if (isset($_SESSION["emprunteur"])) {
+
+?>
 <main>
 <section class="container">
 	<div class="d-flex flex-column my-3">
@@ -56,4 +59,9 @@ include "template/header.php";
 </main>
 <?php
 include "template/footer.php";
+}else {
+  header("Location:index.php?message=0") ;
+  exit;
+}
+
  ?>
