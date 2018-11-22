@@ -25,15 +25,8 @@ if(!empty($_POST)) {
   }
 
   //Si le nom utilisateur contient moins de 3 lettres
-  if(strlen($_POST["user_name"]) < 3) {
+  if(strlen($_POST["email"])) {
     $errors .= "2";
-  }
-  //Si on a stocké des codes erreur on renvoi au formulaire
-  if(!empty($errors)){
-    session_start();
-    $_SESSION["answers"] = $_POST;
-    header("Location: register.php?message=$errors");
-    exit;
   }
   //Sinon on envoi sur la page de login avec un message de succès
   else {
