@@ -5,11 +5,14 @@ include "template/header.php";
  ?>
 <main>
 <section class="container">
-	<div class="row my-4">
-      <div class="w-100 d-flex justify-content-between mb-3">
+	<div class="d-flex flex-column my-3">
+      <div class="d-flex justify-content-between mb-3">
             <h2>Gestion des matériels</h2>
-            <div class="">
+            <div class="d-none d-md-block">
                <a href="materielsAdmin.php?action=add" class="btn btn-primary">Ajouter un matériel</a>
+            </div>
+            <div class="d-block d-md-none">
+              <a href="materielsAdmin.php?action=add" class="btn btn-primary"><i class="fas fa-plus"></i></a>
             </div>
       </div>
       <div class="table-responsive">

@@ -29,7 +29,7 @@ if (isset($_GET["msg"])) {
  ?>
 <main>
 <section class="container">
-  <div class="row my-4">
+  <div class="row my-3">
 <?php
 if (isset($_GET["action"])) {
   $action = htmlspecialchars($_GET["action"]);
@@ -61,10 +61,13 @@ if (isset($_GET["action"])) {
 
 ?>
 <div class="container">
-  <div class="d-flex justify-content-between">
+  <div class="d-flex justify-content-between mb-3">
     <h2><?php echo (isset($titre))?$titre:""; ?> </h2>
     <div class="">
-      <a href="materiels.php" class="btn btn-primary">Retour à la liste</a>
+      <a href="materiels.php" class="btn btn-primary">
+        <span class="d-none d-md-block">Retour à la liste</span>
+        <span class="d-block d-md-none"><i class="fas fa-arrow-left"></i></span>
+      </a>
     </div>
   </div>
   <form class="needs-validation text-right" action="service/materielsTreatment.php" method="post" novalidate >
@@ -74,9 +77,9 @@ if (isset($_GET["action"])) {
   <?php if ($action != "delete") { ?>
 
     <div class="form-group text-left">
-        <div class="input-group mb-3">
+        <div class="input-group ">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="name">Nom du matériel</label>
+            <label class="input-group-text" for="name">Nom</label>
           </div>
           <input type="input" class="form-control" value="<?php echo (isset($nom))?$nom:""; ?>" name="nom" placeholder="Nom du matériel" >
 
@@ -89,7 +92,7 @@ if (isset($_GET["action"])) {
       <!-- <div class="invalid-feedback">Veuillez saisir une description.</div> -->
     </div>
     <div class="form-group text-left">
-      <div class="input-group mb-3">
+      <div class="input-group">
         <div class="input-group-prepend">
           <label class="input-group-text" for="categorie">N° de série</label>
         </div>
@@ -99,7 +102,7 @@ if (isset($_GET["action"])) {
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <div class="input-group mb-3">
+        <div class="input-group">
           <div class="input-group-prepend">
             <label class="input-group-text" for="etat">Etat</label>
           </div>
@@ -117,7 +120,7 @@ if (isset($_GET["action"])) {
         </div>
       </div>
       <div class="form-group col-md-6">
-        <div class="input-group mb-3">
+        <div class="input-group">
           <div class="input-group-prepend">
             <label class="input-group-text" for="acces">Accessibilité</label>
           </div>
@@ -137,9 +140,9 @@ if (isset($_GET["action"])) {
     </div>
 
     <?php if ($action == "edit") { ?>
-        <button type="submit" class="btn btn-success w-25" name="action" value="edit">Enregistrer</button>
+        <button id="addMateriel" type="submit" class="btn btn-success" name="action" value="edit">Enregistrer</button>
     <?php }elseif ($action == "add") { ?>
-        <button type="submit" class="btn btn-success w-25" name="action" value="add">Ajouter</button>
+        <button id="editMateriel" type="submit" class="btn btn-success" name="action" value="add">Ajouter</button>
     <?php } ?>
 
 <?php } else {  ?>
