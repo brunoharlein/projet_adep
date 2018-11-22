@@ -17,10 +17,10 @@ include "template/header.php";
               <thead>
                 <tr class="text-center">
                   <th class="text-left w-25">Nom</th>
-                  <th class="tabCell2">N° de série</th>
-                  <th class="tabCell2">Description</th>
-                  <th class="tabCell1">Etat</th>
-                  <th class="tabCell1">Accessibilité</th>
+                  <th class="d-none d-md-table-cell">N° de série</th>
+                  <th class="d-none d-md-table-cell">Description</th>
+                  <th class="d-none d-lg-table-cell">Etat</th>
+                  <th class="d-none d-lg-table-cell">Accessibilité</th>
                   <th>Modifier</th>
                   <th>Supprimer</th>
                 </tr>
@@ -35,16 +35,16 @@ include "template/header.php";
                 ?>
                 <tr class="text-center">
                   <td class="text-left"><?php echo $value["nom"]; ?></td>
-                  <td class="tabCell2"><?php echo $value["num_serie"]; ?></td>
-                  <td class="tabCell2"><?php echo $value["description"]; ?></td>
-                  <td class="tabCell1"><?php echo ($value["etat"] == 1)?"En stock":"Indisponible"; ?></td>
-                  <td class="tabCell1"><?php echo ($value["acces"] == 1)?"Libre":"Restreint"; ?></td>
+                  <td class="d-none d-md-table-cell"><?php echo $value["num_serie"]; ?></td>
+                  <td class="d-none d-md-table-cell"><?php echo $value["description"]; ?></td>
+                  <td class="d-none d-lg-table-cell"><?php echo ($value["etat"] == 1)?"En stock":"Indisponible"; ?></td>
+                  <td class="d-none d-lg-table-cell"><?php echo ($value["acces"] == 1)?"Libre":"Restreint"; ?></td>
                   <td><a href="materielsAdmin.php?action=edit&id=<?php echo $value["id"]; ?>"><i class="fas fa-edit fa-2x"></i></a></td>
                   <td><a href="materielsAdmin.php?action=delete&id=<?php echo $value["id"]; ?>"><i class="fas fa-times fa-2x"></i></a></td>
                 </tr>
                 <?php
                   }
-                  
+
                 ?>
             </tbody>
 
