@@ -2,13 +2,12 @@
 require "modele/db.php";
 require "modele/historicalManagement.php";
 include "template/header.php";
-session_start();
 $historicals = getHistorical($db);
  ?>
-<main class="container"
+<main class="container">
  <div class="row mt-5">
     <section class="col-md-6 mx-auto mt-4">
-      <h2 class="historicalH2">Gérer les produits du site</h2>
+      <h2 class="historicalH2">Gestion des emprunts</h2>
       <div class="container-fluide">
         <div class="row">
           <table class="table table-hover fontTable">
