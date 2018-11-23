@@ -1,7 +1,8 @@
 <?php
 include "template/header.php";
 require "modele/db.php";
-//var_dump($db);
+require "modele/empruntsManager.php";
+require "modele/materielsManager.php";
 
 
 
@@ -12,12 +13,37 @@ require "modele/db.php";
   <div class="container">
     <section class="d-flex flex-row justify-content-between">
       <h1 class="col-4 mt-0">Emprunter du matériel</h1>
+<<<<<<< HEAD
       <select class=" btn-primary browser-default custom-select col-4 mt- ">
           <option selected>Trier par:</option>
         <option value="1">De A à Z</option>
         <option value="2">De Z à A</option>
         <option value="3">Par disponibilité</option>
+=======
+
+
+        <form action="emprunts.php<?php echo (isset($_POST['choix']))?'?tri='.$_POST['choix']:''; ?>" method="post" name="tri">
+
+      <!-- <form action="emprunts.php?tri=" method="post" name="tri"> -->
+  <div class="form-row align-items-center">
+    <div class="col-auto my-1">
+      <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+      <select name="choix" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Options</option>
+        <option value="1">noms de A à Z</option>
+        <option value="2">noms de Z à A</option>
+        <option value="3">dispo ou pas</option>
+>>>>>>> master
       </select>
+    </div>
+    <div class="col-auto my-1">
+    </div>
+    <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary">OK</button>
+    </div>
+  </div>
+</form>
+
     </section>
     </div>
     <div class="container">
@@ -32,9 +58,23 @@ require "modele/db.php";
           </tr>
         </thead>
         <?php
+        if (isset($_POST['choix'])) {
+          switch ($_POST['choix']) {
+            case 1:
+              $result = orderByAz($db);
+              break;
+              case 2:
+                $result = orderByZa($db);
+              break;
+              case 3:
+                $result = orderByEtat($db);
+              break;
+      }
+    }else{
+      $result = getMateriels($db);
+
+    }
         //récupère toutes les entrées de la table materiel
-          $requete = $db->query('SELECT * FROM materiel');
-          $result = $requete->fetchAll(PDO::FETCH_ASSOC);
         //affiche les données sur chaque entrée dans le tableau
           foreach ($result as $key => $value) {
          ?>
@@ -60,3 +100,4 @@ require "modele/db.php";
 </main>
 <?php
 include "template/footer.php";
+?>
