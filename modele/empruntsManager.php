@@ -7,14 +7,21 @@
         $result = $requete->execute(array('id' => $id_materiel, 'etat' =>  0));
         return $result;
       }
+      //fonction qui insère une ligne dans la table emprunt de labdd quand un emprunteur clique sur emprunter
+      function addEmprunt($db,$id_materiel, $id_emprunteur) {
+        $today = date("y.m.d");
+        $requete = $db->prepare('INSERT INTO emprunt(idEmprunteur, idMateriel, dateEmprunt) VALUES( :idEmprunteur, :idMateriel, :dateEmprunt)');
+        $result = $requete->execute(array('idEmprunteur' =>  $id_emprunteur, 'idMateriel' => $id_materiel, 'dateEmprunt' =>$today));
+        $requete->closeCursor();
+        return $result;
+      }
 
-    //   function nouvelEmprunt($db, )
 
-    //fonction qui stocke les messages d'erreur ou de succès
-     function getMsgEmprunts() {
+      //fonction qui stocke les messages d'erreur ou de succès
+      function getMsgEmprunts() {
        return [
-         ["id" =>1, "msg" => " Vous avez emprunté ce matériel avec succès"],
-         ["id" => 2, "msg" => "Une erreur est survenue, vous n'avez pas emprunté ce matériel. Merci de recommencer"]
+         ['msg' =>1, "msg" => " Vous avez emprunté ce matériel avec succès"],
+         ["msg" => 2, "msg" => "Une erreur est survenue, merci de vous connecter"]
        ];
      }
   ?>
