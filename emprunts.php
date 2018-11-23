@@ -3,6 +3,10 @@ include "template/header.php";
 require "modele/db.php";
 //var_dump($db);
 
+
+
+
+
 ?>
 <main>
   <div class="container">
@@ -10,9 +14,9 @@ require "modele/db.php";
       <h1 class="col-4 mt-0">Emprunter du matériel</h1>
       <select class=" btn-primary browser-default custom-select col-4 mt- ">
           <option selected>Trier par:</option>
-        <option value="disponibilité">Disponibilité</option>
-        <option value="Asc.">Asc.</option>
-        <option value="Desc.">Desc.</option>
+        <option value="1">De A à Z</option>
+        <option value="2">De Z à A</option>
+        <option value="3">Par disponibilité</option>
       </select>
     </section>
     </div>
