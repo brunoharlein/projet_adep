@@ -1,10 +1,10 @@
 
 <footer class="jumbotron jumbotron-fluid p-1 mb-0">
   <div class="container">
-    <hr class="none">
-      <p class="width">Le secrétariat est fermé le Lundi matin. </p>
+      <p class="width pt-2">Le secrétariat est fermé le Lundi matin. </p>
+      <hr class="none">
   </div>
-  <div class="container d-flex justify-content-around">
+  <div class="container d-flex justify-content-around mb-2">
     <a href="https://twitter.com/adeproubaix" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
     <a href="https://www.facebook.com/adeproubaix/" target="_blank"><i class="fab fa-facebook-f fa-2x"></i></a>
     <a href="mailto:contact@adep-roubaix.fr"><i class="far fa-envelope-open fa-2x"></i></a>

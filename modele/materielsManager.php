@@ -39,5 +39,3 @@ function deleteMateriel($db,$id){
   $result = $requete->execute(array($id));
   return $result;
 }
-
- ?>
