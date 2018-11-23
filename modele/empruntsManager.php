@@ -1,14 +1,20 @@
 <?php
-  /*function nouvelEmprunt($db, $id_materiel, $id_emprunteur){
-    $id_materiel = $_GET['materiel']['id'];
-    $id_emprunteur = $_SESSION['id'];
-    $requete = $db ->prepare('INSERT INTO emprunt(id, id_emprunteur, id_materiel, date_emprunt, date_retour) VALUES (id)')
-}*/
+
     //fonction qui update l'état du matériel en fonction de son id quand l'utilisateur  clique sur emprunter page emprunts.php
-      function updateEtatMateriel ($db, $id_materiel, $etat) {
+      function updateEtatMateriel ($db, $id_materiel) {
 
         $requete = $db ->prepare ('UPDATE materiel SET etat = :etat WHERE id = :id');
-        $result = $requete->execute(array('id' => $id_materiel, 'etat' => $etat));
+        $result = $requete->execute(array('id' => $id_materiel, 'etat' =>  0));
         return $result;
       }
-     ?>
+
+    //   function nouvelEmprunt($db, )
+
+    //fonction qui stocke les messages d'erreur ou de succès
+     function getMsgEmprunts() {
+       return [
+         ["id" =>1, "msg" => " Vous avez emprunté ce matériel avec succès"],
+         ["id" => 2, "msg" => "Une erreur est survenue, vous n'avez pas emprunté ce matériel. Merci de recommencer"]
+       ];
+     }
+  ?>

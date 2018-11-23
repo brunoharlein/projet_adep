@@ -1,5 +1,4 @@
 <?php
-session_start();
 require "modele/db.php"; // connexion à la bdd
 require "modele/materielsManager.php";
 include "template/header.php";
