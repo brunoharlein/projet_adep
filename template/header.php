@@ -28,7 +28,7 @@ if (isset($_SESSION["emprunteur"])) {
   <div class="container d-flex justify-content-between">
     <!-- Logo and title ADEP -->
     <div id="logoHeader" class="">
-      <img src="img/adep-logo.png" class="img-fluid" alt="Logo de l'ADEP">
+      <a href="https://www.adep-roubaix.fr/" target="_blank"><img src="img/adep-logo.png" class="img-fluid" alt="Logo de l'ADEP"></a>
     </div>
     <div class="d-flex align-items-center justify-content-center ">
       <h1 id="titreHeader" class="my-3">Gestion des prêts</h1>
