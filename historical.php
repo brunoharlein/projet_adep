@@ -2,16 +2,15 @@
 require "modele/db.php";
 require "modele/historicalManagement.php";
 include "template/header.php";
-session_start();
 $historicals = getHistorical($db);
  ?>
-<div class="container"
+<main class="container">
  <div class="row mt-5">
-    <section class="col-lg-6">
-      <h2>Gérer les produits du site</h2>
+    <section class="col-md-6 mx-auto mt-4">
+      <h2 class="historicalH2">Gestion des emprunts</h2>
       <div class="container-fluide">
         <div class="row">
-          <table class="table table-hover">
+          <table class="table table-hover fontTable">
             <thead class="lightBg">
               <tr>
                 <th scope="col">Nom emprunteur</th>
@@ -39,4 +38,8 @@ $historicals = getHistorical($db);
         </div>
       </section>
     </div>
-  </div>
+  </main>
+
+  <?php
+  include "template/footer.php";
+   ?>

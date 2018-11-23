@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION["emprunteur"])) {
+  $statut =intval($_SESSION["emprunteur"]["statut"]);
+}
+// var_dump($statut);
+?>
 <!doctype html>
 <html class="no-js" lang="fr">
 
@@ -16,52 +23,60 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
-
+<body class="d-flex flex-column justify-content-between">
 <header class="jumbotron jumbotron-fluid py-0 mb-0">
   <div class="container d-flex justify-content-between">
     <!-- Logo and title ADEP -->
     <div id="logoHeader" class="">
-      <img src="img/adep-logo.png" class="img-fluid" alt="Logo de l'ADEP">
+      <a href="https://www.adep-roubaix.fr/" target="_blank"><img src="img/adep-logo.png" class="img-fluid" alt="Logo de l'ADEP"></a>
     </div>
     <div class="d-flex align-items-center justify-content-center ">
       <h1 id="titreHeader" class="my-3">Gestion des prêts</h1>
     </div>
     <!-- Navigation Mobile -->
+    <?php if (isset($statut)) { ?>
     <div class="mobile d-flex align-items-center">
       <a class="mobile" href="javascript:void(0);" onclick="menuMobile()"><i id="navIcon" class="fas fa-bars fa-2x transformIcon"></i></a>
       <nav id="navMobile" class="menuVisible">
             <ul class="nav flex-column">
-              <li class="nav-item"><a class="nav-link" href="#">Emprunter</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Les emprunts</a></li>
-              <li class="nav-item"><a class="nav-link" href="materiels.php">Les matériels</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
-              <li class="nav-item"><a class="nav-link" href="historical.php">L'historique</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Se déconnecter</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="emprunts.php">Emprunter</a></li>
+                <!-- //Si l'emprunteur est admin -->
+                <?php if (isset($statut) === true) { ?>
+                  <li class="nav-item"><a class="nav-link" href="materiels.php">Les matériels</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
+                  <li class="nav-item"><a class="nav-link" href="historical.php">L'historique</a></li>
+                <?php } ?>1
+                <li class="nav-item"><a class="nav-link" href="logout.php">Se déconnecter</a></li>
+
             </ul>
       </nav>
     </div>
+    <?php } ?>
   </div>
+  <!-- Navigation Tab and Screen -->
+  <nav class="tab container ">
+    <ul class="nav d-flex justify-content-center">
+      <?php if (isset($statut)) { ?>
+        <li class="nav-item">
+          <a class="nav-link active" href="emprunts.php">Emprunter</a>
+        </li>
+        <!-- //Si l'emprunteur est admin -->
+        <?php if (isset($statut) === true) { ?>
+          <li class="nav-item">
+            <a class="nav-link" href="materiels.php">Les matériels</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Les emprunteurs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="historical.php">L'historique</a>
+          </li>
+        <?php }?>
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php">Se déconnecter</a>
+        </li>
+    <?php } ?>
+    </ul>
+  </nav>
 </header>
-<!-- Navigation Tab and Screen -->
-<nav class="tab container ">
-  <ul class="nav d-flex justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Emprunter</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Les emprunts</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="materiels.php">Les matériels</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Les emprunteurs</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="historical.php">L'historique</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Se déconnecter</a>
-    </li>
-  </ul>
-</nav>
