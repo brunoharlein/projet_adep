@@ -44,7 +44,7 @@ if (isset($_SESSION["emprunteur"])) {
                   <li class="nav-item"><a class="nav-link" href="materiels.php">Les matériels</a></li>
                   <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
                   <li class="nav-item"><a class="nav-link" href="historical.php">L'historique</a></li>
-                <?php } ?>
+                <?php } ?>1
                 <li class="nav-item"><a class="nav-link" href="logout.php">Se déconnecter</a></li>
 
             </ul>
