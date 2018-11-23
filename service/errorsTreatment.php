@@ -11,10 +11,5 @@ function getErrorsMsgMateriels() {
     ["id" => 0, "msg" => "Une erreur est survenue."]
   ];
 }
-function getMsgEmprunts() {
-  return [
-    ["id" =>1, "msg" => " Vous avez emprunté ce matériel avec succès"],
-    ["id" => 2, "msg" => "Une erreur est survenue, vous n'avez pas emprunté ce matériel. Merci de recommencer"]
-  ];
-}
+
  ?>
