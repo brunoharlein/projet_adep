@@ -16,12 +16,22 @@
         return $result;
       }
 
-
+      function displayMessages() {
+        $messages = getMessages();
+        foreach ($messages as $key => $message) {
+          if($key === 1) {
+            echo "<div class='alert alert-success w-50 mx-auto'>" . $message . "</div>";
+          }
+          if ($key === 2) {
+            echo "<div class='alert alert-danger w-50 mx-auto'>" . $message . "</div>";
+          }
+        }
+      }
       //fonction qui stocke les messages d'erreur ou de succès
-      function getMsgEmprunts() {
+      function codeMsgEmprunts() {
        return [
-         ['msg' =>1, "msg" => " Vous avez emprunté ce matériel avec succès"],
-         ["msg" => 2, "msg" => "Une erreur est survenue, merci de vous connecter"]
+         ['message' =>1, "message" => " Vous avez emprunté ce matériel avec succès"],
+         ["message" => 2, "message" => "Vous devez vous connecter pour emprunter"]
        ];
      }
   ?>
