@@ -1,14 +1,14 @@
-// $(document).ready(function(){
-//   //Affichage du menu Mobile
-//   $("#navMobile").click(function(){
-//         menuMobile();
-//     });
-// });
-//
-// function menuMobile() {
-//     $("#navMobile").toggleClass("menuHidden");
-//     $("#navIcon").toggleClass("fa-times-circle transformIconClose");
-// }
+$(document).ready(function(){
+  //Affichage du menu Mobile
+  $("#navMobile").click(function(){
+        menuMobile();
+    });
+});
+
+function menuMobile() {
+    $("#navMobile").toggleClass("menuHidden");
+    $("#navIcon").toggleClass("fa-times-circle transformIconClose");
+}
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {

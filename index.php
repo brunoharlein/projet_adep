@@ -22,7 +22,7 @@ include "template/header.php";
           <div class="form-group">
             <label for="password">Votre mot de passe</label>
             <input type="password" class="form-control" name="password" id="password" aria-describedby="passwordHelp" placeholder="Password" required>
-            <small id="passwordHelp" class="form-text text-muted"><a href="password_lost.php">Mot de passe oublié ?</a></small>
+            <small id="passwordHelp" class="form-text text-muted">Doit contenir une majuscule, un chiffre et 6 caractères minimum.</small>
           </div>
           <div class="d-flex justify-content-end">
             <button type="submit" class="btn btn-primary">Se connecter</button>

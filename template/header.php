@@ -42,7 +42,7 @@ if (isset($_SESSION["emprunteur"])) {
 
                 <li class="nav-item"><a class="nav-link" href="emprunts.php">Emprunter</a></li>
                 <!-- //Si l'emprunteur est admin -->
-                <?php if (isset($statut) === true) { ?> 
+                <?php if (isset($statut) === true) { ?>
                   <li class="nav-item"><a class="nav-link" href="materiels.php">Les matériels</a></li>
                   <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
                   <li class="nav-item"><a class="nav-link" href="historical.php">L'historique</a></li>
