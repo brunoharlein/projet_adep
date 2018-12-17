@@ -1,7 +1,7 @@
 <?php
 //Fonction which retrieve a single user in DB
 function getUser($userEmail, $db) {
-  $query = $db->prepare("SELECT * FROM emprunteur WHERE Email =  ?");
+  $query = $db->prepare("SELECT * FROM emprunteur WHERE email =  ?");
   $query->execute([$userEmail]);
   $user = $query->fetch(PDO::FETCH_ASSOC);
   return $user;
@@ -18,5 +18,5 @@ function addUser($user, $db) {
       "statut" => $statut["statut"]
     ]);
 }
-  
+
 ?>

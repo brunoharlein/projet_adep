@@ -11,8 +11,7 @@ require "modele/materielsManager.php";
       <h1 class="col-4 mt-0">Emprunter du matériel</h1>
 
 
-        <form action="emprunts.php<?php echo (isset($_POST['choix']))?'?tri='.$_POST['choix']:''; ?>" method="post" name="tri">
-
+<form action="emprunts.php<?php echo (isset($_POST['choix']))?'?tri='.$_POST['choix']:''; ?>" method="post" name="tri">
       <!-- <form action="emprunts.php?tri=" method="post" name="tri"> -->
   <div class="form-row align-items-center">
     <div class="col-auto my-1">
