@@ -13,13 +13,6 @@ require "modele/materielsManager.php";
   <div class="container">
     <section class="d-flex flex-row justify-content-between">
       <h1 class="col-4 mt-0">Emprunter du matériel</h1>
-<<<<<<< HEAD
-      <select class=" btn-primary browser-default custom-select col-4 mt- ">
-          <option selected>Trier par:</option>
-        <option value="1">De A à Z</option>
-        <option value="2">De Z à A</option>
-        <option value="3">Par disponibilité</option>
-=======
 
 
         <form action="emprunts.php<?php echo (isset($_POST['choix']))?'?tri='.$_POST['choix']:''; ?>" method="post" name="tri">
@@ -33,7 +26,6 @@ require "modele/materielsManager.php";
         <option value="1">noms de A à Z</option>
         <option value="2">noms de Z à A</option>
         <option value="3">dispo ou pas</option>
->>>>>>> master
       </select>
     </div>
     <div class="col-auto my-1">
