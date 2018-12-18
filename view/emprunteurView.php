@@ -1,13 +1,9 @@
 <?php
 include "template/header.php";
-require_once "modele/db.php";
-$query = $db->query("SELECT * FROM emprunteur");
-$emprunteur = $query->fetchall(PDO::FETCH_ASSOC);
-
 ?>
 <div class="d-flex justify-content-between flex-wrap w-75 mt-5 mb-3">
     <h2 class="col-12 col-md-6 col-lg-8">Gestion des emprunteurs</h2>
-    <a href="emprunteurAdminAdd.php"><button type="button" class="btn btn-success"><i class="fas fa-plus"></i>Ajouter</button></a>
+    <a href="emprunteur/ajout"><button type="button" class="btn btn-success"><i class="fas fa-plus"></i>Ajouter</button></a>
 </div>
 <table class="table w-75 table-hover">
   <thead>

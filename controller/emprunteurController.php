@@ -3,7 +3,8 @@
 // fonction qui affiche tout les emprunteurs
 function getEmprunteur(){
     $emprunteur = getBorrower();
-    require "../view/emprunteurView.php";
+    // var_dump($emprunteur);
+    require "view/emprunteurView.php";
 }
 
 // fonction qui ajoute un emprunteur
