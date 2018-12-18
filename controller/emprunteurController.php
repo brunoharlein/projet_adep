@@ -10,8 +10,7 @@ function getEmprunteur(){
 function addEmprunteur() {
     if (!empty($_POST)) {
         addBorrower($_POST);
-        header("location: ");
-        exit;
+        redirectTo("");
     }
     require "";
 }
@@ -24,8 +23,7 @@ function editEmprunteur() {
     }
     if (!empty($_POST)) {
         editBorrower($_POST);
-        header("location: ");
-        exit;
+        redirectTo("");
     }
     require "";
 }
@@ -34,8 +32,7 @@ function editEmprunteur() {
 function deleteEmprunteur($id) {
     $id = htmlspecialchars($_GET["id"]);
     deleteBorrower($id);
-    header("location: ");
-    exit;
+    redirectTo("");
 }
 ?>
 
