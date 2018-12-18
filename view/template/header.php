@@ -34,20 +34,21 @@
       <h1 id="titreHeader" class="my-3">Gestion des prêts</h1>
     </div>
     <!-- Navigation Mobile -->
-    <?php if (isset($statut)) { ?>
+    <!-- Affichage du menu si User connecté -->
+    <?php if (isLogged()) { ?>
     <div class="mobile d-flex align-items-center">
       <a class="mobile" href="javascript:void(0);" onclick="menuMobile()"><i id="navIcon" class="fas fa-bars fa-2x transformIcon"></i></a>
       <nav id="navMobile" class="menuVisible">
             <ul class="nav flex-column">
 
-                <li class="nav-item"><a class="nav-link" href="emprunts.php">Emprunter</a></li>
+                <li class="nav-item"><a class="nav-link" <?php setHref("emprunter"); ?>>Emprunter</a></li>
                 <!-- //Si l'emprunteur est admin -->
-                <?php if (isset($statut) === true) { ?>
-                  <li class="nav-item"><a class="nav-link" href="materiels.php">Les matériels</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
-                  <li class="nav-item"><a class="nav-link" href="historical.php">L'historique</a></li>
+                  <?php if ($_SESSION["user"]["status"] === "admin") { ?>
+                  <li class="nav-item"><a class="nav-link" <?php setHref("materiels"); ?> >Les matériels</a></li>
+                  <li class="nav-item"><a class="nav-link" <?php setHref("emprunteurs"); ?> >Les emprunteurs</a></li>
+                  <li class="nav-item"><a class="nav-link" <?php setHref("historique"); ?> >L'historique</a></li>
                 <?php } ?>1
-                <li class="nav-item"><a class="nav-link" href="logout.php">Se déconnecter</a></li>
+                <li class="nav-item"><a class="nav-link" <?php setHref("logout"); ?>>Se déconnecter</a></li>
 
             </ul>
       </nav>
@@ -60,22 +61,22 @@
   <nav class="tab container ">
     <ul class="nav d-flex justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" href="emprunts.php">Emprunter</a>
+          <a class="nav-link active" <?php setHref("emprunter"); ?>>Emprunter</a>
         </li>
         <!-- //Si l'emprunteur est admin -->
           <?php if ($_SESSION["user"]["status"] === "admin") { ?>
           <li class="nav-item">
-            <a class="nav-link" href="materiels.php">Les matériels</a>
+            <a class="nav-link" <?php setHref("materiels"); ?>>Les matériels</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Les emprunteurs</a>
+            <a class="nav-link" <?php setHref("emprunteurs"); ?>>Les emprunteurs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="historical.php">L'historique</a>
+            <a class="nav-link" <?php setHref("historique"); ?>>L'historique</a>
           </li>
         <?php } ?>
         <li class="nav-item">
-          <a class="nav-link" href="logout.php">Se déconnecter</a>
+          <a class="nav-link" <?php setHref("logout"); ?>>Se déconnecter</a>
         </li>
     </ul>
   </nav>

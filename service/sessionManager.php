@@ -12,14 +12,6 @@ function initializeUserSession($user) {
     $_SESSION["user"] = $user;
 }
 
-//Fonction de déconnexion
-function logout() {
-  session_start();
-  session_unset();
-  session_destroy();
-  header("Location: index.php?success=Vous avez été déconnecté, à bientôt :)");
-}
-
 
 //Fonction pour vérifier qu'un utilisateur est connecté
 function isLogged() {
