@@ -3,8 +3,8 @@
 include "template/header.php";
  ?>
  <h2 class="text-center mt-5">Ajouter un emprunteur</h2>
-<a href="emprunteur.php"><button type="submit" class="btn btn-primary">Retour à la liste</button></a>
-<form class="col-12 col-md-12 col-lg-8 mx-auto my-5" action="emprunteurTreatmentAdd.php" method="post">
+<a href="emprunteur.php"><button class="btn btn-primary">Retour à la liste</button></a>
+<form class="col-12 col-md-12 col-lg-8 mx-auto my-5" action="ajoutEmprunteurTreatment.php" method="post">
   <div class="form-group">
     <label for="email">Email : </label>
     <input type="email" class="form-control" id="email" name="email" placeholder="Email...ex : test@example.com" value="">

@@ -29,14 +29,14 @@ $emprunteur = $query->fetchall(PDO::FETCH_ASSOC);
       ?>
     <tr>
       <th scope="row"><?php echo $value["id"] ?></th>
-      <td><?php echo $value["email"] ?></td>
-      <td><?php echo $value["nom"] ?></td>
-      <td><?php echo $value["prenom"] ?></td>
-      <td><?php echo $value["password"] ?></td>
-      <td><?php echo $value["poste"] ?></td>
-      <td><?php echo $value["statut"] ?></td>
-      <td><a href="emprunteurAdminEdit.php?action=edit&id=<?php echo $value["id"]; ?>"><i class="fas fa-edit fa-2x"></i></a></td>
-      <td><a href=".php?action=delete&id=<?php echo $value["id"]; ?>"><i class="fas fa-times fa-2x"></i></a></td>
+      <td class="d-none d-md-table-cell text-center"><?php echo $value["email"] ?></td>
+      <td class="d-none d-md-table-cell text-center"><?php echo $value["nom"] ?></td>
+      <td class="d-none d-md-table-cell text-center"><?php echo $value["prenom"] ?></td>
+      <td class="d-none d-md-table-cell text-center"><?php echo $value["password"] ?></td>
+      <td class="d-none d-md-table-cell text-center"><?php echo $value["poste"] ?></td>
+      <td class="d-none d-md-table-cell text-center"><?php echo $value["statut"] ?></td>
+      <td class="d-none d-md-table-cell text-center"><a href="emprunteurAdminEdit.php?action=edit&id=<?php echo $value["id"]; ?>"><i class="fas fa-edit fa-2x"></i></a></td>
+      <td class="d-none d-md-table-cell text-center"><a href=".php?action=delete&id=<?php echo $value["id"]; ?>"><i class="fas fa-times fa-2x"></i></a></td>
     </tr>
     <?php
     }
