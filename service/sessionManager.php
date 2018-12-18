@@ -10,15 +10,17 @@ function initializeAnonymousSession() {
 function initializeUserSession($user) {
     session_start();
     $_SESSION["user"] = $user;
-}
-
+    $_SESSION["codeMsg"] =[]; //session des codes message succes ou erreur
+  }
+  
 //Fonction de déconnexion
 function logout() {
-  session_start();
-  session_unset();
-  session_destroy();
-  header("Location: index.php?success=Vous avez été déconnecté, à bientôt :)");
-}
+
+    session_start();
+    session_unset();
+    session_destroy();
+  }
+
 
 //Fonction pour vérifier qu'un utilisateur est connecté
 function isLogged() {

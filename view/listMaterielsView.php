@@ -1,18 +1,41 @@
-<!-- <?php
-//if (isset($_SESSION["emprunteur"])) {
-
-?> -->
+<?php //var_dump($_SESSION["codeMsg"]); ?>
 <?php include "view/template/header.php"; ?>
+<?php
+//Affichage du message de confirmation ou d'erreur
+if (isset($_SESSION["codeMsg"][0])) { ?>
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-success text-center mt-2" role="alert">
+            <?php
+            echo afficheErrorMsg($_SESSION["codeMsg"][0],"Le matériel");
+            array_pop($_SESSION["codeMsg"]); //retire le code de la session
+            ?>
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php } ?>
+
 <main>
 <section class="container">
 	<div class="d-flex flex-column my-3">
       <div class="d-flex justify-content-between mb-3">
             <h2>Gestion des matériels</h2>
             <div class="d-none d-md-block">
-               <a href="materielsAdmin.php?action=add" class="btn btn-primary">Ajouter un matériel</a>
+               <a <?php setHref("materiels/ajout"); ?> class="btn btn-primary">Ajouter un matériel</a>
             </div>
             <div class="d-block d-md-none">
-              <a href="materielsAdmin.php?action=add" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+               <a <?php setHref("materiels/ajout"); ?> class="btn btn-primary"><i class="fas fa-plus"></i></a>
             </div>
       </div>
       <div class="table-responsive">
@@ -41,8 +64,8 @@
                     <td class="d-none d-md-table-cell"><?php echo $value["description"]; ?></td>
                     <td class="d-none d-lg-table-cell"><?php echo ($value["etat"] == 1)?"En stock":"Indisponible"; ?></td>
                     <td class="d-none d-lg-table-cell"><?php echo ($value["acces"] == 1)?"Libre":"Restreint"; ?></td>
-                    <td><a href="materielsAdmin.php?action=edit&id=<?php echo $value["id"]; ?>"><i class="fas fa-edit fa-2x"></i></a></td>
-                    <td><a href="materielsAdmin.php?action=delete&id=<?php echo $value["id"]; ?>"><i class="fas fa-times fa-2x"></i></a></td>
+                    <td><a <?php setHref("materiels/edit", ["id"=>$value["id"]]); ?> ><i class="fas fa-edit fa-2x"></i></a></td>
+                    <td><a <?php setHref("materiels/suppr", ["id"=>$value["id"]]); ?> ><i class="fas fa-times fa-2x"></i></a></td>
                   </tr>
                   <?php
                     }
