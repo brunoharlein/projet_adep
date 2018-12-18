@@ -1,11 +1,12 @@
 <?php
-//We try to connect to the db with our id
-//If it works we create a variable db which stocks the connexion
-try {
-  $db = new PDO("mysql:host=localhost;dbname=EmpruntsAdep", "root", "root");
-}
-//Sinon on récupère une erreur
-catch (Exception $e) {
-  echo 'Exception reçue : ' .  $e->getMessage() . "\n";
+// Connexion à la bdd
+function getDataBase() {
+  try {
+    $db = new PDO('mysql:host=localhost;dbname=EmpruntsAdep;charset=utf8', 'phpmyadmin', 'hanane');
+  }
+  catch (Exception $e){
+    die('Erreur : ' . $e->getMessage());
+  }
+  return $db;
 }
  ?>
