@@ -77,15 +77,19 @@ function getRoutes() {
 
     "emprunter" => [
       "emprunter",
-      "addEmprunt"
+      "addEmprunt",
+      ["id" => ["integer"]],
+      "status" => "user"
     ],
     "emprunter/edit" => [
       "emprunter",
-      "updateEmprunt"
+      "updateEmprunt",
+      "status" => "user"
     ],
     "emprunter/list" => [
       "emprunter",
-      "allMateriel"
+      "allMateriel",
+      "status" => "user"
     ],
 
     ////////////////////////////////////// end roads for borrow
