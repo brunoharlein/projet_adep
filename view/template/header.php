@@ -44,7 +44,7 @@ if (isset($_SESSION["emprunteur"])) {
                 <!-- //Si l'emprunteur est admin -->
                 <?php if (isset($statut) === true) { ?>
                   <li class="nav-item"><a class="nav-link" href="materiels.php">Les matériels</a></li>
-                  <li class="nav-item"><a class="nav-link" href="emprunteur.php">Les emprunteurs</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
                   <li class="nav-item"><a class="nav-link" href="historical.php">L'historique</a></li>
                 <?php } ?>1
                 <li class="nav-item"><a class="nav-link" href="logout.php">Se déconnecter</a></li>
@@ -67,7 +67,7 @@ if (isset($_SESSION["emprunteur"])) {
             <a class="nav-link" href="materiels.php">Les matériels</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="emprunteur.php">Les emprunteurs</a>
+            <a class="nav-link" href="#">Les emprunteurs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="historical.php">L'historique</a>

@@ -1,6 +1,6 @@
 <?php
 //on charge le header
-require 'modele/db.php';
+require "modele/db.php";
 // //chargement de la page ajoutEmprunteur.php
 // require 'emprunteur.php';
 // recupérer tout les emprunteur de la base de donnée
@@ -44,7 +44,7 @@ require 'modele/db.php';
   //   else {
   //     $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-      $query = $db->prepare('INSERT INTO emprunteur (email, nom, prenom, password, poste, statut) VALUES(:email, :nom, :prenom, :password, :poste, :statut)');
+      $query = $db->prepare("INSERT INTO emprunteur (email, nom, prenom, password, poste, statut) VALUES(:email, :nom, :prenom, :password, :poste, :statut)");
       $query->execute([
         "email" => $_POST["email"],
         "nom" => $_POST["nom"],
@@ -53,7 +53,6 @@ require 'modele/db.php';
         "poste" => $_POST["poste"],
         "statut" => $_POST["statut"]
       ]);
-      var_dump($query);
 //       header("Location: emprunteurManager.php?success=Emprunteur créé avec succès");
 //       exit;
 //     }
