@@ -14,7 +14,14 @@
 //]
 function getRoutes() {
   return [
-
+    "" => [
+      "index",
+      "login"
+    ],
+    "login" => [
+      "index",
+      "login"
+    ],
     ////////////////////////////////start roads for material section
 
     "materiels" => [

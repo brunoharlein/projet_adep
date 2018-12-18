@@ -1,10 +1,8 @@
-<?php
-require "modele/db.php"; // connexion à la bdd
-require "modele/materielsManager.php";
-include "template/header.php";
-if (isset($_SESSION["emprunteur"])) {
+<!-- <?php
+//if (isset($_SESSION["emprunteur"])) {
 
-?>
+?> -->
+<?php include "view/template/header.php"; ?>
 <main>
 <section class="container">
 	<div class="d-flex flex-column my-3">
@@ -33,9 +31,9 @@ if (isset($_SESSION["emprunteur"])) {
                 <tbody>
                   <?php
                     // On récupère tout le contenu de la table materiel
-                    $result = getMateriels($db);
+                    //$result = getMateriels($db);
                     // On affiche chaque entrée une à une
-                    foreach ($result as $key => $value) {
+                    foreach ($materiels as $key => $value) {
                   ?>
                   <tr class="text-center">
                     <td class="text-left"><?php echo $value["nom"]; ?></td>
@@ -57,10 +55,10 @@ if (isset($_SESSION["emprunteur"])) {
 </section>
 </main>
 <?php
-include "template/footer.php";
-}else {
-  header("Location:index.php?message=0") ;
-  exit;
-}
+include "view/template/footer.php";
+// }else {
+//   header("Location:index.php?message=0") ;
+//   exit;
+// }
 
  ?>

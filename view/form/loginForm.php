@@ -1,11 +1,3 @@
-<?php
-require "service/errorManager.php";
-//We load header
-include "template/header.php";
- ?>
-
-
-<main>
 <section class="container py-3 h-100 d-flex flex-column justify-content-center align-items-center ">
       <div id="formConnexion" class="d-flex flex-column justify-content-center h-75 py-4">
         <h5 class="text-center">
@@ -13,7 +5,7 @@ include "template/header.php";
           Veuillez saisir vos identifiants :
         </h5>
         <!-- new -->
-        <form  action="login.php" method="post" name="Connexion" class="needs-validation" novalidate>
+        <form  action="" method="post" name="Connexion" class="needs-validation" novalidate>
           <div class="form-group">
             <label for="email">Votre Email</label>
             <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Votre@email.com" required autofocus>
@@ -32,11 +24,7 @@ include "template/header.php";
       <div id="errorsConnexion" class="w-100 h-25">
         <?php
         //If a message was transmitted by the url we retrieve it and we display it
-        displayMessages();
+        //displayMessages();
          ?>
       </div>
 </section>
-</main>
-<?php
-include "template/footer.php";
- ?>
