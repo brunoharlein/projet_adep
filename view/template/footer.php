@@ -1,3 +1,4 @@
+
 <footer class="jumbotron jumbotron-fluid p-1 mb-0">
   <div class="container">
       <p class="width pt-2">Le secrétariat est fermé le Lundi matin. </p>

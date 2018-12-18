@@ -9,8 +9,6 @@ require "modele/materielsManager.php";
   <div class="container">
     <section class="d-flex flex-row justify-content-between">
       <h1 class="col-4 mt-0">Emprunter du matériel</h1>
-
-
 <form action="emprunts.php<?php echo (isset($_POST['choix']))?'?tri='.$_POST['choix']:''; ?>" method="post" name="tri">
       <!-- <form action="emprunts.php?tri=" method="post" name="tri"> -->
   <div class="form-row align-items-center">
@@ -31,6 +29,7 @@ require "modele/materielsManager.php";
   </div>
 </form>
 
+>>>>>>> master
     </section>
     </div>
     <div class="container">
@@ -73,7 +72,7 @@ require "modele/materielsManager.php";
             <td class="d-none d-md-table-cell text-center"><?php echo ($value['acces']==1)?"Libre":"Restreint"; ?></td>
             <td>
               <div>
-                <a href="<?php echo 'service/empruntsTraitement.php?id='. $value['id'].'&etat=' . $value['etat']; ?>" class='btn btn-primary btn-xs text-center <?php echo ($value['etat']== 0)?"disabled bts-secondary":""; ?> ' > Emprunter</a>
+                <a <?php setHref('emprunts/ajout') ?> href="<?php echo 'service/empruntsTraitement.php?id='. $value['id'].'&etat=' . $value['etat']; ?>" class='btn btn-primary btn-xs text-center <?php echo ($value['etat']== 0)?"disabled bts-secondary":""; ?> ' > Emprunter</a>
               </div>
 
             </td>

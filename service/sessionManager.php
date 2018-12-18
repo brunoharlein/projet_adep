@@ -15,10 +15,12 @@ function initializeUserSession($user) {
   
 //Fonction de déconnexion
 function logout() {
+
     session_start();
     session_unset();
     session_destroy();
   }
+
 
 //Fonction pour vérifier qu'un utilisateur est connecté
 function isLogged() {
@@ -27,7 +29,5 @@ function isLogged() {
   }
   return false;
 }
-
-
 
 ?>
