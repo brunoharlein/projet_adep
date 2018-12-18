@@ -1,9 +1,9 @@
 <?php
-// session_start();
-// if (isset($_SESSION["emprunteur"])) {
-//   $statut =intval($_SESSION["emprunteur"]["statut"]);
-// }
-//var_dump($_SESSION["user"]);
+session_start();
+if (isset($_SESSION["emprunteur"])) {
+  $statut =intval($_SESSION["emprunteur"]["statut"]);
+}
+// var_dump($statut);
 ?>
 <!doctype html>
 <html class="no-js" lang="fr">
@@ -44,7 +44,7 @@
                 <!-- //Si l'emprunteur est admin -->
                 <?php if (isset($statut) === true) { ?>
                   <li class="nav-item"><a class="nav-link" href="materiels.php">Les matériels</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
+                  <li class="nav-item"><a class="nav-link" href="emprunteur.php">Les emprunteurs</a></li>
                   <li class="nav-item"><a class="nav-link" href="historical.php">L'historique</a></li>
                 <?php } ?>1
                 <li class="nav-item"><a class="nav-link" href="logout.php">Se déconnecter</a></li>
@@ -55,29 +55,28 @@
     <?php } ?>
   </div>
   <!-- Navigation Tab and Screen -->
-  <!-- Affichage du menu si User connecté -->
-  <?php if (isLogged()) { ?>
   <nav class="tab container ">
     <ul class="nav d-flex justify-content-center">
+      <?php if (isset($statut)) { ?>
         <li class="nav-item">
           <a class="nav-link active" href="emprunts.php">Emprunter</a>
         </li>
         <!-- //Si l'emprunteur est admin -->
-          <?php if ($_SESSION["user"]["status"] === "admin") { ?>
+        <?php if (isset($statut) === true) { ?>
           <li class="nav-item">
             <a class="nav-link" href="materiels.php">Les matériels</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Les emprunteurs</a>
+            <a class="nav-link" href="emprunteur.php">Les emprunteurs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="historical.php">L'historique</a>
           </li>
-        <?php } ?>
+        <?php }?>
         <li class="nav-item">
           <a class="nav-link" href="logout.php">Se déconnecter</a>
         </li>
+    <?php } ?>
     </ul>
   </nav>
-  <?php } ?>
 </header>

@@ -72,7 +72,7 @@ require "modele/materielsManager.php";
             <td class="d-none d-md-table-cell text-center"><?php echo ($value['acces']==1)?"Libre":"Restreint"; ?></td>
             <td>
               <div>
-                <a href="<?php echo 'service/empruntsTraitement.php?id='. $value['id'].'&etat=' . $value['etat']; ?>" class='btn btn-primary btn-xs text-center <?php echo ($value['etat']== 0)?"disabled bts-secondary":""; ?> ' > Emprunter</a>
+                <a <?php setHref('emprunts/ajout') ?> href="<?php echo 'service/empruntsTraitement.php?id='. $value['id'].'&etat=' . $value['etat']; ?>" class='btn btn-primary btn-xs text-center <?php echo ($value['etat']== 0)?"disabled bts-secondary":""; ?> ' > Emprunter</a>
               </div>
 
             </td>
