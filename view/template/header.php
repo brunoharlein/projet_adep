@@ -28,7 +28,7 @@
   <div class="container d-flex justify-content-between">
     <!-- Logo and title ADEP -->
     <div id="logoHeader" class="">
-      <a href="https://www.adep-roubaix.fr/" target="_blank"><img src="img/adep-logo.png" class="img-fluid" alt="Logo de l'ADEP"></a>
+      <a href="https://www.adep-roubaix.fr/" target="_blank"><img src="public/img/adep-logo.png" class="img-fluid" alt="Logo de l'ADEP"></a>
     </div>
     <div class="d-flex align-items-center justify-content-center ">
       <h1 id="titreHeader" class="my-3">Gestion des prêts</h1>
@@ -45,7 +45,7 @@
                 <?php if (isset($statut) === true) { ?>
                   <li class="nav-item"><a class="nav-link" href="materiels.php">Les matériels</a></li>
                   <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
-                  <li class="nav-item"><a class="nav-link" href="historical.php">L'historique</a></li>
+                  <li class="nav-item"><a class="nav-link" href="historique">L'historique</a></li>
                 <?php } ?>1
                 <li class="nav-item"><a class="nav-link" href="logout.php">Se déconnecter</a></li>
 
@@ -60,7 +60,7 @@
   <nav class="tab container ">
     <ul class="nav d-flex justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" href="emprunts.php">Emprunter</a>
+          <a class="nav-link active" href="emprunts">Emprunter</a>
         </li>
         <!-- //Si l'emprunteur est admin -->
           <?php if ($_SESSION["user"]["status"] === "admin") { ?>
@@ -71,7 +71,7 @@
             <a class="nav-link" href="#">Les emprunteurs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="historical.php">L'historique</a>
+            <a class="nav-link" href="historique">L'historique</a>
           </li>
         <?php } ?>
         <li class="nav-item">

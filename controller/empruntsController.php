@@ -1,6 +1,5 @@
 <?php
 session_start();
-  require "../modele/db.php";// pour connecter a la db
   require "../modele/empruntsManager.php"; //pour les fonctions qui servent à l'emprunt
   //var_dump(implode(',',getdate()));
 if ((isset($_SESSION['emprunteur'])) && (!empty($_SESSION['emprunteur']))){
