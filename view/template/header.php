@@ -1,9 +1,9 @@
 <?php
-session_start();
-if (isset($_SESSION["emprunteur"])) {
-  $statut =intval($_SESSION["emprunteur"]["statut"]);
-}
-// var_dump($statut);
+// session_start();
+// if (isset($_SESSION["emprunteur"])) {
+//   $statut =intval($_SESSION["emprunteur"]["statut"]);
+// }
+//var_dump($_SESSION["user"]);
 ?>
 <!doctype html>
 <html class="no-js" lang="fr">
@@ -55,14 +55,15 @@ if (isset($_SESSION["emprunteur"])) {
     <?php } ?>
   </div>
   <!-- Navigation Tab and Screen -->
+  <!-- Affichage du menu si User connecté -->
+  <?php if (isLogged()) { ?>
   <nav class="tab container ">
     <ul class="nav d-flex justify-content-center">
-      <?php if (isset($statut)) { ?>
         <li class="nav-item">
           <a class="nav-link active" href="emprunts.php">Emprunter</a>
         </li>
         <!-- //Si l'emprunteur est admin -->
-        <?php if (isset($statut) === true) { ?>
+          <?php if ($_SESSION["user"]["status"] === "admin") { ?>
           <li class="nav-item">
             <a class="nav-link" href="materiels.php">Les matériels</a>
           </li>
@@ -72,11 +73,11 @@ if (isset($_SESSION["emprunteur"])) {
           <li class="nav-item">
             <a class="nav-link" href="historical.php">L'historique</a>
           </li>
-        <?php }?>
+        <?php } ?>
         <li class="nav-item">
           <a class="nav-link" href="logout.php">Se déconnecter</a>
         </li>
-    <?php } ?>
     </ul>
   </nav>
+  <?php } ?>
 </header>
