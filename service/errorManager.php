@@ -61,5 +61,24 @@ function displayMessages() {
     }
   }
 }
+// fonctions d'erreurs et d'affichage des messages la partie euprunts
+function displayMessages() {
+  $messages = getMessages();
+  foreach ($messages as $key => $message) {
+    if($key === 1) {
+      echo "<div class='alert alert-success w-50 mx-auto'>" . $message . "</div>";
+    }
+    if ($key === 2) {
+      echo "<div class='alert alert-danger w-50 mx-auto'>" . $message . "</div>";
+    }
+  }
+}
+//fonction qui stocke les messages d'erreur ou de succès
+function codeMsgEmprunts() {
+ return [
+   ['message' =>1, "message" => " Vous avez emprunté ce matériel avec succès"],
+   ["message" => 2, "message" => "Vous devez vous connecter pour emprunter"]
+ ];
+}
 
  ?>

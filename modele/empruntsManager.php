@@ -1,6 +1,6 @@
 <?php
 
-    //fonction qui update l'état du matériel en fonction de son id quand l'utilisateur  clique sur emprunter page emprunts.php
+    //fonction qui update l'état du matériel en fonction de son id quand l'utilisateur  clique sur emprunter page empruntsView.php
       function updateEtatMateriel ($db, $id_materiel) {
 
         $requete = $db ->prepare ('UPDATE materiel SET etat = :etat WHERE id = :id');
@@ -16,27 +16,7 @@
         return $result;
       }
 
-      function displayMessages() {
-        $messages = getMessages();
-        foreach ($messages as $key => $message) {
-          if($key === 1) {
-            echo "<div class='alert alert-success w-50 mx-auto'>" . $message . "</div>";
-          }
-          if ($key === 2) {
-            echo "<div class='alert alert-danger w-50 mx-auto'>" . $message . "</div>";
-          }
-        }
-      }
-      //fonction qui stocke les messages d'erreur ou de succès
-      function codeMsgEmprunts() {
-       return [
-         ['message' =>1, "message" => " Vous avez emprunté ce matériel avec succès"],
-         ["message" => 2, "message" => "Vous devez vous connecter pour emprunter"]
-       ];
-     }
-
-
-
+    
      // trie de A à Z
      function orderByAz($db) {
        $query = $db->query("SELECT * FROM materiel ORDER by nom");
