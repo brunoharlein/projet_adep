@@ -1,13 +1,9 @@
-<?php
-//chargement du header
-include "template/header.php";
- ?>
-<h2 class="text-center mt-5">Modifier un emprunteur</h2>
-<a href="emprunteur.php"><button type="submit" class="btn btn-primary">Retour à la liste</button>
+<h2 class="text-center mt-5">Ajouter un emprunteur</h2>
+<a href="emprunteur.php"><button class="btn btn-primary">Retour à la liste</button></a>
 <form class="col-12 col-md-12 col-lg-8 mx-auto my-5" action="ajoutEmprunteurTreatment.php" method="post">
   <div class="form-group">
     <label for="email">Email : </label>
-    <input type="email" class="form-control" id="email" name="email" placeholder="Email..." value="">
+    <input type="email" class="form-control" id="email" name="email" placeholder="Email...ex : test@example.com" value="">
   </div>
   <div class="form-group">
     <label for="Nom">Nom : </label><br>
@@ -18,12 +14,8 @@ include "template/header.php";
     <input type="text" class="form-control" id="Prenom" placeholder="Prenom..." name="prenom" value="">
   </div>
   <div class="form-group">
-    <label for="Password">Mot de passe : </label><br>
+    <label for="Password">Mot de passe : (minimum 6 caractères, un chiffre et une majuscule)</label><br>
     <input type="password" class="form-control" id="Password" placeholder="Mot de passe..." name="password" value="">
-  </div>
-  <div class="form-group">
-    <label for="confirmation-password">Confirmez votre mot de passe : </label><br>
-    <input type="password" class="form-control" id="confirmation-password" placeholder="confirmez votre mot de passe..." name="password-confirm"  value="">
   </div>
   <div class="form-group">
     <label for="Statut">Statut : </label><br>
@@ -35,7 +27,3 @@ include "template/header.php";
   </div>
   <button type="submit" class="btn btn-success">Ajouter</button>
 </form>
- <?php
- //chargement du footer
- include "template/footer.php"
-  ?>

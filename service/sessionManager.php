@@ -20,7 +20,6 @@ function logout() {
   header("Location: index.php?success=Vous avez été déconnecté, à bientôt :)");
 }
 
-
 //Fonction pour vérifier qu'un utilisateur est connecté
 function isLogged() {
   if(isset($_SESSION["user"]) && !empty($_SESSION["user"])) {
@@ -28,7 +27,5 @@ function isLogged() {
   }
   return false;
 }
-
-
 
 ?>
