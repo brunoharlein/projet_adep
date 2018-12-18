@@ -38,4 +38,32 @@ function respectPattern($pattern, $value) {
 }
 
 
+function cleanFormEntries($form) {
+  foreach ($form as $key => $value) {
+    $form[$key] = htmlspecialchars($value);
+  }
+  return $form;
+}
+
+function checkValue($form){
+  foreach ($form as $key => $value) {
+    if (empty($value) && $value !== '0') { // si le champs du form est vide et qu'il est different de 0(select à 0)
+      return false;
+      break;
+    }
+    else {
+      return true;
+    }
+  }
+}
+
+function afficheErrorMsg($code,$text){
+  $messages = errorsMsg($text);
+  foreach ($messages as $key => $value) {
+    if ($value["id"] == $code) {
+      $message = $value["msg"];
+    }
+  }
+return $message;
+}
  ?>
