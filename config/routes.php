@@ -54,7 +54,7 @@ function getRoutes() {
 
           /////////////////////////////////////////////////////////// start roads for borrower
 
-    "emprunteur/list" => [
+    "emprunteurs" => [
      "emprunteur",
      "getEmprunteur",
      "status" => "admin"
@@ -84,16 +84,17 @@ function getRoutes() {
    /////////////////////////////////////// start roads for borrow
 
     "emprunter" => [
-      "emprunter",
-      "addEmprunt"
+      "emprunts",
+      "addEmprunt",
+      ["idMateriel" => ["integer"]],
+
+      "status" => "user"
     ],
-    "emprunter/edit" => [
-      "emprunter",
-      "updateEmprunt"
-    ],
+
     "emprunter/list" => [
-      "emprunter",
-      "allMateriel"
+      "emprunts",
+      "allMateriels",
+      "status" => "user"
     ],
 
     ////////////////////////////////////// end roads for borrow
@@ -104,9 +105,13 @@ function getRoutes() {
       "emprunter",
       "getHistorical",
       "status" => "admin"
-    ]
+    ],
 
     ////////////////////////////////////////////////////////////////// end roads for historical
+    "logout" => [
+      "index",
+      "deconnect"
+    ]
    ];
 }
 

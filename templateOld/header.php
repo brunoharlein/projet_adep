@@ -1,9 +1,9 @@
 <?php
-// session_start();
-// if (isset($_SESSION["emprunteur"])) {
-//   $statut =intval($_SESSION["emprunteur"]["statut"]);
-// }
-//var_dump($_SESSION["user"]);
+session_start();
+if (isset($_SESSION["emprunteur"])) {
+  $statut =intval($_SESSION["emprunteur"]["statut"]);
+}
+// var_dump($statut);
 ?>
 <!doctype html>
 <html class="no-js" lang="fr">
@@ -20,46 +20,34 @@
   <!-- Place favicon.ico in the root directory -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" href=<?php echo "http://".$_SERVER['SERVER_NAME']."/Lab/projet_adep/public/css/normalize.css"; ?> >
-  <link rel="stylesheet" href=<?php echo "http://".$_SERVER['SERVER_NAME']."/Lab/projet_adep/public/css/main.css"; ?> >
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="d-flex flex-column justify-content-between">
 <header class="jumbotron jumbotron-fluid py-0 mb-0">
   <div class="container d-flex justify-content-between">
     <!-- Logo and title ADEP -->
     <div id="logoHeader" class="">
-<<<<<<< HEAD
-      <a href="https://www.adep-roubaix.fr/" target="_blank"><img src="public/img/adep-logo.png" class="img-fluid" alt="Logo de l'ADEP"></a>
-=======
-      <a href="https://www.adep-roubaix.fr/" target="_blank"><img src=<?php echo "http://".$_SERVER['SERVER_NAME']."/Lab/projet_adep/public/img/adep-logo.png"; ?> class="img-fluid" alt="Logo de l'ADEP"></a>
->>>>>>> master
+      <a href="https://www.adep-roubaix.fr/" target="_blank"><img src="img/adep-logo.png" class="img-fluid" alt="Logo de l'ADEP"></a>
     </div>
     <div class="d-flex align-items-center justify-content-center ">
       <h1 id="titreHeader" class="my-3">Gestion des prêts</h1>
     </div>
     <!-- Navigation Mobile -->
-    <!-- Affichage du menu si User connecté -->
-    <?php if (isLogged()) { ?>
+    <?php if (isset($statut)) { ?>
     <div class="mobile d-flex align-items-center">
       <a class="mobile" href="javascript:void(0);" onclick="menuMobile()"><i id="navIcon" class="fas fa-bars fa-2x transformIcon"></i></a>
       <nav id="navMobile" class="menuVisible">
             <ul class="nav flex-column">
 
-                <li class="nav-item"><a class="nav-link" <?php setHref("emprunter"); ?>>Emprunter</a></li>
+                <li class="nav-item"><a class="nav-link" href="emprunts.php">Emprunter</a></li>
                 <!-- //Si l'emprunteur est admin -->
-<<<<<<< HEAD
                 <?php if (isset($statut) === true) { ?>
                   <li class="nav-item"><a class="nav-link" href="materiels.php">Les matériels</a></li>
                   <li class="nav-item"><a class="nav-link" href="#">Les emprunteurs</a></li>
-                  <li class="nav-item"><a class="nav-link" href="historique">L'historique</a></li>
-=======
-                  <?php if ($_SESSION["user"]["status"] === "admin") { ?>
-                  <li class="nav-item"><a class="nav-link" <?php setHref("materiels"); ?> >Les matériels</a></li>
-                  <li class="nav-item"><a class="nav-link" <?php setHref("emprunteurs"); ?> >Les emprunteurs</a></li>
-                  <li class="nav-item"><a class="nav-link" <?php setHref("historique"); ?> >L'historique</a></li>
->>>>>>> master
+                  <li class="nav-item"><a class="nav-link" href="historical.php">L'historique</a></li>
                 <?php } ?>1
-                <li class="nav-item"><a class="nav-link" <?php setHref("logout"); ?>>Se déconnecter</a></li>
+                <li class="nav-item"><a class="nav-link" href="logout.php">Se déconnecter</a></li>
 
             </ul>
       </nav>
@@ -67,37 +55,32 @@
     <?php } ?>
   </div>
   <!-- Navigation Tab and Screen -->
-  <!-- Affichage du menu si User connecté -->
-  <?php if (isLogged()) { ?>
   <nav class="tab container ">
     <ul class="nav d-flex justify-content-center">
+      <?php if (isset($statut)) { ?>
         <li class="nav-item">
-<<<<<<< HEAD
-          <a class="nav-link active" href="emprunts">Emprunter</a>
-=======
-          <a class="nav-link active" <?php setHref("emprunter"); ?>>Emprunter</a>
->>>>>>> master
+          <a class="nav-link active" href="emprunts.php">Emprunter</a>
         </li>
         <!-- //Si l'emprunteur est admin -->
-          <?php if ($_SESSION["user"]["status"] === "admin") { ?>
+        <?php if (isset($statut) === true) { ?>
           <li class="nav-item">
-            <a class="nav-link" <?php setHref("materiels"); ?>>Les matériels</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" <?php setHref("emprunteurs"); ?>>Les emprunteurs</a>
+            <a class="nav-link" href="materiels.php">Les matériels</a>
           </li>
           <li class="nav-item">
 <<<<<<< HEAD
-            <a class="nav-link" href="historique">L'historique</a>
+            <a class="nav-link" href="#">Les emprunteurs</a>
 =======
-            <a class="nav-link" <?php setHref("historique"); ?>>L'historique</a>
+            <a class="nav-link" href="emprunteur.php">Les emprunteurs</a>
 >>>>>>> master
           </li>
-        <?php } ?>
+          <li class="nav-item">
+            <a class="nav-link" href="historical.php">L'historique</a>
+          </li>
+        <?php }?>
         <li class="nav-item">
-          <a class="nav-link" <?php setHref("logout"); ?>>Se déconnecter</a>
+          <a class="nav-link" href="logout.php">Se déconnecter</a>
         </li>
+    <?php } ?>
     </ul>
   </nav>
-  <?php } ?>
 </header>

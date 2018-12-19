@@ -1,4 +1,5 @@
 <?php
+
 require "config/global.php";
 require "service/router.php";
 require "service/urlManager.php";
