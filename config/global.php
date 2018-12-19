@@ -3,7 +3,7 @@
 function getGlobalConfig() {
   return $config = [
     "protocol" => "",
-    "host" => "localhost/Lab/projet_adep/",
+    "host" => "localhost/lab/projet_adep/",
     "status" => ["anonymous", "user", "admin"],
     "defaultRoute" => ""
   ];

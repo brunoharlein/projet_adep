@@ -1,40 +1,48 @@
 <?php
+require "model/emprunteurManager.php";
 
 // fonction qui affiche tout les emprunteurs
 function getEmprunteur(){
     $emprunteur = getBorrower();
-    require "../view/emprunteurView.php";
+    // var_dump($emprunteur);
+    require "view/emprunteurView.php";
 }
+
+//fonction qui reccupere un seul emprunteur selon son id
+// function getEmprunteurId() {
+//     $id = $_GET["id"];
+//     if (!empty($_GET["id"])) {
+//         $emprunteur = getBorrowerId($id);
+//     }
+// }
 
 // fonction qui ajoute un emprunteur
 function addEmprunteur() {
     if (!empty($_POST)) {
         addBorrower($_POST);
-        redirectTo("");
+        redirectTo("emprunteurs");
     }
-    require "";
+    require "view/addEmprunteurView.php";
 }
 
 // fonction qui modifie un emprunteur
 function editEmprunteur() {
     if(isset($_GET["id"])) {
         $id = htmlspecialchars($_GET["id"]);
-        $emprunteur = getBorrower($id);
+        $emprunteur = getBorrowerId($id);
+        var_dump($emprunteur);
     }
     if (!empty($_POST)) {
         editBorrower($_POST);
-        redirectTo("");
+        redirectTo("emprunteurs");
     }
-    require "";
+    require "view/editEmprunteurView.php";
 }
 
 // fonction qui supprime un emprunteur
-function deleteEmprunteur($id) {
+function deleteEmprunteur() {
     $id = htmlspecialchars($_GET["id"]);
     deleteBorrower($id);
-    redirectTo("");
+    redirectTo("emprunteurs");
 }
-?>
-
-
 ?>
