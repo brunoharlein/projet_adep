@@ -34,7 +34,7 @@
       <nav id="navMobile" class="menuVisible">
             <ul class="nav flex-column">
 
-                <li class="nav-item"><a class="nav-link" <?php setHref("emprunter"); ?>>Emprunter</a></li>
+                <li class="nav-item"><a class="nav-link" <?php setHref('emprunter/list') ?> >Emprunter</a></li>
                 <!-- //Si l'emprunteur est admin -->
                   <?php if ($_SESSION["user"]["status"] === "admin") { ?>
                   <li class="nav-item"><a class="nav-link" <?php setHref("materiels"); ?> >Les matériels</a></li>
@@ -54,7 +54,7 @@
   <nav class="tab container ">
     <ul class="nav d-flex justify-content-center">
         <li class="nav-item">
-          <a class="nav-link active" <?php setHref("emprunter"); ?>>Emprunter</a>
+          <a class="nav-link active" <?php setHref('emprunter/list') ?> >Emprunter</a>
         </li>
         <!-- //Si l'emprunteur est admin -->
           <?php if ($_SESSION["user"]["status"] === "admin") { ?>

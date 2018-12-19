@@ -6,6 +6,5 @@ require "service/urlManager.php";
 require "service/sessionManager.php";
 require "service/formChecker.php";
 require "model/db.php";
-require "model/emprunteurManager.php";
 route();
 ?>

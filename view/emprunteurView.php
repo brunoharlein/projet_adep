@@ -30,9 +30,9 @@ include "template/header.php";
       <td><?php echo $value["prenom"] ?></td>
       <td><?php echo $value["password"] ?></td>
       <td><?php echo $value["poste"] ?></td>
-      <td><?php echo $value["statut"] ?></td>
+      <td><?php echo $value["status"] ?></td>
       <td><a href="emprunteur/edit?id=<?php echo $value["id"]; ?>"><i class="fas fa-edit fa-2x"></i></a></td>
-      <td><a href=".php?action=delete&id=<?php echo $value["id"]; ?>"><i class="fas fa-times fa-2x"></i></a></td>
+      <td><a href="emprunteur/suppr?id=<?php echo $value["id"]; ?>"><i class="fas fa-times fa-2x"></i></a></td>
     </tr>
     <?php
     }

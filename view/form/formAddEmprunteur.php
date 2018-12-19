@@ -18,8 +18,8 @@
     <input type="password" class="form-control" id="Password" placeholder="Mot de passe..." name="password" value="">
   </div>
   <div class="form-group">
-    <label for="Statut">Statut : </label><br>
-    <input type="text" class="form-control" id="Statut" placeholder="Statut..." name="statut"  value="">
+    <label for="Status">Status : </label><br>
+    <input type="text" class="form-control" id="Status" placeholder="Status..." name="status"  value="">
   </div>
   <div class="form-group">
     <label for="Poste">Poste</label>

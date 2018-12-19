@@ -1,7 +1,7 @@
 <h2 class="text-center mt-5">Modifier un emprunteur</h2>
-<a href="emprunteur.php"><button type="submit" class="btn btn-primary">Retour à la liste</button></a>
+<a href="../emprunteurs"><button type="submit" class="btn btn-primary">Retour à la liste</button></a>
 <form class="col-12 col-md-12 col-lg-8 mx-auto my-5" action="" method="post">
-<input type="hidden" class="form-control" name="id" id="id" value="<?php echo (isset($volonteer)?$volonteer["id"]:""); ?>">
+<input type="hidden" class="form-control" name="id" id="id" value="<?php echo (isset($emprunteur)?$emprunteur["id"]:""); ?>">
 
   <div class="form-group">
     <label for="email">Email : </label>
@@ -24,8 +24,8 @@
     <input type="password" class="form-control" id="confirmation-password" name="password-confirm"  value="<?php echo (isset($emprunteur)?$emprunteur["password-confirm"]:""); ?>">
   </div>
   <div class="form-group">
-    <label for="Statut">Statut : </label><br>
-    <input type="text" class="form-control" id="Statut" name="statut"  value="<?php echo (isset($emprunteur)?$emprunteur["statut"]:""); ?>">
+    <label for="Status">Status : </label><br>
+    <input type="text" class="form-control" id="Status" name="status"  value="<?php echo (isset($emprunteur)?$emprunteur["status"]:""); ?>">
   </div>
   <div class="form-group">
     <label for="Poste">Poste</label>
