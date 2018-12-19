@@ -12,7 +12,7 @@ function getBorrower(){
 function addBorrower($emprunteur) {
     $db = getDataBase();
     $req = $db->prepare("INSERT INTO emprunteur (email, nom, prenom, password, poste, statut) VALUES (:email, :nom, :prenom, :password, :poste, :statut)");
-    $result = $req = execute([
+    $result = $req->execute([
         "email" => $emprunteur["email"],
         "nom" => $emprunteur["nom"],
         "prenom" => $emprunteur["prenom"],

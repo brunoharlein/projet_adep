@@ -1,6 +1,6 @@
 <h2 class="text-center mt-5">Modifier un emprunteur</h2>
 <a href="emprunteur.php"><button type="submit" class="btn btn-primary">Retour à la liste</button></a>
-<form class="col-12 col-md-12 col-lg-8 mx-auto my-5" action="emprunteurTreatmentEdit.php" method="post">
+<form class="col-12 col-md-12 col-lg-8 mx-auto my-5" action="" method="post">
 <input type="hidden" class="form-control" name="id" id="id" value="<?php echo (isset($volonteer)?$volonteer["id"]:""); ?>">
 
   <div class="form-group">

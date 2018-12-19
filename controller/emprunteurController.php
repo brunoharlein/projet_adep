@@ -11,9 +11,9 @@ function getEmprunteur(){
 function addEmprunteur() {
     if (!empty($_POST)) {
         addBorrower($_POST);
-        redirectTo("");
+        redirectTo("emprunteurs");
     }
-    require "";
+    require "view/addEmprunteurView.php";
 }
 
 // fonction qui modifie un emprunteur
@@ -24,9 +24,9 @@ function editEmprunteur() {
     }
     if (!empty($_POST)) {
         editBorrower($_POST);
-        redirectTo("");
+        redirectTo("emprunteurs");
     }
-    require "";
+    require "editEmprunteurView.php";
 }
 
 // fonction qui supprime un emprunteur
@@ -35,7 +35,4 @@ function deleteEmprunteur($id) {
     deleteBorrower($id);
     redirectTo("");
 }
-?>
-
-
 ?>
