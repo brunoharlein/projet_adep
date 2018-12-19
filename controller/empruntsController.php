@@ -33,9 +33,9 @@ function allMateriels() {
   }
   require "view/empruntsView.php";
 }
-
-function sort() {
-  if ($_POST['nomduselectduform'])
-  ordeby(nom,desc)
-}
+// 
+// function sort() {
+//   if ($_POST['nomduselectduform'])
+//   ordeby(nom,desc)
+// }
 ?>
