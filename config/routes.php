@@ -14,6 +14,14 @@
 //]
 function getRoutes() {
   return [
+    "" => [
+      "index",
+      "login"
+    ],
+    "login" => [
+      "index",
+      "login"
+    ],
 
     ////////////////////////////////start roads for material section
 
@@ -46,29 +54,29 @@ function getRoutes() {
 
           /////////////////////////////////////////////////////////// start roads for borrower
 
-    "emprunteur/list" => [
+    "emprunteurs" => [
      "emprunteur",
      "getEmprunteur",
-     "status" => "admin"
+    //  "status" => "admin"
    ],
    "emprunteur/ajout" => [
     "emprunteur",
     "addEmprunteur",
-    "status" => "admin"
+    // "status" => "admin"
    ],
    "emprunteur/edit" => [
     "emprunteur",
     "editEmprunteur",
     ["id" => ["integer"]
    ],
-    "status" => "admin"
+    // "status" => "admin"
    ],
    "emprunteur/suppr" => [
     "emprunteur",
     "deleteEmprunteur",
     ["id" => ["integer"]
    ],
-    "status" => "admin"
+    // "status" => "admin"
    ],
 
    /////////////////////////////////////////////////////////////////// end roads for borrower
@@ -76,16 +84,17 @@ function getRoutes() {
    /////////////////////////////////////// start roads for borrow
 
     "emprunter" => [
-      "emprunter",
-      "addEmprunt"
+      "emprunts",
+      "addEmprunt",
+      ["idMateriel" => ["integer"]],
+
+      "status" => "user"
     ],
-    "emprunter/edit" => [
-      "emprunter",
-      "updateEmprunt"
-    ],
+
     "emprunter/list" => [
-      "emprunter",
-      "allMateriel"
+      "emprunts",
+      "allMateriels",
+      "status" => "user"
     ],
 
     ////////////////////////////////////// end roads for borrow
@@ -96,9 +105,13 @@ function getRoutes() {
       "emprunter",
       "getHistorical",
       "status" => "admin"
-    ]
+    ],
 
     ////////////////////////////////////////////////////////////////// end roads for historical
+    "logout" => [
+      "index",
+      "deconnect"
+    ]
    ];
 }
 

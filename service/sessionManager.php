@@ -2,33 +2,32 @@
 //Fonction de démarrage d'une session anonyme
 function initializeAnonymousSession() {
   session_start();
-  $_SESSION["emprunteur"] = "anonymous";
+  $_SESSION["user"] = "anonymous";
 }
 
 
 //Fonction de démarrage standard d'une session utilisateur
 function initializeUserSession($user) {
     session_start();
-    $_SESSION["emprunteur"] = $user;
-}
-
+    $_SESSION["user"] = $user;
+    $_SESSION["codeMsg"] =[]; //session des codes message succes ou erreur
+  }
+  
 //Fonction de déconnexion
 function logout() {
-  session_start();
-  session_unset();
-  session_destroy();
-  header("Location: index.php?success=Vous avez été déconnecté, à bientôt :)");
-}
+
+    session_start();
+    session_unset();
+    session_destroy();
+  }
 
 
 //Fonction pour vérifier qu'un utilisateur est connecté
 function isLogged() {
-  if(isset($_SESSION["emprunteur"]) && !empty($_SESSION["emprunteur"])) {
+  if(isset($_SESSION["user"]) && !empty($_SESSION["user"])) {
     return true;
   }
   return false;
 }
-
-
 
 ?>
