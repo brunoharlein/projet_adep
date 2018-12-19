@@ -1,12 +1,7 @@
 <?php
-<<<<<<< HEAD
-session_start();
-  require "../modele/empruntsManager.php"; //pour les fonctions qui servent à l'emprunt
-=======
 
   require "model/empruntsManager.php";
   require "model/materielsManager.php"; //pour les fonctions qui servent à l'emprunt
->>>>>>> master
   //var_dump(implode(',',getdate()));
 
 function emprunter() {
