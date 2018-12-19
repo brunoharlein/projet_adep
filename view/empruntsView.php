@@ -1,8 +1,8 @@
 <?php
-include "template/header.php";
-require "modele/db.php";
-require "modele/empruntsManager.php";
-require "modele/materielsManager.php";
+include "view/template/header.php";
+require "model/db.php";
+require "model/empruntsManager.php";
+require "model/materielsManager.php";
 
 ?>
 <main>
@@ -11,7 +11,7 @@ require "modele/materielsManager.php";
       <h1 class="col-4 mt-0">Emprunter du matériel</h1>
 
 
-<form action="emprunts.php<?php echo (isset($_POST['choix']))?'?tri='.$_POST['choix']:''; ?>" method="post" name="tri">
+<form action="order"<?php echo (isset($_POST['choix']))?'?tri='.$_POST['choix']:''; ?>" method="post" name="tri">
       <!-- <form action="emprunts.php?tri=" method="post" name="tri"> -->
   <div class="form-row align-items-center">
     <div class="col-auto my-1">
@@ -73,7 +73,7 @@ require "modele/materielsManager.php";
             <td class="d-none d-md-table-cell text-center"><?php echo ($value['acces']==1)?"Libre":"Restreint"; ?></td>
             <td>
               <div>
-                <a <?php setHref('emprunts/ajout') ?> href="<?php echo 'service/empruntsTraitement.php?id='. $value['id'].'&etat=' . $value['etat']; ?>" class='btn btn-primary btn-xs text-center <?php echo ($value['etat']== 0)?"disabled bts-secondary":""; ?> ' > Emprunter</a>
+                <a <?php setHref('emprunts/emprunter') ?> > Emprunter</a>
               </div>
 
             </td>
@@ -88,3 +88,4 @@ require "modele/materielsManager.php";
 <?php
 include "template/footer.php";
 ?>
+ <!--href="<?php //echo 'service/empruntsTraitement.php?id='. $value['id'].'&etat=' . $value['etat']; ?>" class='btn btn-primary btn-xs text-center <?php //echo ($value['etat']== 0)?"disabled bts-secondary":""; ?> '-->

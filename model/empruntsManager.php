@@ -8,7 +8,7 @@
         return $result;
       }
       //fonction qui insère une ligne dans la table emprunt de la bdd quand un emprunteur clique sur emprunter
-      function addEmprunt($db,$id_materiel, $id_emprunteur) {
+      function addEmprunt($id_materiel, $id_emprunteur) {
         $db = getDataBase();
         $today = date("y.m.d");
         $requete = $db->prepare('INSERT INTO emprunt(idEmprunteur, idMateriel, dateEmprunt) VALUES( :idEmprunteur, :idMateriel, :dateEmprunt)');
@@ -17,7 +17,7 @@
         return $result;
       }
 
-
+//à mettre en une seule fonction?
      // trie de A à Z
      function orderByAz() {
        $db = getDataBase();

@@ -24,7 +24,7 @@ function makeAction($target, $parameters = false) {
 }
 
 //Function pour indiquer l'action du formulaire vers une l'url absolue
-// $target est la route de destion, $parameters (optionnel) attend un tableau associatif avec les éventuels paramètres de la route
+// $target est la route de destination, $parameters (optionnel) attend un tableau associatif avec les éventuels paramètres de la route
 // exemple : setAction(user/new) ou setAction(user/modify, ["id" => 4])
 function setAction($target, $parameters = false) {
   $action = makeAction($target, $parameters);

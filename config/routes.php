@@ -85,8 +85,7 @@ function getRoutes() {
     "emprunter" => [
       "emprunts",
       "addEmprunt",
-      ["idMateriel" => ["integer"]],
-
+      ["id" => ["integer"]],
       "status" => "user"
     ],
 
