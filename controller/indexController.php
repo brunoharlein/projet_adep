@@ -1,6 +1,5 @@
 <?php
 require "model/userManager.php";
-require "service/sessionManager.php";
 // require "service/form.php";
 // require "service/errorMsg.php";
  ?>

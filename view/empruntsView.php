@@ -1,5 +1,32 @@
 <?php include "view/template/header.php"; ?>
-
+<?php   //var_dump($_SESSION["codeMsg"][0]);
+//var_dump($materiels);
+ ?>
+<?php
+//Affichage du message de confirmation ou d'erreur
+if (isset($_SESSION["codeMsg"][0])) { ?>
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-success text-center mt-2" role="alert">
+            <?php
+            echo afficheErrorMsg($_SESSION["codeMsg"][0],"Votre emprunt");
+            array_pop($_SESSION["codeMsg"]); //retire le code de la session
+            ?>
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php } ?>
 <main>
   <div class="container">
     <section class="d-flex flex-row justify-content-between">
@@ -54,12 +81,12 @@
     //   }
     // }
   //  else{
-      $result = getMateriels($db);
+      //$result = getMateriels();
 
     //}
         //récupère toutes les entrées de la table materiel
         //affiche les données sur chaque entrée dans le tableau
-          foreach ($result as $key => $value) {
+          foreach ($materiels as $key => $value) {
          ?>
         <tbody>
           <tr>
@@ -69,7 +96,7 @@
             <td class="d-none d-md-table-cell text-center"><?php echo ($value['acces']==1)?"Libre":"Restreint"; ?></td>
             <td>
               <div>
-                <a <?php setHref('emprunter',['id' => $value['id'], $value['etat']]) ?> class='btn btn-primary btn-xs text-center <?php echo ($value['etat']== 0)?"disabled bts-secondary":""; ?> ' > Emprunter</a>
+                <a <?php setHref('emprunter',['id' => $value['id']]) ?> class='btn btn-primary btn-xs text-center <?php echo ($value['etat']== 0)?"disabled bts-secondary":""; ?> ' > Emprunter</a>
               </div>
 
             </td>
@@ -81,5 +108,5 @@
       </table>
     </div>
 </main>
-<?php include "/view/template/footer.php"; ?>
+<?php include "view/template/footer.php"; ?>
  <!--href="<?php //echo 'service/empruntsTraitement.php?id='. $value['id'].'&etat=' . $value['etat']; ?>" -->

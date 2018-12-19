@@ -19,9 +19,9 @@
 
 //à mettre en une seule fonction?
      // trie de A à Z
-     function orderByAz() {
+     function orderBy($tri,$type) {
        $db = getDataBase();
-       $query = $db->query("SELECT * FROM materiel ORDER by nom");
+       $query = $db->query("SELECT * FROM materiel ORDER by $tri");
        $orderAZ = $query->fetchall(PDO::FETCH_ASSOC);
        return $orderAZ;
      }
@@ -29,7 +29,7 @@
      // trie de Z à A
      function orderByZa() {
        $db = getDataBase();
-       $query = $db->query("SELECT * FROM materiel ORDER by nom DESC");
+       $query = $db->query("SELECT * FROM materiel ORDER by nom $type");
        $orderZA = $query->fetchall(PDO::FETCH_ASSOC);
        return $orderZA;
      }

@@ -1,11 +1,4 @@
-<?php
-// session_start();
-// if (isset($_SESSION["emprunteur"])) {
-//   $statut =intval($_SESSION["emprunteur"]["statut"]);
-// }
-//var_dump($_SESSION["user"]);
-require "service/sessionManager.php"
-?>
+
 <!doctype html>
 <html class="no-js" lang="fr">
 
