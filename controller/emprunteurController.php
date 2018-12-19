@@ -7,6 +7,14 @@ function getEmprunteur(){
     require "view/emprunteurView.php";
 }
 
+//fonction qui reccupere un seul emprunteur selon son id
+// function getEmprunteurId() {
+//     $id = $_GET["id"];
+//     if (!empty($_GET["id"])) {
+//         $emprunteur = getBorrowerId($id);
+//     }
+// }
+
 // fonction qui ajoute un emprunteur
 function addEmprunteur() {
     if (!empty($_POST)) {
@@ -20,13 +28,14 @@ function addEmprunteur() {
 function editEmprunteur() {
     if(isset($_GET["id"])) {
         $id = htmlspecialchars($_GET["id"]);
-        $emprunteur = getBorrower($id);
+        $emprunteur = getBorrowerId($id);
+        var_dump($emprunteur);
     }
     if (!empty($_POST)) {
         editBorrower($_POST);
         redirectTo("emprunteurs");
     }
-    require "editEmprunteurView.php";
+    require "view/editEmprunteurView.php";
 }
 
 // fonction qui supprime un emprunteur
