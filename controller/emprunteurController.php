@@ -39,9 +39,9 @@ function editEmprunteur() {
 }
 
 // fonction qui supprime un emprunteur
-function deleteEmprunteur($id) {
+function deleteEmprunteur() {
     $id = htmlspecialchars($_GET["id"]);
     deleteBorrower($id);
-    redirectTo("");
+    redirectTo("emprunteurs");
 }
 ?>
