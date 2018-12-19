@@ -1,5 +1,6 @@
 <?php include "view/template/header.php"; ?>
-<?php   //var_dump($_SESSION["codeMsg"][0]);
+<?php
+//var_dump($_SESSION["codeMsg"][0]);
 //var_dump($materiels);
  ?>
 <?php
