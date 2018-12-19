@@ -24,8 +24,8 @@
     <input type="password" class="form-control" id="confirmation-password" name="password-confirm"  value="<?php echo (isset($emprunteur)?$emprunteur["password-confirm"]:""); ?>">
   </div>
   <div class="form-group">
-    <label for="Statut">Statut : </label><br>
-    <input type="text" class="form-control" id="Statut" name="statut"  value="<?php echo (isset($emprunteur)?$emprunteur["statut"]:""); ?>">
+    <label for="Status">Status : </label><br>
+    <input type="text" class="form-control" id="Status" name="status"  value="<?php echo (isset($emprunteur)?$emprunteur["status"]:""); ?>">
   </div>
   <div class="form-group">
     <label for="Poste">Poste</label>

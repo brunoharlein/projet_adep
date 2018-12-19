@@ -21,14 +21,14 @@ function getBorrowerId($id) {
 // fonction qui ajoute un emprunteur
 function addBorrower($emprunteur) {
     $db = getDataBase();
-    $req = $db->prepare("INSERT INTO emprunteur (email, nom, prenom, password, poste, statut) VALUES (:email, :nom, :prenom, :password, :poste, :statut)");
+    $req = $db->prepare("INSERT INTO emprunteur (email, nom, prenom, password, poste, status) VALUES (:email, :nom, :prenom, :password, :poste, :status)");
     $result = $req->execute([
         "email" => $emprunteur["email"],
         "nom" => $emprunteur["nom"],
         "prenom" => $emprunteur["prenom"],
         "password" => $emprunteur["password"],
         "poste" => $emprunteur["poste"],
-        "statut" => $emprunteur["statut"]
+        "status" => $emprunteur["status"]
     ]);
     $req->closeCursor();
     return $result;
@@ -41,14 +41,14 @@ function editBorrower($form) {
     if (!empty($_GET["id"])) {
         $emprunteur = getBorrowerId($id);
     
-    $req = $db->prepare("UPDATE emprunteur SET email = :email, nom = :nom, prenom = :prenom, password = :password, poste = :poste, statut = :statut WHERE id = :id");
+    $req = $db->prepare("UPDATE emprunteur SET email = :email, nom = :nom, prenom = :prenom, password = :password, poste = :poste, status = :status WHERE id = :id");
     $result = $req->execute([
         "email" => $form["email"],
         "nom" => $form["nom"],
         "prenom" => $form["prenom"],
         "password" => $form["password"],
         "poste" => $form["poste"],
-        "statut" => $form["statut"],
+        "status" => $form["status"],
         "id" => $id
     ]);
     $req->closeCursor();
