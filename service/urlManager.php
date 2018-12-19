@@ -43,4 +43,12 @@ function redirectTo($target, $parameters = false) {
   header("Location: " . $url);
   exit;
 }
+
+// load class
+function loadCss($file) {
+  $config = getGlobalConfig();
+  $path = "http://" . $config["host"];
+  $path .= "public/css/$file";
+  echo "<link rel='stylesheet' href='$path'>";
+}
  ?>

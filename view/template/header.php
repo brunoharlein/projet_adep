@@ -13,8 +13,8 @@
   <!-- Place favicon.ico in the root directory -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" href=<?php echo "http://".$_SERVER['SERVER_NAME']."/lab/projet_adep/public/css/normalize.css"; ?> >
-  <link rel="stylesheet" href=<?php echo "http://".$_SERVER['SERVER_NAME']."/lab/projet_adep/public/css/main.css"; ?> >
+  <?php loadCss("normalize.css") ?>
+  <?php loadCss("main.css") ?>
 </head>
 <body class="d-flex flex-column justify-content-between">
 <header class="jumbotron jumbotron-fluid py-0 mb-0">
