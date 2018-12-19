@@ -28,13 +28,27 @@ function emprunter() {
 }
 
 function allMateriels() {
-  if(getMateriels()) {
-    $materiels = getMateriels();
+  if(isset($_POST) && !empty($_POST)) {
+    //alors fonction avec requete de tri
+    if(getMaterielsEmprunts($_POST['triMaterielsEmprunts'])){
+      $materiels =  getMaterielsEmprunts($_POST['triMaterielsEmprunts']);
+    }
+    else {
+      $materiels = NULL;
+    }
   }
   else {
-    $materiels = NULL;
+    if(getMaterielsEmprunts('nomAZ')){
+      $materiels =  getMaterielsEmprunts('nomAZ');
+    }
+    else {
+      $materiels = NULL;
+    }
   }
+
+
   require "view/empruntsView.php";
 }
+
 
 ?>

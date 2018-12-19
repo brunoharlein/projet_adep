@@ -1,7 +1,7 @@
 <?php include "view/template/header.php"; ?>
 <?php
 //var_dump($_SESSION["codeMsg"][0]);
-//var_dump($materiels);
+//var_dump($_POST);
  ?>
 <?php
 //Affichage du message de confirmation ou d'erreur
