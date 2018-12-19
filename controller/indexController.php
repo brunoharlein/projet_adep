@@ -1,37 +1,38 @@
 <?php
 require "model/userManager.php";
-// require "service/form.php";
-// require "service/errorMsg.php";
+// require "service/formChecker.php";
+require "service/errorMsg.php";
  ?>
 
 <?php
 function login() {
-  //$messages = errorsLogin();
-  $code = "";
   if (isset($_POST)) {
     if (!empty($_POST)) {
-      //if (checkValue($_POST)) {
         if (getUser($_POST)) {
           $user = getUser($_POST);
           //test passwordverify à faire
-          // if (!empty($user) && password_verify($_POST["psw"],$user["psw"])) {
-          //   // code...
-          // }
-          initializeUserSession($user);
-          if ($_SESSION["user"]["status"] === "admin") {
-            redirectTo("materiels");
-          }else {
-            redirectTo("emprunter/list");
-          }
+          //if (!empty($user) && password_verify($_POST["password"],$user["password"])) {
+            initializeUserSession($user);
+            if ($_SESSION["user"]["status"] === "admin") {
+              redirectTo("materiels");
+            }else {
+              redirectTo("emprunter/list");
+            }
         }
         else {
-          $code = "1";
+          initializeMsgSession();
+          array_push($_SESSION["codeMsg"], "2"); //ajoute le code msg à la session code
         }
-      //}
     }
+    // else {
+    //   initializeMsgSession();
+    //   array_push($_SESSION["codeMsg"], "1"); //ajoute le code msg à la session code
+    // }
   }
-  require "view/indexView.php";
+require "view/indexView.php";
 }
+
+
  function deconnect(){
    logout();
    redirectTo("login");
