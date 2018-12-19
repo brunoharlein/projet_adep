@@ -21,7 +21,7 @@ function login() {
           if ($_SESSION["user"]["status"] === "admin") {
             redirectTo("materiels");
           }else {
-            redirectTo("emprunter");
+            redirectTo("emprunter/list");
           }
         }
         else {

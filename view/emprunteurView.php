@@ -14,7 +14,7 @@ include "template/header.php";
       <th scope="col">Prenom</th>
       <th scope="col">Password</th>
       <th scope="col">Poste</th>
-      <th scope="col">Status</th>
+      <th scope="col">Statut</th>
       <th scope="col">Modifier</th>
       <th scope="col">Supprimer</th>
     </tr>
@@ -30,7 +30,7 @@ include "template/header.php";
       <td><?php echo $value["prenom"] ?></td>
       <td><?php echo $value["password"] ?></td>
       <td><?php echo $value["poste"] ?></td>
-      <td><?php echo $value["statut"] ?></td>
+      <td><?php echo $value["status"] ?></td>
       <td><a href="emprunteur/edit?id=<?php echo $value["id"]; ?>"><i class="fas fa-edit fa-2x"></i></a></td>
       <td><a href="emprunteur/suppr?id=<?php echo $value["id"]; ?>"><i class="fas fa-times fa-2x"></i></a></td>
     </tr>

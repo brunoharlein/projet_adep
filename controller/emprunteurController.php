@@ -1,8 +1,6 @@
 <?php
-<<<<<<< HEAD
-=======
+
 require "model/emprunteurManager.php";
->>>>>>> e23a0240c7ebb3e633415160552ad68bba8781a8
 
 // fonction qui affiche tout les emprunteurs
 function getEmprunteur(){
