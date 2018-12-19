@@ -8,6 +8,16 @@ function getBorrower(){
     return $result;
 }
 
+//fonction qui reccupere un seul emprunteur selon son id
+function getBorrowerId($id) {
+    $db = getDataBase();
+    $req = $db->prepare("SELECT * FROM emprunteur WHERE id = :id");
+    $req->execute(["id" => $id]);
+    $result = $req->fetch(PDO::FETCH_ASSOC);
+    $req->closeCursor();
+    return $result;
+}
+
 // fonction qui ajoute un emprunteur
 function addBorrower($emprunteur) {
     $db = getDataBase();
@@ -27,7 +37,11 @@ function addBorrower($emprunteur) {
 // fonction qui modifie un emprunteur
 function editBorrower($form) {
     $db = getDataBase();
-    $req = prepare("UPDATE emprunteur SET email = :email, nom = :nom, prenom = :prenom, password = :password, poste = :poste, statut = :statut WHERE id = :id");
+    $id = $_GET["id"];
+    if (!empty($_GET["id"])) {
+        $emprunteur = getBorrowerId($id);
+    
+    $req = $db->prepare("UPDATE emprunteur SET email = :email, nom = :nom, prenom = :prenom, password = :password, poste = :poste, statut = :statut WHERE id = :id");
     $result = $req->execute([
         "email" => $form["email"],
         "nom" => $form["nom"],
@@ -35,16 +49,17 @@ function editBorrower($form) {
         "password" => $form["password"],
         "poste" => $form["poste"],
         "statut" => $form["statut"],
-        "id" => $form["id"]
+        "id" => $id
     ]);
     $req->closeCursor();
     return $result;
+}
 }
 
 // fonction qui supprime un emprunteur
 function deleteBorrower($id) {
     $db = getDataBase();
-    $req = prepare("DELETE FROM emprunteur WHERE id = :id");
+    $req = $db->prepare("DELETE FROM emprunteur WHERE id = :id");
     $result = $req->execute(["id" => $id]);
     $req->closeCursor();
     return $result;
