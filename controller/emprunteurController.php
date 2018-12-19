@@ -1,4 +1,5 @@
 <?php
+require "model/emprunteurManager.php";
 
 // fonction qui affiche tout les emprunteurs
 function getEmprunteur(){
