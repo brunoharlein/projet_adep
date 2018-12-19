@@ -8,7 +8,7 @@
         return $result;
       }
       //fonction qui insère une ligne dans la table emprunt de la bdd quand un emprunteur clique sur emprunter
-      function addEmprunt($db,$id_materiel, $id_emprunteur) {
+      function addEmprunt($id_materiel, $id_emprunteur) {
         $db = getDataBase();
         $today = date("y.m.d");
         $requete = $db->prepare('INSERT INTO emprunt(idEmprunteur, idMateriel, dateEmprunt) VALUES( :idEmprunteur, :idMateriel, :dateEmprunt)');
@@ -17,11 +17,11 @@
         return $result;
       }
 
-
+//à mettre en une seule fonction?
      // trie de A à Z
-     function orderByAz() {
+     function orderBy($tri,$type) {
        $db = getDataBase();
-       $query = $db->query("SELECT * FROM materiel ORDER by nom");
+       $query = $db->query("SELECT * FROM materiel ORDER by $tri");
        $orderAZ = $query->fetchall(PDO::FETCH_ASSOC);
        return $orderAZ;
      }
@@ -29,7 +29,7 @@
      // trie de Z à A
      function orderByZa() {
        $db = getDataBase();
-       $query = $db->query("SELECT * FROM materiel ORDER by nom DESC");
+       $query = $db->query("SELECT * FROM materiel ORDER by nom $type");
        $orderZA = $query->fetchall(PDO::FETCH_ASSOC);
        return $orderZA;
      }
