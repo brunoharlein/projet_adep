@@ -8,19 +8,21 @@ function getEmprunteur(){
     require "view/emprunteurView.php";
 }
 
-//fonction qui reccupere un seul emprunteur selon son id
-// function getEmprunteurId() {
-//     $id = $_GET["id"];
-//     if (!empty($_GET["id"])) {
-//         $emprunteur = getBorrowerId($id);
-//     }
-// }
-
 // fonction qui ajoute un emprunteur
 function addEmprunteur() {
     if (!empty($_POST)) {
-        addBorrower($_POST);
+        if ($emprunteur["email"] !== $_POST["email"]) {
+            if() {
+
+            }
+        
+        $emprunteur = addBorrower($_POST);
         redirectTo("emprunteurs");
+        }
+        else {
+            redirectTo("");
+            
+        }
     }
     require "view/addEmprunteurView.php";
 }

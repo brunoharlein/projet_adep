@@ -1,8 +1,8 @@
 <?php
-require "model/emprunterManager.php"
+require "model/emprunterManager.php";
 
 // fonction pour historique
-function getHistorical () {
+function getHistorical() {
 $historicals = getHistorical();
 require "view/historicalView.php";
 // echo (isset($_POST['choix']))?'?tri='.$_POST['choix']:'';
