@@ -2,8 +2,6 @@
 require "model/userManager.php";
 // require "service/form.php";
 // require "service/errorMsg.php";
-
-
  ?>
 
 <?php
@@ -25,7 +23,6 @@ function login() {
           }else {
             redirectTo("emprunter");
           }
-
         }
         else {
           $code = "1";
@@ -35,9 +32,6 @@ function login() {
   }
   require "view/indexView.php";
 }
-
-
-
  function deconnect(){
    logout();
    redirectTo("login");
