@@ -6,7 +6,7 @@
         <div class="d-flex justify-content-between mb-3">
           <h2><?php echo (isset($title))?$title:""; ?> </h2>
           <div class="">
-            <a <?php setHref("materiels"); ?> class="btn btn-primary">
+            <a <?php setHref("materiels"); ?> class="btn btn-success">
               <span class="d-none d-md-block">Retour à la liste</span>
               <span class="d-block d-md-none"><i class="fas fa-arrow-left"></i></span>
             </a>

@@ -1,7 +1,7 @@
 
-<footer class="jumbotron jumbotron-fluid p-1 mb-0">
+<footer class="jumbotron jumbotron-fluid p-1 mb-0 bg-dark">
   <div class="container">
-      <p class="width pt-2">Le secrétariat est fermé le Lundi matin. </p>
+      <p class="width pt-2 text-white">Le secrétariat est fermé le Lundi matin. </p>
       <hr class="none">
   </div>
   <div class="container d-flex justify-content-around mb-2">
