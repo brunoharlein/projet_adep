@@ -12,18 +12,17 @@ function errorsMsg($subject){
   ];
 }
 
-function getErrorEmprunteur($subject) {
-  return [
+
+function getErrorEmprunteur($code) {
+  $references = [
     "0" => "Il faut remplir le formulaire",
     "1" => "Certains champs sont vides",
     "2" => "Le nom utilisateur est trop court",
     "3" => "Le mot de passe ne correspond pas à sa confirmation",
     "4" => "Le mot de passe ne respecte pas les conditions indiquées",
     "5" => "Un utilisateur utilise déjà cet email merci d'en choisir un autre",
-    "6" => "Veuillez entrer un email au format valide",
-    "7" => "Veuillez saisir des identifiants valident.",
-    "8" => "Il faut vous identifier pour accéder au contenu",
-    "9" => "Contenu reservé aux administrateurs du site"
   ];
+  return $references;
 }
+
  ?>

@@ -1,5 +1,7 @@
 <?php
+
 require "model/emprunteurManager.php";
+require "service/errorMsg.php";
 
 // fonction qui affiche tout les emprunteurs
 function getEmprunteur(){
@@ -11,19 +13,16 @@ function getEmprunteur(){
 // fonction qui ajoute un emprunteur
 function addEmprunteur() {
     if (!empty($_POST)) {
-        if ($emprunteur["email"] !== $_POST["email"]) {
-            if() {
 
-            }
-        
-        $emprunteur = addBorrower($_POST);
+        foreach ($_POST as $key => $value) {
+            $_POST[$key] = htmlspecialchars($value);
+          }
+        if (!empty($_POST["password"])) {
+          password_hash($_POST["password"]);
+        }
+        addBorrower($_POST);
         redirectTo("emprunteurs");
         }
-        else {
-            redirectTo("");
-            
-        }
-    }
     require "view/addEmprunteurView.php";
 }
 

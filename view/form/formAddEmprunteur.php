@@ -1,5 +1,7 @@
-<h2 class="text-center mt-5">Ajouter un emprunteur</h2>
-<a href="../emprunteurs"><button class="btn btn-primary">Retour à la liste</button></a>
+<div class="text-center">
+  <h2 class="mt-5">Ajouter un emprunteur</h2>
+  <a href="../emprunteurs"><button class="btn btn-primary">Retour à la liste</button></a>
+</div>
 <form class="col-12 col-md-12 col-lg-8 mx-auto my-5" action="" method="post">
   <div class="form-group">
     <label for="email">Email : </label>
@@ -25,5 +27,7 @@
     <label for="Poste">Poste</label>
     <input type="text" class="form-control" id="Poste" placeholder="Poste..." name="poste"  value="">
   </div>
-  <button type="submit" class="btn btn-success">Ajouter</button>
+  <div class="text-center">
+    <button type="submit" class="btn btn-success">Ajouter</button>
+  </div>
 </form>

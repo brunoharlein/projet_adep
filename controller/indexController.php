@@ -2,8 +2,6 @@
 require "model/userManager.php";
 // require "service/form.php";
 // require "service/errorMsg.php";
-
-
  ?>
 
 <?php
@@ -23,9 +21,8 @@ function login() {
           if ($_SESSION["user"]["status"] === "admin") {
             redirectTo("materiels");
           }else {
-            redirectTo("emprunter");
+            redirectTo("emprunter/list");
           }
-
         }
         else {
           $code = "1";
@@ -35,9 +32,6 @@ function login() {
   }
   require "view/indexView.php";
 }
-
-
-
  function deconnect(){
    logout();
    redirectTo("login");

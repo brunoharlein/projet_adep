@@ -1,7 +1,7 @@
 <?php
 
-require "template/header.php";
-require "form/formEditEmprunteur.php";
-require "template/footer.php";
+require "view/template/header.php";
+require "view/form/formEditEmprunteur.php";
+require "view/template/footer.php";
 
 ?>

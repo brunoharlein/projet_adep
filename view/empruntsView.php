@@ -1,35 +1,39 @@
+<?php include "view/template/header.php"; ?>
 <?php
-include "template/header.php";
-require "modele/db.php";
-require "modele/empruntsManager.php";
-require "modele/materielsManager.php";
-
-?>
+//var_dump($_SESSION["codeMsg"][0]);
+//var_dump($_POST);
+ ?>
+<?php
+//Affichage du message de confirmation ou d'erreur
+if (isset($_SESSION["codeMsg"][0])) { ?>
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-success text-center mt-2" role="alert">
+            <?php
+            echo afficheErrorMsg($_SESSION["codeMsg"][0],"Votre emprunt");
+            array_pop($_SESSION["codeMsg"]); //retire le code de la session
+            ?>
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php } ?>
 <main>
   <div class="container">
     <section class="d-flex flex-row justify-content-between">
       <h1 class="col-4 mt-0">Emprunter du matériel</h1>
-<form action="emprunts.php<?php echo (isset($_POST['choix']))?'?tri='.$_POST['choix']:''; ?>" method="post" name="tri">
-      <!-- <form action="emprunts.php?tri=" method="post" name="tri"> -->
-  <div class="form-row align-items-center">
-    <div class="col-auto my-1">
-      <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-      <select name="choix" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Options</option>
-        <option value="1">noms de A à Z</option>
-        <option value="2">noms de Z à A</option>
-        <option value="3">dispo ou pas</option>
-      </select>
-    </div>
-    <div class="col-auto my-1">
-    </div>
-    <div class="col-auto my-1">
-      <button type="submit" class="btn btn-primary">OK</button>
-    </div>
-  </div>
-</form>
+      <?php require "form/sortEmpruntsListForm.php"; ?>
 
->>>>>>> master
     </section>
     </div>
     <div class="container">
@@ -44,25 +48,26 @@ require "modele/materielsManager.php";
           </tr>
         </thead>
         <?php
-        if (isset($_POST['choix'])) {
-          switch ($_POST['choix']) {
-            case 1:
-              $result = orderByAz($db);
-              break;
-              case 2:
-                $result = orderByZa($db);
-              break;
-              case 3:
-                $result = orderByEtat($db);
-              break;
-      }
-    }else{
-      $result = getMateriels($db);
+    //     if (isset($_POST['choix'])) {
+    //       switch ($_POST['choix']) {
+    //         case 1:
+    //           $result = orderByAz($db);
+    //           break;
+    //           case 2:
+    //             $result = orderByZa($db);
+    //           break;
+    //           case 3:
+    //             $result = orderByEtat($db);
+    //           break;
+    //   }
+    // }
+  //  else{
+      //$result = getMateriels();
 
-    }
+    //}
         //récupère toutes les entrées de la table materiel
         //affiche les données sur chaque entrée dans le tableau
-          foreach ($result as $key => $value) {
+          foreach ($materiels as $key => $value) {
          ?>
         <tbody>
           <tr>
@@ -72,7 +77,7 @@ require "modele/materielsManager.php";
             <td class="d-none d-md-table-cell text-center"><?php echo ($value['acces']==1)?"Libre":"Restreint"; ?></td>
             <td>
               <div>
-                <a <?php setHref('emprunts/ajout') ?> href="<?php echo 'service/empruntsTraitement.php?id='. $value['id'].'&etat=' . $value['etat']; ?>" class='btn btn-primary btn-xs text-center <?php echo ($value['etat']== 0)?"disabled bts-secondary":""; ?> ' > Emprunter</a>
+                <a <?php setHref('emprunter',['id' => $value['id']]) ?> class='btn btn-primary btn-xs text-center <?php echo ($value['etat']== 0)?"disabled bts-secondary":""; ?> ' > Emprunter</a>
               </div>
 
             </td>
@@ -84,6 +89,5 @@ require "modele/materielsManager.php";
       </table>
     </div>
 </main>
-<?php
-include "template/footer.php";
-?>
+<?php include "view/template/footer.php"; ?>
+ <!--href="<?php //echo 'service/empruntsTraitement.php?id='. $value['id'].'&etat=' . $value['etat']; ?>" -->

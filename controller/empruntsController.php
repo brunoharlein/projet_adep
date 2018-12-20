@@ -3,27 +3,52 @@
   require "model/empruntsManager.php";
   require "model/materielsManager.php"; //pour les fonctions qui servent à l'emprunt
   //var_dump(implode(',',getdate()));
+  require "service/errorMsg.php";
 
 function emprunter() {
   $id_emprunteur = intval($_SESSION['user']['id']);
   if ((isset($_GET['id'])) && (!empty($_GET['id']))) {
       $id_materiel = intval($_GET['id']);
-      updateEtatMateriel( $id_materiel);
-      addEmprunt($id_materiel, $id_emprunteur);
-      //var_dump($id_emprunteur, $id_materiel);
-      //var_dump(addEmprunt($id_materiel, $id_emprunteur));
-      require "view/empruntsView.php";
-      //header('Location:../emprunts.php?msg=1');
+      if(addEmprunt($id_materiel, $id_emprunteur)) {
+        if(updateEtatMateriel( $id_materiel)) {
+          array_push($_SESSION["codeMsg"], "3"); //ajoute le code msg à la session code
+          redirectTo("emprunter/list");
+        }
+        else {
+          array_push($_SESSION["codeMsg"], "4");
+          redirectTo("emprunter/list");
+        }
       }
+      else {
+        array_push($_SESSION["codeMsg"], "4");
+        redirectTo("emprunter/list");
+      }
+  }
+  //require "view/empruntsView.php";
 }
 
 function allMateriels() {
-  if(getMateriels()) {
-    $materiels = getMateriels();
+  if(isset($_POST) && !empty($_POST)) {
+    //alors fonction avec requete de tri
+    if(getMaterielsEmprunts($_POST['triMaterielsEmprunts'])){
+      $materiels =  getMaterielsEmprunts($_POST['triMaterielsEmprunts']);
+    }
+    else {
+      $materiels = NULL;
+    }
   }
   else {
-    $materiels = NULL;
+    if(getMaterielsEmprunts('nomAZ')){
+      $materiels =  getMaterielsEmprunts('nomAZ');
+    }
+    else {
+      $materiels = NULL;
+    }
   }
+
+
   require "view/empruntsView.php";
 }
+
+
 ?>

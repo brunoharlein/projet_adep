@@ -40,8 +40,9 @@ function editBorrower($form) {
     $id = $_GET["id"];
     if (!empty($_GET["id"])) {
         $emprunteur = getBorrowerId($id);
-    
+
     $req = $db->prepare("UPDATE emprunteur SET email = :email, nom = :nom, prenom = :prenom, password = :password, poste = :poste, status = :status WHERE id = :id");
+
     $result = $req->execute([
         "email" => $form["email"],
         "nom" => $form["nom"],
@@ -64,8 +65,5 @@ function deleteBorrower($id) {
     $req->closeCursor();
     return $result;
 }
+
 ?>
-
-
-<?php
-

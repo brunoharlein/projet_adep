@@ -1,7 +1,7 @@
 <?php
 //Function which return the tab containing error messages with their indexes
-function getReferences() {
-  return [
+function getReferences($code) {
+  $references = [
     "0" => "Il faut remplir le formulaire",
     "1" => "Certains champs sont vides",
     "2" => "Le nom utilisateur est trop court",
@@ -13,6 +13,7 @@ function getReferences() {
     "8" => "Il faut vous identifier pour accéder au contenu",
     "9" => "Contenu reservé aux administrateurs du site"
   ];
+  return $references;
 }
 
 //Fonction which on the base of chain error codes returns corresponding message

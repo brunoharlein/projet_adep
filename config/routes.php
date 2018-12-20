@@ -57,26 +57,26 @@ function getRoutes() {
     "emprunteurs" => [
      "emprunteur",
      "getEmprunteur",
-    //  "status" => "admin"
+     "status" => "admin"
    ],
    "emprunteur/ajout" => [
     "emprunteur",
     "addEmprunteur",
-    // "status" => "admin"
+    "status" => "admin"
    ],
    "emprunteur/edit" => [
     "emprunteur",
     "editEmprunteur",
     ["id" => ["integer"]
    ],
-    // "status" => "admin"
+    "status" => "admin"
    ],
    "emprunteur/suppr" => [
     "emprunteur",
     "deleteEmprunteur",
     ["id" => ["integer"]
    ],
-    // "status" => "admin"
+    "status" => "admin"
    ],
 
    /////////////////////////////////////////////////////////////////// end roads for borrower
@@ -85,9 +85,8 @@ function getRoutes() {
 
     "emprunter" => [
       "emprunts",
-      "addEmprunt",
-      ["idMateriel" => ["integer"]],
-
+      "emprunter",
+      ["id" => ["integer"]],
       "status" => "user"
     ],
 
