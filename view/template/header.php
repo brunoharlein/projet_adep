@@ -20,11 +20,11 @@
 <header class="jumbotron jumbotron-fluid py-0 mb-0">
   <div class="container d-flex justify-content-between">
     <!-- Logo and title ADEP -->
-    <div id="logoHeader" class="">
-      <a href="https://www.adep-roubaix.fr/" target="_blank"><img src=<?php echo "http://".$_SERVER['SERVER_NAME']."/Lab/projet_adep/public/img/adep-logo.png"; ?> class="img-fluid" alt="Logo de l'ADEP"></a>
+    <div id="logoHeader" class="d-flex align-items-center">
+      <a href="https://www.adep-roubaix.fr/" target="_blank"><img src=<?php echo "http://".$_SERVER['SERVER_NAME']."/Lab/projet_adep/public/img/adep-logo.png"; ?> class="" alt="Logo de l'ADEP"></a>
     </div>
     <div class="d-flex align-items-center justify-content-center ">
-      <h1 id="titreHeader" class="my-3">Gestion des prêts</h1>
+      <h1 id="titreHeader">Gestion des prêts</h1>
     </div>
     <!-- Navigation Mobile -->
     <!-- Affichage du menu si User connecté -->
@@ -48,30 +48,33 @@
     </div>
     <?php } ?>
   </div>
+  </header>
   <!-- Navigation Tab and Screen -->
   <!-- Affichage du menu si User connecté -->
   <?php if (isLogged()) { ?>
-  <nav class="tab container ">
-    <ul class="nav d-flex justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" <?php setHref('emprunter/list') ?> >Emprunter</a>
-        </li>
-        <!-- //Si l'emprunteur est admin -->
-          <?php if ($_SESSION["user"]["status"] === "admin") { ?>
-          <li class="nav-item">
-            <a class="nav-link" <?php setHref("materiels"); ?>>Les matériels</a>
+    <nav class="tab navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" <?php setHref('emprunter/list') ?> >Emprunter</a>
           </li>
+          <!-- //Si l'emprunteur est admin -->
+            <?php if ($_SESSION["user"]["status"] === "admin") { ?>
+            <li class="nav-item">
+              <a class="nav-link" <?php setHref("materiels"); ?>>Les matériels</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" <?php setHref("emprunteurs"); ?>>Les emprunteurs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" <?php setHref("historique"); ?>>L'historique</a>
+            </li>
+          <?php } ?>
           <li class="nav-item">
-            <a class="nav-link" <?php setHref("emprunteurs"); ?>>Les emprunteurs</a>
+            <a class="nav-link" <?php setHref("logout"); ?>>Se déconnecter</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" <?php setHref("historique"); ?>>L'historique</a>
-          </li>
-        <?php } ?>
-        <li class="nav-item">
-          <a class="nav-link" <?php setHref("logout"); ?>>Se déconnecter</a>
-        </li>
-    </ul>
-  </nav>
+        </ul>
+      </div>
+    </nav>
+
   <?php } ?>
-</header>
