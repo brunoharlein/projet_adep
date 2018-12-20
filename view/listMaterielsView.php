@@ -40,7 +40,7 @@ if (isset($_SESSION["codeMsg"][0])) { ?>
       </div>
       <div class="table-responsive">
         <table class="table table-hover">
-                <thead>
+                <thead class="thead-light">
                   <tr class="text-center d-flex">
                     <th class="col-4 text-left">Nom</th>
                     <th class="col-2 d-none d-md-table-cell">N° de série</th>
