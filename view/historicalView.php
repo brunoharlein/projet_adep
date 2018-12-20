@@ -5,6 +5,8 @@ include "view/template/header.php";
  <div class="row mt-5">
     <section class="col-md-6 mx-auto mt-4">
       <h2 class="historicalH2">Gestion des emprunts</h2>
+      <?php require "form/historicalForm.php"; ?>
+
       <div class="container-fluide">
         <div class="row">
           <table class="table table-hover fontTable">
@@ -21,7 +23,7 @@ include "view/template/header.php";
                foreach ($historicals as $key => $postHistorical) {
               ?>
               <tr>
-                <td><?php echo $postHistorical["nom"] . " " . $postHistorical["prenom"]; ?></td>
+                <td><?php echo $postHistorical["nom_emprunteur"] . " " . $postHistorical["prenom"]; ?></td>
                 <td><?php echo $postHistorical["nom_materiel"]; ?></td>
                 <td><?php echo $postHistorical["dateEmprunt"]; ?></td>
                 <td><?php echo $postHistorical["dateRetour"]; ?></td>
