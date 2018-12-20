@@ -182,7 +182,7 @@ Add this function after `ga` is defined:
           'hitType': 'event',
           'eventCategory': (host == window.location.hostname || host == undefined || host == '' ? '' : 'external ') + 'error',
           'eventAction': message,
-          'eventLabel': (file + ' LINE: ' + line + (column ? ' COLUMN: ' + column : '')).trim(),
+          'eventlabel': (file + ' LINE: ' + line + (column ? ' COLUMN: ' + column : '')).trim(),
           'nonInteraction': 1
         });
     };

@@ -1,7 +1,7 @@
 <?php include "view/template/header.php"; ?>
 <?php
 //var_dump($_SESSION["codeMsg"][0]);
-//var_dump($materiels);
+//var_dump($_POST);
  ?>
 <?php
 //Affichage du message de confirmation ou d'erreur
@@ -32,27 +32,7 @@ if (isset($_SESSION["codeMsg"][0])) { ?>
   <div class="container">
     <section class="d-flex flex-row justify-content-between">
       <h1 class="col-4 mt-0">Emprunter du matériel</h1>
-
-
-<form action="" method="post" name="tri">
-      <!-- <form action="emprunts.php?tri=" method="post" name="tri"> -->
-  <div class="form-row align-items-center">
-    <div class="col-auto my-1">
-      <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-      <select name="choix" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Options</option>
-        <option value="1">noms de A à Z</option>
-        <option value="2">noms de Z à A</option>
-        <option value="3">dispo ou pas</option>
-      </select>
-    </div>
-    <div class="col-auto my-1">
-    </div>
-    <div class="col-auto my-1">
-      <button type="submit" class="btn btn-primary">OK</button>
-    </div>
-  </div>
-</form>
+      <?php require "form/sortEmpruntsListForm.php"; ?>
 
     </section>
     </div>

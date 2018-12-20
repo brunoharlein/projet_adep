@@ -18,11 +18,31 @@
         return $result;
       }
 
-//à mettre en une seule fonction?
+
+function getMaterielsEmprunts($tri){
+  $text = "";
+  switch ($tri) {
+    case 'nomAZ':
+      $text .= " ORDER BY nom ASC";
+      break;
+      case 'nomZA':
+      $text .= " ORDER BY nom DESC";
+      break;
+      case 'etat':
+      $text .= " WHERE etat = 1";
+      break;
+  
+  }
+  $db = getDataBase();
+  $requete = $db->query('SELECT * FROM materiel'. $text);
+  $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+  $requete->closeCursor(); // Termine le traitement de la requête
+  return $result;
+}
      // trie de A à Z
-     // function orderBy($tri,$type) {
+     // function orderBy($sort,$type) {
      //   $db = getDataBase();
-     //   $query = $db->query("SELECT * FROM materiel ORDER by $tri");
+     //   $query = $db->query("SELECT * FROM materiel ORDER by $sort");
      //   $orderAZ = $query->fetchall(PDO::FETCH_ASSOC);
      //   return $orderAZ;
      // }
