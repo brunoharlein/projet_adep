@@ -9,7 +9,7 @@ function emprunter() {
   $id_emprunteur = intval($_SESSION['user']['id']);
   if ((isset($_GET['id'])) && (!empty($_GET['id']))) {
       $id_materiel = intval($_GET['id']);
-      if(  addEmprunt($id_materiel, $id_emprunteur)) {
+      if(addEmprunt($id_materiel, $id_emprunteur)) {
         if(updateEtatMateriel( $id_materiel)) {
           array_push($_SESSION["codeMsg"], "3"); //ajoute le code msg à la session code
           redirectTo("emprunter/list");
@@ -19,23 +19,36 @@ function emprunter() {
           redirectTo("emprunter/list");
         }
       }
-
+      else {
+        array_push($_SESSION["codeMsg"], "4");
+        redirectTo("emprunter/list");
       }
-      require "view/empruntsView.php";
+  }
+  //require "view/empruntsView.php";
 }
 
 function allMateriels() {
-  if(getMateriels()) {
-    $materiels = getMateriels();
+  if(isset($_POST) && !empty($_POST)) {
+    //alors fonction avec requete de tri
+    if(getMaterielsEmprunts($_POST['triMaterielsEmprunts'])){
+      $materiels =  getMaterielsEmprunts($_POST['triMaterielsEmprunts']);
+    }
+    else {
+      $materiels = NULL;
+    }
   }
   else {
-    $materiels = NULL;
+    if(getMaterielsEmprunts('nomAZ')){
+      $materiels =  getMaterielsEmprunts('nomAZ');
+    }
+    else {
+      $materiels = NULL;
+    }
   }
+
+
   require "view/empruntsView.php";
 }
 
-function sort() {
-  if ($_POST['nomduselectduform'])
-  ordeby(nom,desc);
-}
+
 ?>

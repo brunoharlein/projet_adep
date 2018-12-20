@@ -23,8 +23,8 @@ include "view/template/header.php";
               <tr>
                 <td><?php echo $postHistorical["nom"] . " " . $postHistorical["prenom"]; ?></td>
                 <td><?php echo $postHistorical["nom_materiel"]; ?></td>
-                <td><?php echo $postHistorical["date_emprunt"]; ?></td>
-                <td><?php echo $postHistorical["date_retour"]; ?></td>
+                <td><?php echo $postHistorical["dateEmprunt"]; ?></td>
+                <td><?php echo $postHistorical["dateRetour"]; ?></td>
               </tr>
               <?php
                }

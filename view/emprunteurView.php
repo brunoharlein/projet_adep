@@ -14,7 +14,7 @@ include "template/header.php";
       <th scope="col">Prenom</th>
       <th scope="col">Password</th>
       <th scope="col">Poste</th>
-      <th scope="col">Status</th>
+      <th scope="col">Statut</th>
       <th scope="col">Modifier</th>
       <th scope="col">Supprimer</th>
     </tr>
