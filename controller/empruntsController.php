@@ -36,6 +36,6 @@ function allMateriels() {
 
 function sort() {
   if ($_POST['nomduselectduform'])
-  ordeby(nom,desc)
+  ordeby(nom,desc);
 }
 ?>
