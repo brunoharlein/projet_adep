@@ -51,4 +51,9 @@ function loadCss($file) {
   $path .= "public/css/$file";
   echo "<link rel='stylesheet' href='$path'>";
 }
+
+// load picture header
+function loadPict() {
+  echo "<a href='https://www.adep-roubaix.fr/' target='_blank'><img src= '/lab/projet_adep/public/img/adep-logo.png' class='img-fluid' alt='Logo de l'ADEP'></a>";
+}
  ?>
