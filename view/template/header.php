@@ -52,10 +52,10 @@
   <!-- Navigation Tab and Screen -->
   <!-- Affichage du menu si User connecté -->
   <?php if (isLogged()) { ?>
-    <nav class="tab navbar navbar-expand-lg navbar-light bg-light">
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+    <nav class="tab navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container collapse navbar-collapse " id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" <?php setHref('emprunter/list') ?> >Emprunter</a>
           </li>
           <!-- //Si l'emprunteur est admin -->
@@ -70,11 +70,13 @@
               <a class="nav-link" <?php setHref("historique"); ?>>L'historique</a>
             </li>
           <?php } ?>
-          <li class="nav-item">
-            <a class="nav-link" <?php setHref("logout"); ?>>Se déconnecter</a>
-          </li>
         </ul>
+        <span class="navbar-text">
+          <a class="nav-link" <?php setHref("logout"); ?>>Se déconnecter</a>
+        </span>
       </div>
+
+
     </nav>
 
   <?php } ?>
