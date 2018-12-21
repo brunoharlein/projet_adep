@@ -1,4 +1,4 @@
-<?php
+<?php var_dump($_POST);
 //require "service/errorManager.php";
 //We load header
 include "view/template/header.php";

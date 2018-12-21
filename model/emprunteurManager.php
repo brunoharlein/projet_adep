@@ -8,7 +8,7 @@ function getBorrower(){
     return $result;
 }
 
-//fonction qui reccupere un seul emprunteur selon son id
+ //fonction qui reccupere un seul emprunteur selon son id
 function getBorrowerId($id) {
     $db = getDataBase();
     $req = $db->prepare("SELECT * FROM emprunteur WHERE id = :id");
