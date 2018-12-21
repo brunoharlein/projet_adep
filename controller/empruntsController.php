@@ -45,10 +45,17 @@ function allMateriels() {
       $materiels = NULL;
     }
   }
-
-
   require "view/empruntsView.php";
 }
 
+function myEmprunts(){
+  if(getMyEmprunts($_SESSION['user']['id'])){
+    $myEmprunts = getMyEmprunts($_SESSION['user']['id']);
+  }
+  else {
+    $myEmprunts = NULL;
+  }
+  require "view/listMyEmpruntsView.php";
+}
 
 ?>

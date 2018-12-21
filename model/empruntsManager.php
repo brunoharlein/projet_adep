@@ -39,29 +39,18 @@ function getMaterielsEmprunts($tri){
   $requete->closeCursor(); // Termine le traitement de la requête
   return $result;
 }
-     // trie de A à Z
-     // function orderBy($sort,$type) {
-     //   $db = getDataBase();
-     //   $query = $db->query("SELECT * FROM materiel ORDER by $sort");
-     //   $orderAZ = $query->fetchall(PDO::FETCH_ASSOC);
-     //   return $orderAZ;
-     // }
-     //
-     // // trie de Z à A
-     // function orderByZa() {
-     //   $db = getDataBase();
-     //   $query = $db->query("SELECT * FROM materiel ORDER by nom $type");
-     //   $orderZA = $query->fetchall(PDO::FETCH_ASSOC);
-     //   return $orderZA;
-     // }
-     //
-     // // trie selon l'etat de dispo
-     // function orderByEtat() {
-     //   $db = getDataBase();
-     //   $query = $db->query("SELECT * FROM materiel ORDER by etat DESC");
-     //   $orderEtat = $query->fetchall(PDO::FETCH_ASSOC);
-     //   return $orderEtat;
-     // }
+
+function getMyEmprunts($id_emprunteur){
+  $db = getDataBase();
+  $requete = $db->prepare('SELECT emp.prenom, emp.nom, m.nom as materiel, m.num_serie, e.dateEmprunt, e.dateRetour FROM `emprunt` e
+                        inner join emprunteur emp on emp.id = e.idEmprunteur
+                        inner join materiel m on m.id = e.idMateriel
+                        WHERE  e.idEmprunteur = ? ');
+  $requete->execute([$id_emprunteur]);
+  $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+  $requete->closeCursor();
+  return $result;
+}
 
 
 
