@@ -9,14 +9,6 @@ function getEmprunteur(){
     require "view/emprunteurView.php";
 }
 
-//fonction qui reccupere un seul emprunteur selon son id
-// function getEmprunteurId() {
-//     $id = $_GET["id"];
-//     if (!empty($_GET["id"])) {
-//         $emprunteur = getBorrowerId($id);
-//     }
-// }
-
 // fonction qui ajoute un emprunteur
 function addEmprunteur() {
     if (!empty($_POST)) {
