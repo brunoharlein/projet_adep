@@ -66,4 +66,15 @@ function afficheErrorMsg($code,$text){
   }
 return $message;
 }
+
+function errorMsgEmprunteur($code, $text) {
+  $messages = getErrorEmprunteur($text);
+  foreach ($messages as $key => $value) {
+    if ($value["id"] == $code) {
+      $message = $value["msg"];
+    }
+  }
+return $message;
+}
+
  ?>

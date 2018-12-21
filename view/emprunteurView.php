@@ -1,7 +1,7 @@
 <?php
 include "view/template/header.php";
 
-// if (isset($_SESSION["codeMsg"][0])) { 
+if (isset($_SESSION["codeMsg"][0])) { 
 ?>
   <!-- Modal -->
   <div id="myModal" class="modal fade" role="dialog">
@@ -14,7 +14,7 @@ include "view/template/header.php";
         <div class="modal-body">
           <div class="alert alert-success text-center mt-2" role="alert">
             <?php
-            echo afficheErrorMsg($_SESSION["codeMsg"][0],"Le matériel");
+            echo afficheErrorMsg($_SESSION["codeMsg"][0],"L'emprunteur");
             array_pop($_SESSION["codeMsg"]); //retire le code de la session
             ?>
           </div>
@@ -24,7 +24,7 @@ include "view/template/header.php";
       </div>
     </div>
   </div>
-  <?php //} ?>
+  <?php } ?>
   <main>
     <section class="container">
       <div class="d-flex flex-column my-3">
@@ -45,7 +45,6 @@ include "view/template/header.php";
                 <th scope="col" class="col-2 d-none d-md-table-cell">Email</th>
                 <th scope="col" class="col-3 d-none d-md-table-cell">Nom</th>
                 <th scope="col" class="col-2 d-none d-md-table-cell">Prenom</th>
-                <th scope="col" class="col-1 d-none d-md-table-cell">Password</th>
                 <th scope="col" class="col-1 d-none d-md-table-cell">Poste</th>
                 <th scope="col" class="col-1 d-none d-md-table-cell">Statut</th>
                 <th scope="col" class="col-1">Modifier</th>
@@ -61,7 +60,6 @@ include "view/template/header.php";
                 <td class="d-none d-md-table-cell"><?php echo $value["email"] ?></td>
                 <td class="d-none d-md-table-cell"><?php echo $value["nom"] ?></td>
                 <td class="d-none d-md-table-cell"><?php echo $value["prenom"] ?></td>
-                <td class="d-none d-md-table-cell"><?php echo $value["password"] ?></td>
                 <td class="d-none d-md-table-cell"><?php echo $value["poste"] ?></td>
                 <td class="d-none d-md-table-cell"><?php echo $value["status"] ?></td>
                 <td><a href="emprunteur/edit?id=<?php echo $value["id"]; ?>"><i class="fas fa-edit fa-2x"></i></a></td>

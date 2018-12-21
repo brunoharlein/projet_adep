@@ -22,7 +22,12 @@ function getErrorEmprunteur($code) {
     "4" => "Le mot de passe ne respecte pas les conditions indiquées",
     "5" => "Un utilisateur utilise déjà cet email merci d'en choisir un autre",
   ];
-  return $references;
+  $message = "Nous avons trouvé les erreurs suivantes : ";
+  $code = htmlspecialchars($code);
+  for ($i=0; $i < strlen($code) ; $i++) {
+    $message .= "<p>" . $references[$code[$i]] . "</p>";
+  }
+  return $message;
 }
 
  ?>

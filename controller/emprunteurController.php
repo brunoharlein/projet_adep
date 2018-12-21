@@ -13,16 +13,21 @@ function getEmprunteur(){
 // fonction qui ajoute un emprunteur
 function addEmprunteur() {
     if (!empty($_POST)) {
-
         foreach ($_POST as $key => $value) {
             $_POST[$key] = htmlspecialchars($value);
-          }
-        if (!empty($_POST["password"])) {
-          password_hash($_POST["password"]);
         }
-        addBorrower($_POST);
-        redirectTo("emprunteurs");
+        if (!empty($_POST["password"]) && ($_POST["password"] === $_POST["passwordConfirm"])) {
+            $_POST["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
+            var_dump($_POST);
+            $emprunteurs = getBorrower();
+            foreach ($emprunteurs as $key => $value) {
+                if ($_POST["email"] !== $value["email"]) {
+                    addBorrower($_POST);
+                    redirectTo("emprunteurs");
+                }
+            }
         }
+    }
     require "view/addEmprunteurView.php";
 }
 
@@ -31,7 +36,6 @@ function editEmprunteur() {
     if(isset($_GET["id"])) {
         $id = htmlspecialchars($_GET["id"]);
         $emprunteur = getBorrowerId($id);
-        var_dump($emprunteur);
     }
     if (!empty($_POST)) {
         editBorrower($_POST);
