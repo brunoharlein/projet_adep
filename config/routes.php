@@ -96,6 +96,11 @@ function getRoutes() {
       "status" => "user"
     ],
 
+    "emprunts/list" => [
+      "emprunts",
+      "myEmprunts",
+      "status" => "user"
+    ],
     ////////////////////////////////////// end roads for borrow
 
     ///////////////////////////////////////////////////////////////// start roads for historical

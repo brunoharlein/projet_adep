@@ -62,6 +62,6 @@ function loadJs($file) {
 
 // load picture header
 function loadPict() {
-  echo "<a href='https://www.adep-roubaix.fr/' target='_blank'><img src= '/lab/projet_adep/public/img/adep-logo.png' class='img-fluid' alt='Logo de l'ADEP'></a>";
+  echo "<a href='https://www.adep-roubaix.fr/' target='_blank'><img src= '/Lab/projet_adep/public/img/adep-logo.png' class='img-fluid' alt='Logo de l'ADEP'></a>";
 }
  ?>

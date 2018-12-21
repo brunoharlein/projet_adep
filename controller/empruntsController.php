@@ -45,10 +45,27 @@ function allMateriels() {
       $materiels = NULL;
     }
   }
-
-
   require "view/empruntsView.php";
 }
 
+function myEmprunts(){
+  if (isset($_POST) && !empty($_POST)) {
+    if(getMyEmpruntsTri($_SESSION['user']['id'],$_POST['tri'])){
+      $myEmprunts = getMyEmpruntsTri($_SESSION['user']['id'],$_POST['tri']);
+    }else {
+      $myEmprunts = NULL;
+    }
+
+  }
+  else {
+    if(getMyEmpruntsTri($_SESSION['user']['id'],2)){
+      $myEmprunts = getMyEmpruntsTri($_SESSION['user']['id'],2);
+    }else {
+      $myEmprunts = NULL;
+    }
+  }
+
+  require "view/listMyEmpruntsView.php";
+}
 
 ?>

@@ -9,5 +9,4 @@ function getUser($userEmail) {
 }
 
 
-
 ?>
