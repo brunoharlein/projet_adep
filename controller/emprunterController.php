@@ -1,6 +1,5 @@
 <?php
 require "model/emprunterManager.php";
-
 function getHistorical() {
   if(isset($_POST) && !empty($_POST)) {
     //alors fonction avec requete de tri
@@ -19,11 +18,6 @@ function getHistorical() {
       $historicals = NULL;
     }
   }
-
-
   require "view/historicalView.php";
 }
-
-
-
 ?>
