@@ -13,7 +13,7 @@
         <table class="table table-hover">
                 <thead class="thead-light">
                   <tr class="text-center d-flex">
-                    <th class="col-6 text-left">Matériels</th>
+                    <th class="col-6 text-left">Matériel</th>
                     <th class="col-2 d-none d-md-table-cell">N° de série</th>
                     <th class="col-2 d-none d-lg-table-cell">Date d'emprunt</th>
                     <th class="col-2 d-none d-lg-table-cell">Etat</th>
