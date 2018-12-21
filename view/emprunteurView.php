@@ -31,19 +31,19 @@ if (isset($_SESSION["codeMsg"][0])) {
           <div class="d-flex justify-content-between mb-3">
                 <h2>Gestion des emprunteurs</h2>
                 <div class="d-none d-md-block">
-                  <a <?php setHref("emprunteur/ajout"); ?> class="btn btn-primary">Ajouter un emprunteur</a>
+                  <a <?php setHref("emprunteur/ajout"); ?> class="btn btn-success">Ajouter un emprunteur</a>
                 </div>
                 <div class="d-block d-md-none">
-                  <a <?php setHref("materiels/ajout"); ?> class="btn btn-primary"><i class="fas fa-plus"></i></a>
+                  <a <?php setHref("emprunteur/ajout"); ?> class="btn btn-primary"><i class="fas fa-plus"></i></a>
                 </div>
           </div>
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>
               <tr class="text-center display-6">
-                <th scope="col" class="col-3 text-left">N°</th>
+                <th scope="col" class="d-none d-md-table-cell col-3 text-left">N°</th>
                 <th scope="col" class="col-2 d-none d-md-table-cell">Email</th>
-                <th scope="col" class="col-3 d-none d-md-table-cell">Nom</th>
+                <th scope="col" class="col-3 d-md-table-cell">Nom</th>
                 <th scope="col" class="col-2 d-none d-md-table-cell">Prenom</th>
                 <th scope="col" class="col-1 d-none d-md-table-cell">Poste</th>
                 <th scope="col" class="col-1 d-none d-md-table-cell">Statut</th>
@@ -56,9 +56,9 @@ if (isset($_SESSION["codeMsg"][0])) {
             foreach ($emprunteur as $key => $value) {
             ?>
               <tr class="text-center display-5">
-                <th scope="row" class="text-left"><?php echo $value["id"] ?></th>
+                <th scope="row" class="d-none d-md-table-cell text-left"><?php echo $value["id"] ?></th>
                 <td class="d-none d-md-table-cell"><?php echo $value["email"] ?></td>
-                <td class="d-none d-md-table-cell"><?php echo $value["nom"] ?></td>
+                <td class="d-md-table-cell"><?php echo $value["nom"] ?></td>
                 <td class="d-none d-md-table-cell"><?php echo $value["prenom"] ?></td>
                 <td class="d-none d-md-table-cell"><?php echo $value["poste"] ?></td>
                 <td class="d-none d-md-table-cell"><?php echo $value["status"] ?></td>

@@ -2,7 +2,7 @@
   <div class="d-flex flex-column my-3">
   <div class="d-flex justify-content-between mt-3">
     <h2>Ajout</h2>
-    <a <?php setHref("emprunteurs") ?>><button class="btn btn-primary">Retour</button></a>
+    <a <?php setHref("emprunteurs") ?>><button class="btn btn-success">Retour</button></a>
   </div>
   <form class="col-12 col-md-12 col-lg-12 mx-auto my-3" action="" method="post">
     <div class="form-group text-left">
@@ -62,7 +62,7 @@
       </div>
     </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-success">Ajouter</button>
+      <button type="submit" class="btn btn-primary float-right">Ajouter</button>
     </div>
   </form>
 </section>
