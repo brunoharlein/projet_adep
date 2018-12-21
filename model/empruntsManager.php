@@ -40,12 +40,21 @@ function getMaterielsEmprunts($tri){
   return $result;
 }
 
-function getMyEmprunts($id_emprunteur){
+function getMyEmpruntsTri($id_emprunteur,$tri){
+  $text = "";
+  switch ($tri) {
+    case '0':
+      $text .= " AND e.dateRetour IS NOT NULL";
+      break;
+    case '1':
+      $text .= " AND e.dateRetour IS NULL";
+      break;
+  }
   $db = getDataBase();
   $requete = $db->prepare('SELECT emp.prenom, emp.nom, m.nom as materiel, m.num_serie, e.dateEmprunt, e.dateRetour FROM `emprunt` e
                         inner join emprunteur emp on emp.id = e.idEmprunteur
                         inner join materiel m on m.id = e.idMateriel
-                        WHERE  e.idEmprunteur = ? ');
+                        WHERE  e.idEmprunteur = ? '.$text.' order by dateEmprunt desc');
   $requete->execute([$id_emprunteur]);
   $result = $requete->fetchAll(PDO::FETCH_ASSOC);
   $requete->closeCursor();

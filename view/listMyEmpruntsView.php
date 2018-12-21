@@ -5,6 +5,9 @@
 	<div class="d-flex flex-column my-3">
       <div class="d-flex justify-content-between mb-3">
             <h2>Mes emprunts</h2>
+            <div class="">
+              <?php include "view/form/triMyEmpruntsForm.php"; ?>
+            </div>
       </div>
       <div class="table-responsive">
         <table class="table table-hover">
@@ -18,6 +21,7 @@
                 </thead>
                 <tbody>
                   <?php
+									if (!is_null($myEmprunts)) {
                     // On affiche chaque entrée une à une
                     foreach ($myEmprunts as $key => $value) {
                       $dateEmprunt = new DateTime($value["dateEmprunt"]);
@@ -36,7 +40,11 @@
                   </tr>
                   <?php
                     }
-                  ?>
+									}else { ?>
+										<tr>
+											<td colspan="4" class="text-center">Aucun résultat</td>
+										</tr>
+									<?php } ?>
               </tbody>
             </table>
       </div>

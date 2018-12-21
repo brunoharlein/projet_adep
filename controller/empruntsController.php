@@ -49,12 +49,22 @@ function allMateriels() {
 }
 
 function myEmprunts(){
-  if(getMyEmprunts($_SESSION['user']['id'])){
-    $myEmprunts = getMyEmprunts($_SESSION['user']['id']);
+  if (isset($_POST) && !empty($_POST)) {
+    if(getMyEmpruntsTri($_SESSION['user']['id'],$_POST['tri'])){
+      $myEmprunts = getMyEmpruntsTri($_SESSION['user']['id'],$_POST['tri']);
+    }else {
+      $myEmprunts = NULL;
+    }
+
   }
   else {
-    $myEmprunts = NULL;
+    if(getMyEmpruntsTri($_SESSION['user']['id'],2)){
+      $myEmprunts = getMyEmpruntsTri($_SESSION['user']['id'],2);
+    }else {
+      $myEmprunts = NULL;
+    }
   }
+
   require "view/listMyEmpruntsView.php";
 }
 
