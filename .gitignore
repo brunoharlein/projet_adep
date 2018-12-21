@@ -3,3 +3,4 @@
 # Useful .gitignore templates: https://github.com/github/gitignore
 
 model/db.php
+config/global.php
