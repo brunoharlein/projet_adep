@@ -52,8 +52,8 @@ if (isset($_SESSION["codeMsg"][0])) { ?>
                 </thead>
                 <tbody>
                   <?php
+                  if (!is_null($materiels)) {
                     // On récupère tout le contenu de la table materiel
-                    //$result = getMateriels($db);
                     // On affiche chaque entrée une à une
                     foreach ($materiels as $key => $value) {
                   ?>
@@ -67,7 +67,11 @@ if (isset($_SESSION["codeMsg"][0])) { ?>
                   </tr>
                   <?php
                     }
-                  ?>
+                  }else { ?>
+                    <tr>
+											<td colspan="4" class="text-center">Aucun résultat</td>
+										</tr>
+                  <?php } ?>
               </tbody>
             </table>
       </div>
