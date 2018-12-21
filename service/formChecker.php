@@ -67,6 +67,10 @@ function afficheErrorMsg($code,$text){
 return $message;
 }
 
+function errorMsgEmprunteur($code, $text) {
+  $messages = getErrorEmprunteur($text);
+}
+
 function afficheConnexionMsg($code){
   $messages = connexionMsg();
   foreach ($messages as $key => $value) {
