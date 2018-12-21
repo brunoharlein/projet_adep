@@ -1,4 +1,4 @@
-<section class="container py-3 h-100 d-flex flex-column justify-content-center align-items-center ">
+<section class="container py-3 d-flex flex-column justify-content-center align-items-center ">
       <div id="formConnexion" class="d-flex flex-column justify-content-center h-75 py-4">
         <h5 class="text-center">
           <span class="d-none d-md-block">Pour accéder à l'interface d'emprunt de matériels, <br></span>

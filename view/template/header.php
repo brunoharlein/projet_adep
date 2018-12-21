@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="fr">
-
+<?php //var_dump($_SESSION["user"]["status"]); ?>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,13 +23,23 @@
     <div id="logoHeader" class="">
       <?php loadPict(); ?>
     </div>
+    <!-- Title -->
     <div class="d-flex align-items-center justify-content-center ">
-      <h1 id="titreHeader" class="my-3">Gestion des prêts</h1>
+      <h1 id="titreHeader">Gestion des prêts</h1>
     </div>
+    <!-- My account -->
+    <?php if (isLogged()) { ?>
+    <div class="d-flex justify-content-end">
+        <div class="mt-2">
+          <a class="btn btn-dark" <?php setHref("logout"); ?>>Se déconnecter</a>
+        </div>
+    </div>
+  <?php } ?>
+
     <!-- Navigation Mobile -->
     <!-- Affichage du menu si User connecté -->
     <?php if (isLogged()) { ?>
-    <div class="mobile d-flex align-items-center">
+    <div class="mobile align-items-center"> <!-- d-flex -->
       <a class="mobile" href="javascript:void(0);" onclick="menuMobile()"><i id="navIcon" class="fas fa-bars fa-2x transformIcon"></i></a>
       <nav id="navMobile" class="menuVisible">
             <ul class="nav flex-column">
@@ -40,7 +50,7 @@
                   <li class="nav-item"><a class="nav-link" <?php setHref("materiels"); ?> >Les matériels</a></li>
                   <li class="nav-item"><a class="nav-link" <?php setHref("emprunteurs"); ?> >Les emprunteurs</a></li>
                   <li class="nav-item"><a class="nav-link" <?php setHref("historique"); ?> >L'historique</a></li>
-                <?php } ?>1
+                <?php } ?>
                 <li class="nav-item"><a class="nav-link" <?php setHref("logout"); ?>>Se déconnecter</a></li>
 
             </ul>
@@ -48,30 +58,42 @@
     </div>
     <?php } ?>
   </div>
+  </header>
   <!-- Navigation Tab and Screen -->
   <!-- Affichage du menu si User connecté -->
   <?php if (isLogged()) { ?>
-  <nav class="tab container ">
-    <ul class="nav d-flex justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" <?php setHref('emprunter/list') ?> >Emprunter</a>
-        </li>
-        <!-- //Si l'emprunteur est admin -->
-          <?php if ($_SESSION["user"]["status"] === "admin") { ?>
+    <nav class="tab navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav">
+          <a class="navbar-brand" href="#"><i class="fas fa-user"></i> <?php echo $_SESSION["user"]["prenom"]." ".$_SESSION["user"]["nom"]; ?></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
           <li class="nav-item">
-            <a class="nav-link" <?php setHref("materiels"); ?>>Les matériels</a>
+            <a class="nav-link" <?php setHref('emprunts/list') ?> >Mes emprunts</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" <?php setHref("emprunteurs"); ?>>Les emprunteurs</a>
+            <a class="nav-link" <?php setHref('emprunter/list') ?> >Emprunter</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" <?php setHref("historique"); ?>>L'historique</a>
-          </li>
-        <?php } ?>
-        <li class="nav-item">
-          <a class="nav-link" <?php setHref("logout"); ?>>Se déconnecter</a>
-        </li>
-    </ul>
-  </nav>
+        </ul>
+        <ul class="navbar-nav">
+          <!-- //Si l'emprunteur est admin -->
+            <?php if ($_SESSION["user"]["status"] === "admin") { ?>
+            <li class="nav-item">
+              <a class="nav-link" <?php setHref("historique"); ?>>L'historique</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" <?php setHref("materiels"); ?>>Les matériels</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" <?php setHref("emprunteurs"); ?>>Les emprunteurs</a>
+            </li>
+          <?php } ?>
+        </ul>
+
+      </div>
+
+
+    </nav>
+
   <?php } ?>
-</header>
