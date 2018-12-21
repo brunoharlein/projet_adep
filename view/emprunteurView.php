@@ -1,6 +1,5 @@
-<?php
-include "template/header.php";
-?>
+<?php include "template/header.php"; ?>
+
 <div class="d-flex justify-content-between flex-wrap w-75 mt-5 mb-3">
     <h2 class="col-12 col-md-6 col-lg-8">Gestion des emprunteurs</h2>
     <a href="emprunteur/ajout"><button type="button" class="btn btn-success"><i class="fas fa-plus"></i>Ajouter</button></a>

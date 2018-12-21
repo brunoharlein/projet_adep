@@ -66,4 +66,14 @@ function afficheErrorMsg($code,$text){
   }
 return $message;
 }
+
+function afficheConnexionMsg($code){
+  $messages = connexionMsg();
+  foreach ($messages as $key => $value) {
+    if ($value["id"] == $code) {
+      $message = $value["msg"];
+    }
+  }
+return $message;
+}
  ?>

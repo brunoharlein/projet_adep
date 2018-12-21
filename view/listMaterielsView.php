@@ -32,23 +32,22 @@ if (isset($_SESSION["codeMsg"][0])) { ?>
       <div class="d-flex justify-content-between mb-3">
             <h2>Gestion des matériels</h2>
             <div class="d-none d-md-block">
-               <a <?php setHref("materiels/ajout"); ?> class="btn btn-primary">Ajouter un matériel</a>
+               <a <?php setHref("materiels/ajout"); ?> class="btn btn-success">Ajouter un matériel</a>
             </div>
             <div class="d-block d-md-none">
-               <a <?php setHref("materiels/ajout"); ?> class="btn btn-primary"><i class="fas fa-plus"></i></a>
+               <a <?php setHref("materiels/ajout"); ?> class="btn btn-success"><i class="fas fa-plus"></i></a>
             </div>
       </div>
       <div class="table-responsive">
         <table class="table table-hover">
-                <thead>
-                  <tr class="text-center">
-                    <th class="col-3 text-left">Nom</th>
+                <thead class="thead-light">
+                  <tr class="text-center d-flex">
+                    <th class="col-4 text-left">Nom</th>
                     <th class="col-2 d-none d-md-table-cell">N° de série</th>
-                    <th class="col-3 d-none d-md-table-cell">Description</th>
-                    <th class="col-1 d-none d-lg-table-cell">Etat</th>
-                    <th class="col-1 d-none d-lg-table-cell">Accessibilité</th>
-                    <th class="col-1">Modifier</th>
-                    <th class="col-1">Supprimer</th>
+                    <th class="col-2 d-none d-lg-table-cell">Etat</th>
+                    <th class="col-2 d-none d-lg-table-cell">Accessibilité</th>
+                    <th class="col-4 col-md-3 col-lg-1">Modifier</th>
+                    <th class="col-4 col-md-3 col-lg-1">Supprimer</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -58,14 +57,13 @@ if (isset($_SESSION["codeMsg"][0])) { ?>
                     // On affiche chaque entrée une à une
                     foreach ($materiels as $key => $value) {
                   ?>
-                  <tr class="text-center">
-                    <td class="text-left"><?php echo $value["nom"]; ?></td>
-                    <td class="d-none d-md-table-cell"><?php echo $value["num_serie"]; ?></td>
-                    <td class="d-none d-md-table-cell"><?php echo $value["description"]; ?></td>
-                    <td class="d-none d-lg-table-cell"><?php echo ($value["etat"] == 1)?"En stock":"Indisponible"; ?></td>
-                    <td class="d-none d-lg-table-cell"><?php echo ($value["acces"] == 1)?"Libre":"Restreint"; ?></td>
-                    <td><a <?php setHref("materiels/edit", ["id"=>$value["id"]]); ?> ><i class="fas fa-edit fa-2x"></i></a></td>
-                    <td><a <?php setHref("materiels/suppr", ["id"=>$value["id"]]); ?> ><i class="fas fa-times fa-2x"></i></a></td>
+                  <tr class="text-center d-flex">
+                    <td class="col-4 text-left"><?php echo $value["nom"]; ?></td>
+                    <td class="col-2 d-none d-md-table-cell"><?php echo $value["num_serie"]; ?></td>
+                    <td class="col-2 d-none d-lg-table-cell"><?php echo ($value["etat"] == 1)?"En stock":"Indisponible"; ?></td>
+                    <td class="col-2 d-none d-lg-table-cell"><?php echo ($value["acces"] == 1)?"Libre":"Restreint"; ?></td>
+                    <td class="col-4 col-md-3 col-lg-1"><a <?php setHref("materiels/edit", ["id"=>$value["id"]]); ?> ><i class="fas fa-edit fa-2x"></i></a></td>
+                    <td class="col-4 col-md-3 col-lg-1"><a <?php setHref("materiels/suppr", ["id"=>$value["id"]]); ?> ><i class="fas fa-times fa-2x"></i></a></td>
                   </tr>
                   <?php
                     }

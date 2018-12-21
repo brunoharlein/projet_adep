@@ -14,7 +14,16 @@ function menuMobile() {
 (function() {
   'use strict';
   window.addEventListener('load', function() {
+    $(document).ready(function() {
+    	// get current URL path and assign 'active' class
+    	var pathname = window.location.href;
+    	$('a[href="'+pathname+'"]').addClass('active');
+    });
+
+
+    //affichage de la Modal
     if($('#myModal')){$('#myModal').modal('show');}
+
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
     // Loop over them and prevent submission
