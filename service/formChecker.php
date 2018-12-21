@@ -69,6 +69,10 @@ return $message;
 
 function errorMsgEmprunteur($code, $text) {
   $messages = getErrorEmprunteur($text);
+}
+
+function afficheConnexionMsg($code){
+  $messages = connexionMsg();
   foreach ($messages as $key => $value) {
     if ($value["id"] == $code) {
       $message = $value["msg"];
@@ -76,5 +80,4 @@ function errorMsgEmprunteur($code, $text) {
   }
 return $message;
 }
-
  ?>

@@ -30,4 +30,12 @@ function getErrorEmprunteur($code) {
   return $message;
 }
 
+function connexionMsg(){
+  return [
+    ["id" => 1, "msg" => "Veuillez saisir vos identifiants et mot de passe."],
+    ["id" => 2, "msg" => "La connexion a echoué, veuillez saisir des identifiants valident."],
+    ["id" => 0, "msg" => "Une erreur est survenue."]
+  ];
+}
+
  ?>
