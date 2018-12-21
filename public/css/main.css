@@ -173,16 +173,17 @@ header{
 
 #logoHeader {
   max-height: 15vh;
-  max-width: 72px;
+  /* max-width: 72px; */
 }
 
 #logoHeader img{
-  max-height: 100%;
-  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 15vh;
 }
 
 #titreHeader{
-  font-size:1.25em !important;
+  font-size:1.25em ;
 }
 
 /* Navigation */
@@ -238,14 +239,18 @@ header{
 
    @media screen and (min-width: 1000px) {
      header{
-       height:25vh;
+       height:20vh;
      }
      #logoHeader {
-       max-height: 23vh;
-       max-width: 200px;
+       max-height: 20vh;
+       /* max-width: 200px; */
      }
+     #logoHeader img{
+       max-height: 20vh;
+     }
+
      #titreHeader{
-       font-size:3.5em !important;
+       font-size:8vh;
      }
      .tab{
        display:block !important;

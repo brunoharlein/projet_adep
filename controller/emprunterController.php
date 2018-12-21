@@ -1,13 +1,23 @@
 <?php
 require "model/emprunterManager.php";
-
-// fonction pour historique
 function getHistorical() {
-$historicals = getHistorical2();
-require "view/historicalView.php";
-// echo (isset($_POST['choix']))?'?tri='.$_POST['choix']:'';
-// require "view/form/historical/view.php";
+  if(isset($_POST) && !empty($_POST)) {
+    //alors fonction avec requete de tri
+    if(getTriHistorical($_POST['choix'])){
+      $historicals =  getTriHistorical($_POST['choix']);
+    }
+    else {
+      $historicals = NULL;
+    }
+  }
+  else {
+    if(getTriHistorical('nomAZ')){
+      $historicals =  getTriHistorical('nomAZ');
+    }
+    else {
+      $historicals = NULL;
+    }
+  }
+  require "view/historicalView.php";
 }
-
-
 ?>

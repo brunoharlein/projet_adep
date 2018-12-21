@@ -1,7 +1,7 @@
 <?php
 include "view/template/header.php";
 
-// if (isset($_SESSION["codeMsg"][0])) { 
+if (isset($_SESSION["codeMsg"][0])) { 
 ?>
   <!-- Modal -->
   <div id="myModal" class="modal fade" role="dialog">
@@ -24,7 +24,7 @@ include "view/template/header.php";
       </div>
     </div>
   </div>
-  <?php //} ?>
+  <?php } ?>
   <main>
     <section class="container">
       <div class="d-flex flex-column my-3">

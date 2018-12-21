@@ -31,7 +31,7 @@ function getMaterielsEmprunts($tri){
       case 'etat':
       $text .= " WHERE etat = 1";
       break;
-  
+
   }
   $db = getDataBase();
   $requete = $db->query('SELECT * FROM materiel'. $text);
